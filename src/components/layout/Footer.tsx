@@ -3,27 +3,29 @@ import { Container } from '../ui/Container';
 import { COMPANY } from '../../constants/company';
 import { CONTACT_INFO } from '../../constants/contact';
 import { Linkedin, Twitter, Mail, Phone } from 'lucide-react';
+import { useTranslation } from '../../hooks/useTranslation';
 
 export function Footer() {
+  const t = useTranslation();
   return (
     <footer className="bg-primary-950 text-primary-200 py-12">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-white font-semibold text-lg mb-4">{COMPANY.name}</h3>
-            <p className="mb-4">{COMPANY.mission}</p>
+            <p className="mb-4">{t.about.company.mission}</p>
           </div>
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="text-white font-semibold text-lg mb-4">{t.footer.quickLinks}</h3>
             <ul className="space-y-2">
-              <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
-              <li><a href="#industries" className="hover:text-white transition-colors">Industries</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#about" className="hover:text-white transition-colors">{t.common.sections.about}</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">{t.common.sections.services}</a></li>
+              <li><a href="#industries" className="hover:text-white transition-colors">{t.common.sections.industries}</a></li>
+              <li><a href="#contact" className="hover:text-white transition-colors">{t.common.sections.contact}</a></li>
             </ul>
           </div>
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Contact Us</h3>
+            <h3 className="text-white font-semibold text-lg mb-4">{t.contact.title}</h3>
             <div className="space-y-2">
               <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-center hover:text-white transition-colors">
                 <Mail className="w-5 h-5 mr-2" />

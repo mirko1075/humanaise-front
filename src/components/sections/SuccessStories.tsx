@@ -10,8 +10,8 @@ export function SuccessStories() {
     <div id="success-stories" className="py-16 bg-indigo-950">
       <Container>
         <SectionHeading
-          title="Success Stories"
-          subtitle="See how we've helped businesses achieve their goals"
+          title={t.success.title}
+          subtitle={t.success.subtitle}
           theme="dark"
         />
 
@@ -27,10 +27,10 @@ export function SuccessStories() {
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <p className="text-indigo-200 italic mb-4">"{t.stories[index].quote}"</p>
+                <p className="text-indigo-200 italic mb-4">"{t.success.items[index].quote}"</p>
                 <div className="border-t border-indigo-700 pt-4">
                   <p className="font-semibold text-white">{story.author}</p>
-                  <p className="text-indigo-300">{t.stories[index].role}</p>
+                  <p className="text-indigo-300">{t.success.items[index].role}</p>
                   <p className="text-indigo-400">{story.company}</p>
                 </div>
               </div>

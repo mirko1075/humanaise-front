@@ -15,6 +15,15 @@ export const en: Translation = {
       learnMore: "Learn More",
       sendMessage: "Send Message",
     },
+    sections: {
+      about: "About",
+      services: "Services",
+      industries: "Industries",
+      roi: "ROI Calculator",
+      reasons: "Why Choose Us",
+      contact: "Contact",
+      success: "Success Stories",
+    },
   },
   home: {
     hero: {
@@ -252,21 +261,28 @@ export const en: Translation = {
       },
     ],
   },
-  stories: [
-    {
-      quote:
-        "HumanAIze helped us reduce customer response time by 75% with their intelligent chatbot solution.",
-      role: "CTO",
-    },
-    {
-      quote:
-        "Their workflow automation system saved us over 1000 work hours per month.",
-      role: "Operations Director",
-    },
-    {
-      quote:
-        "The AI-powered analytics platform helped us increase sales by 40% in just 3 months.",
-      role: "Marketing Manager",
-    },
-  ],
+  success: {
+    title: "Success Stories",
+    subtitle: "See how we've helped businesses achieve their goals",
+    items: [
+      {
+        quote:
+          "HumanAIze helped us reduce customer response time by 75% with their intelligent chatbot solution.",
+        role: "CTO",
+      },
+      {
+        quote:
+          "Their workflow automation system saved us over 1000 work hours per month.",
+        role: "Operations Director",
+      },
+      {
+        quote:
+          "The AI-powered analytics platform helped us increase sales by 40% in just 3 months.",
+        role: "Marketing Manager",
+      },
+    ],
+  },
+  footer: {
+    quickLinks: "Quick Links",
+  },
 };

@@ -15,6 +15,15 @@ export interface Translation {
       learnMore: string;
       sendMessage: string;
     };
+    sections: {
+      about: string;
+      services: string;
+      industries: string;
+      roi: string;
+      reasons: string;
+      contact: string;
+      success: string;
+    };
   };
   home: {
     hero: {
@@ -134,8 +143,15 @@ export interface Translation {
       submit: string;
     };
   };
-  stories: Array<{
-    quote: string;
-    role: string;
-  }>;
+  success: {
+    title: string;
+    subtitle: string;
+    items: Array<{
+      quote: string;
+      role: string;
+    }>;
+  };
+  footer: {
+    quickLinks: string;
+  };
 }

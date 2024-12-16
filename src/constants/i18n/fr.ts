@@ -15,6 +15,15 @@ export const fr: Translation = {
       learnMore: "En Savoir Plus",
       sendMessage: "Envoyer le Message",
     },
+    sections: {
+      about: "À Propos",
+      services: "Services",
+      industries: "Industries",
+      roi: "Calculateur de ROI",
+      reasons: "Pourquoi Nous Choisir",
+      contact: "Contact",
+      success: "Réussites",
+    },
   },
   home: {
     hero: {
@@ -259,21 +268,28 @@ export const fr: Translation = {
       },
     ],
   },
-  stories: [
-    {
-      quote:
-        "HumanAIze nous a aidés à réduire le temps de réponse aux clients de 75% avec leur solution de chatbot intelligent.",
-      role: "CTO",
-    },
-    {
-      quote:
-        "Leur système d'automatisation des flux de travail nous a permis d'économiser plus de 1000 heures de travail par mois.",
-      role: "Directeur des Opérations",
-    },
-    {
-      quote:
-        "La plateforme d'analyse alimentée par l'IA nous a aidés à augmenter les ventes de 40% en seulement 3 mois.",
-      role: "Responsable Marketing",
-    },
-  ],
+  success: {
+    title: "Réussites",
+    subtitle: "Découvrez comment HumanAIse a transformé les entreprises",
+    items: [
+      {
+        quote:
+          "HumanAIze nous a aidés à réduire le temps de réponse aux clients de 75% avec leur solution de chatbot intelligent.",
+        role: "CTO",
+      },
+      {
+        quote:
+          "Leur système d'automatisation des flux de travail nous a permis d'économiser plus de 1000 heures de travail par mois.",
+        role: "Directeur des Opérations",
+      },
+      {
+        quote:
+          "La plateforme d'analyse alimentée par l'IA nous a aidés à augmenter les ventes de 40% en seulement 3 mois.",
+        role: "Responsable Marketing",
+      },
+    ],
+  },
+  footer: {
+    quickLinks: "Liens Rapides",
+  },
 };

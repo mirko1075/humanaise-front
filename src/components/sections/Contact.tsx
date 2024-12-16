@@ -59,8 +59,8 @@ export function Contact() {
                 </a>
               </div>
             </div>
-            
-{/*             <div className="flex items-start space-x-4">
+            {
+          /*<div className="flex items-start space-x-4">
               <MapPin className="h-6 w-6 text-primary-300 mt-1" />
               <div>
                 <h3 className="text-lg font-semibold text-white">{t.contact.form.location}</h3>
@@ -69,7 +69,8 @@ export function Contact() {
                   {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state} {CONTACT_INFO.address.zip}
                 </p>
               </div>
-            </div> */}
+            </div> */
+            }
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
