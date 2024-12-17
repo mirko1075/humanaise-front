@@ -19,8 +19,11 @@ jobs:
     - name: Build website
       run: npm run build # Adjust according to your build command
 
-    - name: Netlify Deploy
+    - name: Deploy to Netlify
       uses: jsmrcaga/action-netlify-deploy@v2.4.0
       with:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        NETLIFY_DEPLOY_MESSAGE: "Deploy from GitHub Actions"
+        NETLIFY_DEPLOY_TO_PROD: true # Set to false to deploy to a draft URL
+        publish-dir: dist # Specify the build directory (Vite defaults to dist)

@@ -7,23 +7,18 @@ import { useTranslation } from '../../hooks/useTranslation';
 const reasons = [
   {
     icon: Users,
-   
   },
   {
     icon: Scale,
-   
   },
   {
     icon: Brain,
-  
   },
   {
     icon: BarChart3,
- 
   },
   {
     icon: Shield,
-   
   },
 ];
 
@@ -42,7 +37,9 @@ export function WhyChooseUs() {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {t.reasons.items[index].title}
               </h3>
-              <p className="text-gray-600">{t.reasons.items[index].description}</p>
+              <p className="text-gray-600">
+                {t.reasons.items[index].description}
+              </p>
             </Card>
           ))}
         </div>
