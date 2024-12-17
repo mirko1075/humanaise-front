@@ -14,7 +14,7 @@ export function Services() {
           subtitle="Comprehensive AI solutions to power your business transformation"
           theme="dark"
         />
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SERVICES.map((service, index) => (
             <div
@@ -25,7 +25,9 @@ export function Services() {
               <h3 className="text-xl font-semibold text-white mb-2">
                 {t.services.items[index].title}
               </h3>
-              <p className="text-indigo-200">{t.services.items[index].description}</p>
+              <p className="text-indigo-200">
+                {t.services.items[index].description}
+              </p>
             </div>
           ))}
         </div>

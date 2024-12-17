@@ -26,10 +26,25 @@ ChartJS.register(
 
 interface MetricsChartProps {
   results: ROIResults | null;
+  isFormComplete: boolean;
 }
 
-export function MetricsChart({ results }: MetricsChartProps) {
+export function MetricsChart({ results, isFormComplete }: MetricsChartProps) {
   const t = useTranslation();
+
+  if (!isFormComplete) {
+    return (
+      <div className="bg-primary-800/50 border border-primary-700 rounded-xl p-6">
+        <div className="h-[300px] flex items-center justify-center text-primary-300">
+          {t.roi.calculator.enterDetails}
+        </div>
+      </div>
+    );
+  }
+
+  if (!results) {
+    return null;
+  }
 
   // Generate forecast data points
   const generateForecastData = (baseValue: number) => {
@@ -44,7 +59,7 @@ export function MetricsChart({ results }: MetricsChartProps) {
 
   const data = {
     labels: ['3 Months', '6 Months', '1 Year', '18 Months', '2 Years'],
-    datasets: results ? [
+    datasets: [
       {
         label: t.roi.calculator.results.annualSavings,
         data: generateForecastData(results.annualSavings),
@@ -59,7 +74,7 @@ export function MetricsChart({ results }: MetricsChartProps) {
         backgroundColor: 'rgba(59, 130, 246, 0.1)',
         tension: 0.4
       }
-    ] : []
+    ]
   };
 
   const options = {
@@ -136,13 +151,7 @@ export function MetricsChart({ results }: MetricsChartProps) {
 
   return (
     <div className="bg-primary-800/50 border border-primary-700 rounded-xl p-6">
-      {results ? (
-        <Line data={data} options={options} />
-      ) : (
-        <div className="h-[300px] flex items-center justify-center text-primary-300">
-          {t.roi.calculator.enterDetails}
-        </div>
-      )}
+      <Line data={data} options={options} />
     </div>
   );
 }

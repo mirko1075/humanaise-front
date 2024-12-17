@@ -15,10 +15,14 @@ export function Contact() {
     console.log('Form submitted:', formData);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData(prev => ({
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.id]: e.target.value
+      [e.target.id]: e.target.value,
     }));
   };
 
@@ -26,10 +30,10 @@ export function Contact() {
     <section id="contact" className="py-20 bg-primary-900">
       <Container>
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">{t.contact.title}</h2>
-          <p className="text-xl text-primary-200">
-            {t.contact.subtitle}
-          </p>
+          <h2 className="text-3xl font-bold text-white mb-4">
+            {t.contact.title}
+          </h2>
+          <p className="text-xl text-primary-200">{t.contact.subtitle}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -37,8 +41,10 @@ export function Contact() {
             <div className="flex items-start space-x-4">
               <Mail className="h-6 w-6 text-primary-300 mt-1" />
               <div>
-                <h3 className="text-lg font-semibold text-white">{t.contact.form.email}</h3>
-                <a 
+                <h3 className="text-lg font-semibold text-white">
+                  {t.contact.form.email}
+                </h3>
+                <a
                   href={`mailto:${CONTACT_INFO.email}`}
                   className="text-primary-200 hover:text-white transition-colors"
                 >
@@ -50,8 +56,10 @@ export function Contact() {
             <div className="flex items-start space-x-4">
               <Phone className="h-6 w-6 text-primary-300 mt-1" />
               <div>
-                <h3 className="text-lg font-semibold text-white">{t.contact.form.phone}</h3>
-                <a 
+                <h3 className="text-lg font-semibold text-white">
+                  {t.contact.form.phone}
+                </h3>
+                <a
                   href={`tel:${CONTACT_INFO.phone}`}
                   className="text-primary-200 hover:text-white transition-colors"
                 >
@@ -59,8 +67,7 @@ export function Contact() {
                 </a>
               </div>
             </div>
-            {
-          /*<div className="flex items-start space-x-4">
+            {/*<div className="flex items-start space-x-4">
               <MapPin className="h-6 w-6 text-primary-300 mt-1" />
               <div>
                 <h3 className="text-lg font-semibold text-white">{t.contact.form.location}</h3>
@@ -69,20 +76,19 @@ export function Contact() {
                   {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state} {CONTACT_INFO.address.zip}
                 </p>
               </div>
-            </div> */
-            }
+            </div> */}
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            {CONTACT_FORM_FIELDS.map(field => (
+            {CONTACT_FORM_FIELDS.map((field) => (
               <div key={field.id}>
-                <label 
+                <label
                   htmlFor={field.id}
                   className="block text-sm font-medium text-primary-200 mb-1"
                 >
                   {t.contact.form[field.id]}
                 </label>
-                
+
                 {field.type === 'textarea' ? (
                   <textarea
                     id={field.id}
@@ -100,8 +106,10 @@ export function Contact() {
                     className="w-full rounded-lg bg-primary-800 border-primary-700 text-white focus:border-primary-500 focus:ring-primary-500"
                   >
                     <option value="">Select a service</option>
-                    {field.options.map(option => (
-                      <option key={option} value={option}>{option}</option>
+                    {field.options.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
                     ))}
                   </select>
                 ) : (
