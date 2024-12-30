@@ -232,32 +232,31 @@ export const en: Translation = {
     ],
   },
   reasons: {
-    title: "¿Por qué Elegir HumanAIse?",
+    title: "Why Choose HumanAIse?",
     items: [
       {
-        title: "Enfoque Centrado en el Humano",
+        title: "Intuitive Solutions",
         description:
-          "Priorizamos soluciones fáciles de usar que mejoran las capacidades humanas.",
+          "We prioritize easy-to-use solutions that enhance human capabilities.",
       },
       {
-        title: "Soluciones Escalables",
+        title: "Scalable Solutions",
         description:
-          "Nuestras herramientas crecen con tu negocio, adaptándose a nuevos desafíos y oportunidades.",
+          "Our tools grow with your business, adapting to new challenges and opportunities.",
       },
       {
-        title: "Experiencia de Vanguardia",
+        title: "Cutting-Edge Expertise",
         description:
-          "Nuestro equipo combina un profundo conocimiento técnico con una pasión por la innovación.",
+          "Our team combines deep technical knowledge with a passion for innovation.",
       },
       {
-        title: "Impacto Comprobado",
+        title: "Proven Impact",
         description:
-          "Entregamos resultados medibles, asegurando el ROI para cada solución implementada.",
+          "We deliver measurable results, ensuring ROI for every implemented solution.",
       },
       {
-        title: "IA Ética",
-        description:
-          "La transparencia y la confianza guían todos nuestros desarrollos de IA.",
+        title: "Ethical AI",
+        description: "Transparency and trust guide all our AI developments.",
       },
     ],
   },
