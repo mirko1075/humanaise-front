@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Brain, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Container } from '../ui/Container';
-import { COMPANY } from '../../constants/company';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { useTranslation } from '../../hooks/useTranslation';
+import logo from '../../imgs/logo.png';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,8 +23,7 @@ export function Header() {
       <Container>
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <Brain className="h-8 w-8 text-indigo-300" />
-            <span className="ml-2 text-xl font-bold text-white">{COMPANY.name}</span>
+          <a href="#home"><img src={logo} width="192px" /></a>
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">

@@ -14,8 +14,8 @@ export function SEO({
   title, 
   description,
   canonical = 'https://humanaise.com',
-  ogImage = 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-  keywords = 'AI automation, business automation, artificial intelligence, workflow optimization, AI solutions',
+  ogImage = '../imgs/copertina.jpg',
+  keywords = 'Making AI feel Human. AI automation, business automation, artificial intelligence, workflow optimization, AI solutions',
   author = 'HumanAIse'
 }: SEOProps) {
   const t = useTranslation();

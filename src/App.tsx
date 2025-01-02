@@ -27,7 +27,6 @@ export default function App() {
         <Industries />
         <ROICalculator />
         <WhyChooseUs />
-        <SuccessStories />
         <Contact />
       </main>
       <Footer />
