@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node src/utils/seo/generateSitemap.js && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate-sitemap": "node src/utils/seo/generateSitemap.js"
   },
   "dependencies": {
     "chart.js": "^4.4.1",
@@ -15,7 +16,8 @@
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
-    "react-helmet-async": "^2.0.4"
+    "react-helmet-async": "^2.0.4",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
@@ -33,6 +35,6 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.3.0",
     "vite": "^5.4.2",
-    "vite-plugin-image-optimizer": "^1.1.7"
+    "vite-plugin-image-optimizer": "^1.1.8"
   }
 }
