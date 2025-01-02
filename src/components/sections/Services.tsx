@@ -7,7 +7,7 @@ import { useTranslation } from '../../hooks/useTranslation';
 export function Services() {
   const t = useTranslation();
   return (
-    <div id="services" className="py-16 bg-indigo-900">
+    <div id="services" className="pt-32 pb-16 bg-indigo-900">
       <Container>
         <SectionHeading
           title="Our Services"

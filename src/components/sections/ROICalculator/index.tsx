@@ -21,7 +21,7 @@ export function ROICalculator() {
   } = useCalculator(setResults);
 
   return (
-    <section id="roi-calculator" className="py-20 bg-primary-900">
+    <section id="roi-calculator" className="pt-32 pb-16 bg-primary-900">
       <Container>
         <SectionHeading
           title={roi.calculator.title}

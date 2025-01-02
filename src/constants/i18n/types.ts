@@ -23,6 +23,7 @@ export interface Translation {
       reasons: string;
       contact: string;
       success: string;
+      social: string;
     };
   };
   home: {

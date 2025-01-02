@@ -5,7 +5,7 @@ export function About() {
   const t = useTranslation();
 
   return (
-    <section id="about" className="py-20 bg-primary-900">
+    <section id="about" className="pt-32 pb-16 bg-primary-900">
       <Container>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-8">

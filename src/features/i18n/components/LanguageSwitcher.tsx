@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useLanguage } from '../../hooks/useLanguage';
-import { LANGUAGES } from '../../constants/languages';
 import { Globe } from 'lucide-react';
+import { useLanguage } from '../hooks/useLanguage';
+import { LANGUAGES } from '../constants';
+import type { Language } from '../types';
 
 export function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,11 +23,6 @@ export function LanguageSwitcher() {
   const handleLanguageSelect = (lang: Language) => {
     setLanguage(lang);
     setIsOpen(false);
-
-    // Update URL with new language while preserving section
-    const currentHash = window.location.hash || '#home';
-    const newUrl = `/${lang}${currentHash}`;
-    window.history.pushState(null, '', newUrl);
   };
 
   return (

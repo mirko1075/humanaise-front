@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Brain, Menu, X } from 'lucide-react';
 import { Container } from '../ui/Container';
-import { NAV_ITEMS } from '../../constants/navigation';
 import { COMPANY } from '../../constants/company';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { useTranslation } from '../../hooks/useTranslation';

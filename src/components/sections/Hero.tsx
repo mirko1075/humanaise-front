@@ -6,7 +6,7 @@ export function Hero() {
   const t = useTranslation();
 
   return (
-    <div className="relative min-h-screen pt-24 pb-16">
+    <div id="home" className="relative min-h-screen pt-24 pb-16">
       <div 
         className="absolute inset-0 z-0"
         style={{

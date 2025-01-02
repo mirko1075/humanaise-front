@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import type { Language } from '../constants/i18n/types';
+import type { Language } from '../types/language';
 
 interface LanguageContextType {
   language: Language;
@@ -27,12 +27,22 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
     localStorage.setItem('language', lang);
+    
+    // Update URL and document language
+    const currentHash = window.location.hash || '#home';
+    const newUrl = `/${lang}${currentHash}`;
+    window.history.pushState(null, '', newUrl);
     document.documentElement.lang = lang;
   };
 
   useEffect(() => {
     document.documentElement.lang = language;
-  }, [language]);
+    
+    // Set initial URL
+    const currentHash = window.location.hash || '#home';
+    const newUrl = `/${language}${currentHash}`;
+    window.history.replaceState(null, '', newUrl);
+  }, []);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage }}>

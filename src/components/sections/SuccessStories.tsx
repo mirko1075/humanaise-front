@@ -7,7 +7,7 @@ import { useTranslation } from '../../hooks/useTranslation';
 export function SuccessStories() {
   const t = useTranslation();
   return (
-    <div id="success-stories" className="py-16 bg-indigo-950">
+    <div id="success-stories" className="pt-32 pb-16 bg-indigo-950">
       <Container>
         <SectionHeading
           title={t.success.title}
