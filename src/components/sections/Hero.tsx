@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '../ui/Button';
 import { useTranslation } from '../../hooks/useTranslation';
+import  splash from '../../imgs/copertina.jpg';
 
 export function Hero() {
   const t = useTranslation();
@@ -10,7 +11,7 @@ export function Hero() {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")',
+          backgroundImage: 'url("'+splash+'")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

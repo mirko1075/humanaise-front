@@ -22,7 +22,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <FooterSection title={t.about.company.name}>
             <p className="text-primary-900 leading-relaxed">
-              {t.about.company.mission} - Missiond
+              {t.about.company.mission}
             </p>
           </FooterSection>
 

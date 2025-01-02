@@ -6,6 +6,7 @@ import { StructuredData } from './StructuredData';
 import { LanguageAlternates } from './LanguageAlternates';
 import { useLanguage } from '../../hooks/useLanguage';
 import { LANGUAGES } from '../../constants/languages';
+import { Language } from '../../types/language';
 
 interface SEOProps {
   title: string;
@@ -17,7 +18,7 @@ interface SEOProps {
 export function SEO({ 
   title, 
   description, 
-  image = 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
+  image = '../../imgs/copertina.jpg',
   path = ''
 }: SEOProps) {
   const { language } = useLanguage();
@@ -31,7 +32,7 @@ export function SEO({
     description,
     sameAs: [
       'https://twitter.com/HumanaiseAI',
-      'https://linkedin.com/company/humanaise'
+      'https://linkedin.com/company/humanaise-ai'
     ],
     contactPoint: {
       telephone: '+39-392-866-5301',
