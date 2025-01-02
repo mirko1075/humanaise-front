@@ -1,11 +1,18 @@
-import fs from 'fs';
+import fs from "fs";
 
-const languages = ['en', 'it', 'es', 'fr'];
-const sections = ['home', 'about', 'services', 'roi-calculator', 'success-stories', 'contact'];
+const languages = ["en", "it", "es", "fr"];
+const sections = [
+  "home",
+  "about",
+  "services",
+  "roi-calculator",
+  "success-stories",
+  "contact",
+];
 
 export function generateSitemap() {
-  const baseUrl = 'https://humanaise.com';
-  const today = new Date().toISOString().split('T')[0];
+  const baseUrl = "https://humanaise.com";
+  const today = new Date().toISOString().split("T")[0];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -19,7 +26,7 @@ export function generateSitemap() {
     <loc>${baseUrl}/${lang}#${section}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>${section === 'home' ? '1.0' : '0.8'}</priority>
+    <priority>${section === "home" ? "1.0" : "0.8"}</priority>
     ${languages
       .map(
         (alternateLang) => `
@@ -29,13 +36,13 @@ export function generateSitemap() {
       href="${baseUrl}/${alternateLang}#${section}"
     />`
       )
-      .join('')}
+      .join("")}
   </url>`
         )
-        .join('')
+        .join("")
     )
-    .join('')}
+    .join("")}
 </urlset>`;
 
-  fs.writeFileSync('public/sitemap.xml', sitemap);
+  fs.writeFileSync("public/sitemap.xml", sitemap);
 }

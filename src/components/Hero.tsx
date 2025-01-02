@@ -1,9 +1,9 @@
 import React from 'react';
-import { Bot, Sparkles } from 'lucide-react';
+import { Bot } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <div id="home" className="pt-24 pb-16 bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+    <div id="home" className="pt-32 pb-16 bg-gradient-to-br from-indigo-50 via-white to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <div className="flex justify-center mb-6">
