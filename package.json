@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node src/utils/seo/generateSitemap.js && npx netlify build",
+    "build": "node src/utils/seo/generateSitemap.js && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "generate-sitemap": "node src/utils/seo/generateSitemap.js",
