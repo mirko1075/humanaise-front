@@ -8,6 +8,12 @@ import { useTranslation } from '../../../hooks/useTranslation';
 export function Footer() {
   const t = useTranslation();
 
+  const handleLegalLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    e.preventDefault();
+    window.history.pushState({}, '', path);
+    window.location.reload();
+  };
+
   const quickLinks = [
     { href: '#about', label: t.common.sections.about },
     { href: '#services', label: t.common.sections.services },
@@ -51,7 +57,8 @@ export function Footer() {
                   <li key={link.href}>
                     <a 
                       href={link.href}
-                      className="text-primary-900 hover:text-white transition-colors duration-200 text-sm"
+                      onClick={(e) => handleLegalLinkClick(e, link.href)}
+                      className="text-primary-900 hover:text-white transition-colors duration-200 text-sm cursor-pointer"
                     >
                       {link.label}
                     </a>
