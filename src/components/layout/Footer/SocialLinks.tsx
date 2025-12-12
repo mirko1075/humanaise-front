@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, Twitter, Github, Youtube } from 'lucide-react';
+import { Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
 import { CONTACT_INFO } from '../../../constants/contact';
 
 const socialLinks = [
@@ -9,19 +9,19 @@ const socialLinks = [
     label: 'LinkedIn'
   },
   {
+    icon: Instagram,
+    href: CONTACT_INFO.social.instagram,
+    label: 'Instagram'
+  },
+  {
+    icon: Facebook,
+    href: CONTACT_INFO.social.facebook,
+    label: 'Facebook'
+  },
+  {
     icon: Twitter,
     href: `https://twitter.com/${CONTACT_INFO.social.twitter}`,
     label: 'Twitter'
-  },
-  {
-    icon: Github,
-    href: 'https://github.com/humanaise',
-    label: 'GitHub'
-  },
-  {
-    icon: Youtube,
-    href: 'https://youtube.com/@humanaise',
-    label: 'YouTube'
   }
 ];
 

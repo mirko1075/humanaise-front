@@ -185,6 +185,7 @@ export const en: Translation = {
   contact: {
     title: "Contact Us",
     subtitle: "Ready to transform your business? Get in touch with us today.",
+    whatsappDisclaimer: "We use WhatsApp exclusively for customer support and business inquiries.",
     form: {
       name: "Name",
       email: "Email",
@@ -284,5 +285,79 @@ export const en: Translation = {
   },
   footer: {
     quickLinks: "Quick Links",
+    brandClarification: "HumanAIse, also referred to as Humanaise or HumanaiseAI on social media, is a unified brand representing a single AI automation business.",
+    whatsappDisclaimer: "We use WhatsApp exclusively for customer support and business inquiries.",
+    legal: {
+      privacyPolicy: "Privacy Policy",
+      termsOfService: "Terms of Service",
+    },
+  },
+  legal: {
+    privacyPolicy: {
+      title: "Privacy Policy",
+      lastUpdated: "Last updated",
+      sections: {
+        introduction: {
+          title: "1. Introduction",
+          content: "HumanAIse (\"we,\" \"our,\" or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website humanaise.com or use our services."
+        },
+        dataCollection: {
+          title: "2. Information We Collect",
+          content: "We may collect the following types of information:",
+          items: [
+            "Personal identification information (name, email address, phone number)",
+            "Business information (company name, industry, job title)",
+            "Communication data (messages sent through contact forms or WhatsApp)",
+            "Technical data (IP address, browser type, device information)",
+            "Usage data (pages visited, time spent on site, referring URL)"
+          ]
+        },
+        dataUsage: {
+          title: "3. How We Use Your Information",
+          content: "We use the collected information for the following purposes:",
+          items: [
+            "To respond to your inquiries and provide customer support",
+            "To deliver our AI automation services",
+            "To send business communications via WhatsApp (with your consent)",
+            "To improve our website and services",
+            "To comply with legal obligations"
+          ]
+        },
+        whatsapp: {
+          title: "4. WhatsApp Communications",
+          content: "We use WhatsApp exclusively for customer support and business inquiries. By contacting us via WhatsApp, you consent to receive responses through this channel. We do not use WhatsApp for bulk messaging or marketing purposes. You may opt out at any time by informing us through the same channel."
+        },
+        dataSharing: {
+          title: "5. Data Sharing and Disclosure",
+          content: "We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances: with service providers who assist us in operating our website and services (under strict confidentiality agreements); when required by law or to protect our rights; or with your explicit consent."
+        },
+        cookies: {
+          title: "6. Cookies and Tracking",
+          content: "We use cookies and similar tracking technologies to enhance your browsing experience, analyze site traffic, and understand user behavior. You can control cookie settings through your browser preferences. Note that disabling cookies may affect website functionality."
+        },
+        security: {
+          title: "7. Data Security",
+          content: "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security."
+        },
+        rights: {
+          title: "8. Your Rights",
+          content: "Depending on your location, you may have the following rights:",
+          items: [
+            "Access, correct, or delete your personal data",
+            "Object to or restrict processing of your data",
+            "Request data portability",
+            "Withdraw consent at any time"
+          ]
+        },
+        contact: {
+          title: "9. Contact Us",
+          content: "If you have questions or concerns about this Privacy Policy or our data practices, please contact us at: privacy@humanaise.com"
+        }
+      }
+    },
+    termsOfService: {
+      title: "Terms of Service",
+      lastUpdated: "Last updated",
+    },
   },
 };

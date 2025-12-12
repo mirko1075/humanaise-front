@@ -126,6 +126,7 @@ export interface Translation {
   contact: {
     title: string;
     subtitle: string;
+    whatsappDisclaimer?: string;
     form: {
       name: string;
       email: string;
@@ -154,5 +155,23 @@ export interface Translation {
   };
   footer: {
     quickLinks: string;
+    brandClarification?: string;
+    whatsappDisclaimer?: string;
+    legal?: {
+      privacyPolicy: string;
+      termsOfService: string;
+    };
+  };
+  legal?: {
+    privacyPolicy?: {
+      title: string;
+      lastUpdated: string;
+      sections?: any;
+    };
+    termsOfService?: {
+      title: string;
+      lastUpdated: string;
+      sections?: any;
+    };
   };
 }

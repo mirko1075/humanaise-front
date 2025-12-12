@@ -77,6 +77,15 @@ export function Contact() {
                 </p>
               </div>
             </div> */}
+
+            {/* WhatsApp Disclaimer */}
+            {t.contact.whatsappDisclaimer && (
+              <div className="mt-8 p-4 bg-primary-800/40 rounded-lg border border-primary-700/50">
+                <p className="text-sm text-primary-200 leading-relaxed">
+                  {t.contact.whatsappDisclaimer}
+                </p>
+              </div>
+            )}
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">

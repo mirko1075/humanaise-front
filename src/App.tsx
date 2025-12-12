@@ -12,8 +12,42 @@ import { WhyChooseUs } from './components/sections/WhyChooseUs';
 import { SuccessStories } from './components/sections/SuccessStories';
 import { Contact } from './components/sections/Contact';
 import { Footer } from './components/layout/Footer';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { TermsOfService } from './pages/TermsOfService';
 
 export default function App() {
+  const pathname = window.location.pathname;
+  const isPrivacyPolicy = pathname.includes('/privacy-policy');
+  const isTermsOfService = pathname.includes('/terms-of-service');
+
+  // Render legal pages
+  if (isPrivacyPolicy) {
+    return (
+      <div className="min-h-screen bg-primary-950">
+        <SEO />
+        <Header />
+        <main>
+          <PrivacyPolicy />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (isTermsOfService) {
+    return (
+      <div className="min-h-screen bg-primary-950">
+        <SEO />
+        <Header />
+        <main>
+          <TermsOfService />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  // Render homepage
   return (
     <div className="min-h-screen bg-primary-950">
       <SEO />

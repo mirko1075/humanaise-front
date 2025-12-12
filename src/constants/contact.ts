@@ -1,6 +1,8 @@
 export const CONTACT_INFO = {
   email: "info@humanaise.com",
-  phone: "+39 3928665301",
+  phone: "+39 353 4932019",
+  whatsapp: "+39 353 4932019",
+  whatsappUrl: "https://wa.me/393534932019",
   address: {
     street: "Via Calagonone 29",
     city: "Monserrato",
@@ -11,6 +13,8 @@ export const CONTACT_INFO = {
   social: {
     linkedin: "humanaise-ai",
     twitter: "@HumanaiseAI",
+    instagram: "https://www.instagram.com/humanaiseai",
+    facebook: "https://www.facebook.com/profile.php?id=61584810028432",
   },
 } as const;
 

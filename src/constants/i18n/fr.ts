@@ -190,6 +190,7 @@ export const fr: Translation = {
     title: "Contactez-nous",
     subtitle:
       "Prêt à transformer votre entreprise ? Contactez-nous dès aujourd'hui.",
+    whatsappDisclaimer: "Nous utilisons WhatsApp exclusivement pour le support client et les demandes commerciales.",
     form: {
       name: "Nom",
       email: "Email",
@@ -291,5 +292,79 @@ export const fr: Translation = {
   },
   footer: {
     quickLinks: "Liens Rapides",
+    brandClarification: "HumanAIse, également connu sous le nom d'Humanaise ou HumanaiseAI sur les réseaux sociaux, est une marque unifiée représentant une seule entreprise d'automatisation IA.",
+    whatsappDisclaimer: "Nous utilisons WhatsApp exclusivement pour le support client et les demandes commerciales.",
+    legal: {
+      privacyPolicy: "Politique de Confidentialité",
+      termsOfService: "Conditions d'Utilisation",
+    },
+  },
+  legal: {
+    privacyPolicy: {
+      title: "Politique de Confidentialité",
+      lastUpdated: "Dernière mise à jour",
+      sections: {
+        introduction: {
+          title: "1. Introduction",
+          content: "HumanAIse (\"nous\", \"notre\" ou \"nos\") s'engage à protéger votre vie privée. Cette Politique de Confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations lorsque vous visitez notre site web humanaise.com ou utilisez nos services."
+        },
+        dataCollection: {
+          title: "2. Informations que Nous Collectons",
+          content: "Nous pouvons collecter les types d'informations suivants:",
+          items: [
+            "Informations d'identification personnelle (nom, adresse e-mail, numéro de téléphone)",
+            "Informations commerciales (nom de l'entreprise, secteur, titre du poste)",
+            "Données de communication (messages envoyés via des formulaires de contact ou WhatsApp)",
+            "Données techniques (adresse IP, type de navigateur, informations sur l'appareil)",
+            "Données d'utilisation (pages visitées, temps passé sur le site, URL de référence)"
+          ]
+        },
+        dataUsage: {
+          title: "3. Comment Nous Utilisons Vos Informations",
+          content: "Nous utilisons les informations collectées aux fins suivantes:",
+          items: [
+            "Pour répondre à vos demandes et fournir un support client",
+            "Pour fournir nos services d'automatisation IA",
+            "Pour envoyer des communications commerciales via WhatsApp (avec votre consentement)",
+            "Pour améliorer notre site web et nos services",
+            "Pour respecter les obligations légales"
+          ]
+        },
+        whatsapp: {
+          title: "4. Communications WhatsApp",
+          content: "Nous utilisons WhatsApp exclusivement pour le support client et les demandes commerciales. En nous contactant via WhatsApp, vous consentez à recevoir des réponses via ce canal. Nous n'utilisons pas WhatsApp pour la messagerie de masse ou à des fins marketing. Vous pouvez vous désinscrire à tout moment en nous informant via le même canal."
+        },
+        dataSharing: {
+          title: "5. Partage et Divulgation des Données",
+          content: "Nous ne vendons, n'échangeons ni ne louons vos informations personnelles à des tiers. Nous pouvons partager vos informations uniquement dans les circonstances suivantes: avec des fournisseurs de services qui nous aident à exploiter notre site web et nos services (sous des accords de confidentialité stricts); lorsque la loi l'exige ou pour protéger nos droits; ou avec votre consentement explicite."
+        },
+        cookies: {
+          title: "6. Cookies et Suivi",
+          content: "Nous utilisons des cookies et des technologies de suivi similaires pour améliorer votre expérience de navigation, analyser le trafic du site et comprendre le comportement des utilisateurs. Vous pouvez contrôler les paramètres des cookies via les préférences de votre navigateur. Notez que la désactivation des cookies peut affecter la fonctionnalité du site web."
+        },
+        security: {
+          title: "7. Sécurité des Données",
+          content: "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos informations personnelles contre l'accès non autorisé, l'altération, la divulgation ou la destruction. Cependant, aucune méthode de transmission sur Internet n'est sécurisée à 100%, et nous ne pouvons garantir une sécurité absolue."
+        },
+        rights: {
+          title: "8. Vos Droits",
+          content: "Selon votre emplacement, vous pouvez avoir les droits suivants:",
+          items: [
+            "Accéder, corriger ou supprimer vos données personnelles",
+            "Vous opposer ou restreindre le traitement de vos données",
+            "Demander la portabilité des données",
+            "Retirer votre consentement à tout moment"
+          ]
+        },
+        contact: {
+          title: "9. Nous Contacter",
+          content: "Si vous avez des questions ou des préoccupations concernant cette Politique de Confidentialité ou nos pratiques en matière de données, veuillez nous contacter à: privacy@humanaise.com"
+        }
+      }
+    },
+    termsOfService: {
+      title: "Conditions d'Utilisation",
+      lastUpdated: "Dernière mise à jour",
+    },
   },
 };

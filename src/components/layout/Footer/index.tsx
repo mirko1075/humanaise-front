@@ -15,6 +15,11 @@ export function Footer() {
     { href: '#contact', label: t.common.sections.contact }
   ];
 
+  const legalLinks = [
+    { href: '/privacy-policy', label: t.footer.legal?.privacyPolicy ?? 'Privacy Policy' },
+    { href: '/terms-of-service', label: t.footer.legal?.termsOfService ?? 'Terms of Service' }
+  ];
+
   return (
     <footer className="relative bg-gradient-to-b from-white to-primary-950">
       <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:3rem_3rem]" />
@@ -40,6 +45,19 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
+              {/* Legal Links */}
+              <ul className="space-y-3 mt-6 pt-6 border-t border-primary-800/30">
+                {legalLinks.map(link => (
+                  <li key={link.href}>
+                    <a 
+                      href={link.href}
+                      className="text-primary-900 hover:text-white transition-colors duration-200 text-sm"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </nav>
           </FooterSection>
 
@@ -51,6 +69,24 @@ export function Footer() {
             <SocialLinks />
           </FooterSection>
         </div>
+
+        {/* Brand Clarification */}
+        {t.footer.brandClarification && (
+          <div className="mt-12 pt-8 border-t border-primary-800/30">
+            <p className="text-sm text-primary-900 text-center max-w-3xl mx-auto leading-relaxed">
+              {t.footer.brandClarification}
+            </p>
+          </div>
+        )}
+
+        {/* WhatsApp Disclaimer */}
+        {t.footer.whatsappDisclaimer && (
+          <div className="mt-6">
+            <p className="text-sm text-primary-900 text-center max-w-3xl mx-auto leading-relaxed">
+              {t.footer.whatsappDisclaimer}
+            </p>
+          </div>
+        )}
 
         <Copyright />
       </Container>
