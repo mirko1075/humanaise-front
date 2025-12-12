@@ -11,6 +11,7 @@ export function Footer() {
   const handleLegalLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
     e.preventDefault();
     window.history.pushState({}, '', path);
+    window.scrollTo(0, 0);
     window.location.reload();
   };
 
