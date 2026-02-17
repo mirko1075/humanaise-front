@@ -10,11 +10,25 @@ import { fadeInUp, scrollViewport } from '../../utils/animations';
 export function Contact() {
   const t = useTranslation();
   const [formData, setFormData] = useState<Record<string, string>>({});
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setError(false);
+
+    const body = new URLSearchParams({
+      'form-name': 'contact',
+      ...formData,
+    });
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString(),
+    })
+      .then(() => setSubmitted(true))
+      .catch(() => setError(true));
   };
 
   const handleInputChange = (
@@ -103,7 +117,25 @@ export function Contact() {
 
           {/* Glass form card */}
           <div className="bg-white/[0.04] backdrop-blur-md border border-white/[0.1] rounded-2xl p-8 glow-indigo">
-            <form onSubmit={handleSubmit} className="space-y-5">
+            {submitted ? (
+              <div className="flex items-center justify-center h-full min-h-[300px]">
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                    <Send className="w-7 h-7 text-emerald-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2">Message Sent!</h3>
+                  <p className="text-indigo-200">We'll get back to you soon.</p>
+                </div>
+              </div>
+            ) : (
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="space-y-5">
+              <input type="hidden" name="form-name" value="contact" />
+              <p className="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+              {error && (
+                <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-300 text-sm">
+                  Something went wrong. Please try again.
+                </div>
+              )}
               {CONTACT_FORM_FIELDS.map((field) => (
                 <div key={field.id}>
                   <label
@@ -117,6 +149,7 @@ export function Contact() {
                   {field.type === 'textarea' ? (
                     <textarea
                       id={field.id}
+                      name={field.id}
                       rows={4}
                       placeholder={t.contact.form.placeholders[field.id]}
                       required={field.required}
@@ -126,6 +159,7 @@ export function Contact() {
                   ) : field.type === 'select' ? (
                     <select
                       id={field.id}
+                      name={field.id}
                       required={field.required}
                       onChange={handleInputChange}
                       className={inputClasses}
@@ -141,6 +175,7 @@ export function Contact() {
                     <input
                       type={field.type}
                       id={field.id}
+                      name={field.id}
                       placeholder={t.contact.form.placeholders[field.id]}
                       required={field.required}
                       onChange={handleInputChange}
@@ -155,6 +190,7 @@ export function Contact() {
                 {t.contact.form.submit}
               </Button>
             </form>
+            )}
           </div>
         </motion.div>
       </Container>
