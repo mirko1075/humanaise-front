@@ -24,7 +24,11 @@ export default function App() {
   if (isPrivacyPolicy) {
     return (
       <div className="min-h-screen bg-primary-950">
-        <SEO />
+        <SEO
+          title="Privacy Policy"
+          description="HumanAIse Privacy Policy - Learn how we collect, use, and protect your personal data."
+          canonical="https://humanaise.com/privacy-policy"
+        />
         <Header />
         <main>
           <PrivacyPolicy />
@@ -37,7 +41,11 @@ export default function App() {
   if (isTermsOfService) {
     return (
       <div className="min-h-screen bg-primary-950">
-        <SEO />
+        <SEO
+          title="Terms of Service"
+          description="HumanAIse Terms of Service - Read our terms and conditions for using our AI automation services."
+          canonical="https://humanaise.com/terms-of-service"
+        />
         <Header />
         <main>
           <TermsOfService />

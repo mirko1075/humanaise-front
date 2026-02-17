@@ -18,19 +18,37 @@ export function Header() {
     { href: '/#contact', label: t.common.nav.contact }
   ];
 
+  const isHomePage = window.location.pathname === '/';
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const hash = href.replace('/', '');
+    const targetId = hash.replace('#', '');
+
+    if (isHomePage) {
+      e.preventDefault();
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        window.history.replaceState(null, '', hash);
+      }
+    }
+    // If not on homepage, let the browser navigate to /#section
+  };
+
   return (
     <header className="fixed w-full bg-indigo-900/90 backdrop-blur-sm z-50 shadow-lg">
       <Container>
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-          <a href="/"><img src={logo} width="192px" /></a>
+          <a href="/"><img src={logo} width="192px" alt="HumanAIse" /></a>
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a 
+              <a
                 key={item.href}
-                href={item.href} 
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="text-indigo-200 hover:text-white transition-colors"
               >
                 {item.label}
@@ -65,7 +83,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 className="block px-4 py-2 text-indigo-200 hover:text-white hover:bg-indigo-700/50 rounded-lg transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => { handleNavClick(e, item.href); setIsMenuOpen(false); }}
               >
                 {item.label}
               </a>

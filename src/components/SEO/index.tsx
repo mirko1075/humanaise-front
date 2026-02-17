@@ -18,7 +18,7 @@ interface SEOProps {
 export function SEO({ 
   title, 
   description, 
-  image = '../../imgs/copertina.jpg',
+  image = 'https://humanaise.com/copertina.jpg',
   path = ''
 }: SEOProps) {
   const { language } = useLanguage();
@@ -32,7 +32,7 @@ export function SEO({
     description,
     sameAs: [
       'https://twitter.com/HumanaiseAI',
-      'https://linkedin.com/company/humanaise-ai'
+      'https://www.linkedin.com/company/humanaise-ai'
     ],
     contactPoint: {
       telephone: '+39-392-866-5301',

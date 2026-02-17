@@ -10,4 +10,4 @@ Sitemap: ${sitemapUrl}`;
 const sitemapUrl = "https://humanaise.com/sitemap.xml";
 const robotsTxt = generateRobotsTxt(sitemapUrl);
 console.log(robotsTxt);
-fs.writeFileSync("src/public/robots.txt", robotsTxt);
+fs.writeFileSync("public/robots.txt", robotsTxt);
