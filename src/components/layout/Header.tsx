@@ -10,12 +10,12 @@ export function Header() {
   const t = useTranslation();
 
   const navItems = [
-    { href: '#home', label: t.common.nav.home },
-    { href: '#about', label: t.common.nav.about },
-    { href: '#services', label: t.common.nav.services },
-    { href: '#roi-calculator', label: t.common.nav.roiCalculator },
-    { href: '#success-stories', label: t.common.nav.successStories },
-    { href: '#contact', label: t.common.nav.contact }
+    { href: '/#home', label: t.common.nav.home },
+    { href: '/#about', label: t.common.nav.about },
+    { href: '/#services', label: t.common.nav.services },
+    { href: '/#roi-calculator', label: t.common.nav.roiCalculator },
+    { href: '/#success-stories', label: t.common.nav.successStories },
+    { href: '/#contact', label: t.common.nav.contact }
   ];
 
   return (
@@ -23,7 +23,7 @@ export function Header() {
       <Container>
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-          <a href="#home"><img src={logo} width="192px" /></a>
+          <a href="/"><img src={logo} width="192px" /></a>
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
