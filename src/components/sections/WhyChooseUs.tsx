@@ -28,7 +28,7 @@ export function WhyChooseUs() {
     <section className="py-20 bg-primary-900">
       <Container>
         <h2 className="text-3xl font-bold text-center text-white mb-12">
-          Why Choose HumanAIse?
+          {t.reasons.title}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((reason, index) => (
