@@ -24,15 +24,19 @@ export function Calculator({
 }: CalculatorProps) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <InputForm 
-        inputs={inputs}
-        errors={errors}
-        onInputChange={onInputChange}
-        onCalculate={onCalculate}
-        onReset={onReset}
-        isValid={isValid}
-      />
-      <Results results={results} />
+      <div className="bg-white/[0.04] backdrop-blur-md border border-white/[0.1] rounded-2xl p-8">
+        <InputForm
+          inputs={inputs}
+          errors={errors}
+          onInputChange={onInputChange}
+          onCalculate={onCalculate}
+          onReset={onReset}
+          isValid={isValid}
+        />
+      </div>
+      <div className="bg-white/[0.04] backdrop-blur-md border border-white/[0.1] rounded-2xl p-8">
+        <Results results={results} />
+      </div>
     </div>
   );
 }

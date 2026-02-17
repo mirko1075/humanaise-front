@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Container } from '../ui/Container';
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone, Send } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { CONTACT_INFO, CONTACT_FORM_FIELDS } from '../../constants/contact';
 import { useTranslation } from '../../hooks/useTranslation';
+import { fadeInUp, scrollViewport } from '../../utils/animations';
 
 export function Contact() {
   const t = useTranslation();
@@ -26,20 +28,39 @@ export function Contact() {
     }));
   };
 
+  const inputClasses = "w-full rounded-xl bg-white/[0.06] backdrop-blur-sm border border-white/[0.12] text-white placeholder-indigo-300/40 focus:border-blue-400 focus:ring-blue-400/20 focus:ring-2 transition-all duration-200 px-4 py-3";
+
   return (
-    <section id="contact" className="pt-32 pb-16 bg-primary-900">
-      <Container>
-        <div className="text-center mb-12">
+    <section id="contact" className="pt-32 pb-16 bg-primary-900 relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px]" />
+
+      <Container className="relative">
+        <motion.div
+          className="text-center mb-12"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
           <h2 className="text-3xl font-bold text-white mb-4">
             {t.contact.title}
           </h2>
           <p className="text-xl text-primary-200">{t.contact.subtitle}</p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
           <div className="space-y-8">
-            <div className="flex items-start space-x-4">
-              <Mail className="h-6 w-6 text-primary-300 mt-1" />
+            <div className="flex items-start space-x-4 group">
+              <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/20 transition-colors">
+                <Mail className="h-5 w-5 text-blue-400" />
+              </div>
               <div>
                 <h3 className="text-lg font-semibold text-white">
                   {t.contact.form.email}
@@ -53,8 +74,10 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="flex items-start space-x-4">
-              <Phone className="h-6 w-6 text-primary-300 mt-1" />
+            <div className="flex items-start space-x-4 group">
+              <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/20 transition-colors">
+                <Phone className="h-5 w-5 text-blue-400" />
+              </div>
               <div>
                 <h3 className="text-lg font-semibold text-white">
                   {t.contact.form.phone}
@@ -67,20 +90,10 @@ export function Contact() {
                 </a>
               </div>
             </div>
-            {/*<div className="flex items-start space-x-4">
-              <MapPin className="h-6 w-6 text-primary-300 mt-1" />
-              <div>
-                <h3 className="text-lg font-semibold text-white">{t.contact.form.location}</h3>
-                <p className="text-primary-200">
-                  {CONTACT_INFO.address.street}<br />
-                  {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state} {CONTACT_INFO.address.zip}
-                </p>
-              </div>
-            </div> */}
 
             {/* WhatsApp Disclaimer */}
             {t.contact.whatsappDisclaimer && (
-              <div className="mt-8 p-4 bg-primary-800/40 rounded-lg border border-primary-700/50">
+              <div className="mt-8 p-4 bg-white/[0.04] rounded-xl border border-white/[0.08]">
                 <p className="text-sm text-primary-200 leading-relaxed">
                   {t.contact.whatsappDisclaimer}
                 </p>
@@ -88,57 +101,62 @@ export function Contact() {
             )}
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {CONTACT_FORM_FIELDS.map((field) => (
-              <div key={field.id}>
-                <label
-                  htmlFor={field.id}
-                  className="block text-sm font-medium text-primary-200 mb-1"
-                >
-                  {t.contact.form[field.id]}
-                </label>
-
-                {field.type === 'textarea' ? (
-                  <textarea
-                    id={field.id}
-                    rows={4}
-                    placeholder={t.contact.form.placeholders[field.id]}
-                    required={field.required}
-                    onChange={handleInputChange}
-                    className="w-full rounded-lg bg-primary-800 border-primary-700 text-white placeholder-primary-400 focus:border-primary-500 focus:ring-primary-500"
-                  />
-                ) : field.type === 'select' ? (
-                  <select
-                    id={field.id}
-                    required={field.required}
-                    onChange={handleInputChange}
-                    className="w-full rounded-lg bg-primary-800 border-primary-700 text-white focus:border-primary-500 focus:ring-primary-500"
+          {/* Glass form card */}
+          <div className="bg-white/[0.04] backdrop-blur-md border border-white/[0.1] rounded-2xl p-8 glow-indigo">
+            <form onSubmit={handleSubmit} className="space-y-5">
+              {CONTACT_FORM_FIELDS.map((field) => (
+                <div key={field.id}>
+                  <label
+                    htmlFor={field.id}
+                    className="block text-sm font-medium text-indigo-200 mb-2"
                   >
-                    <option value="">Select a service</option>
-                    {field.options.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                ) : (
-                  <input
-                    type={field.type}
-                    id={field.id}
-                    placeholder={t.contact.form.placeholders[field.id]}
-                    required={field.required}
-                    onChange={handleInputChange}
-                    className="w-full rounded-lg bg-primary-800 border-primary-700 text-white placeholder-primary-400 focus:border-primary-500 focus:ring-primary-500"
-                  />
-                )}
-              </div>
-            ))}
+                    {t.contact.form[field.id]}
+                    {field.required && <span className="text-red-400 ml-1">*</span>}
+                  </label>
 
-            <Button type="submit" className="w-full">
-              {t.contact.form.submit}
-            </Button>
-          </form>
-        </div>
+                  {field.type === 'textarea' ? (
+                    <textarea
+                      id={field.id}
+                      rows={4}
+                      placeholder={t.contact.form.placeholders[field.id]}
+                      required={field.required}
+                      onChange={handleInputChange}
+                      className={inputClasses}
+                    />
+                  ) : field.type === 'select' ? (
+                    <select
+                      id={field.id}
+                      required={field.required}
+                      onChange={handleInputChange}
+                      className={inputClasses}
+                    >
+                      <option value="">Select a service</option>
+                      {field.options.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                  ) : (
+                    <input
+                      type={field.type}
+                      id={field.id}
+                      placeholder={t.contact.form.placeholders[field.id]}
+                      required={field.required}
+                      onChange={handleInputChange}
+                      className={inputClasses}
+                    />
+                  )}
+                </div>
+              ))}
+
+              <Button type="submit" className="w-full gap-2">
+                <Send className="w-4 h-4" />
+                {t.contact.form.submit}
+              </Button>
+            </form>
+          </div>
+        </motion.div>
       </Container>
     </section>
   );

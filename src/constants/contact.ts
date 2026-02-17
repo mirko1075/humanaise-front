@@ -38,13 +38,13 @@ export const CONTACT_FORM_FIELDS = [
     label: "Company",
     type: "text",
     placeholder: "Your company name",
-    required: true,
+    required: false,
   },
   {
     id: "industry",
     label: "Industry",
     type: "select",
-    required: true,
+    required: false,
     options: [
       "Construction",
       "Tourism & Hospitality",
@@ -59,6 +59,6 @@ export const CONTACT_FORM_FIELDS = [
     label: "Message",
     type: "textarea",
     placeholder: "How can we help you?",
-    required: true,
+    required: false,
   },
 ] as const;

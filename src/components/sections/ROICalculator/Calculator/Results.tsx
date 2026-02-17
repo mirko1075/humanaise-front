@@ -24,7 +24,7 @@ export function Results({ results }: ResultsProps) {
     {
       label: roi.calculator.results.annualSavings,
       value: formatCurrency(results.annualSavings),
-      color: 'text-green-400'
+      color: 'text-emerald-400'
     },
     {
       label: roi.calculator.results.timeFreed,
@@ -34,19 +34,19 @@ export function Results({ results }: ResultsProps) {
     {
       label: roi.calculator.results.roi,
       value: `${formatNumber(results.roi)}%`,
-      color: 'text-purple-400'
+      color: 'text-gradient'
     }
   ];
 
   return (
     <div className="space-y-6">
-      <h3 className="text-xl font-semibold text-indigo-300 mb-4">
+      <h3 className="text-xl font-semibold text-white mb-4">
         {roi.calculator.results.title}
       </h3>
 
       <div className="space-y-4">
         {metrics.map((metric, index) => (
-          <div key={index} className="bg-primary-700/30 rounded-lg p-4">
+          <div key={index} className="bg-white/[0.05] border border-white/[0.08] rounded-xl p-4">
             <div className="text-sm text-indigo-300 mb-1">{metric.label}</div>
             <div className={`text-2xl font-bold ${metric.color}`}>{metric.value}</div>
           </div>

@@ -34,7 +34,7 @@ export function MetricsChart({ results, isFormComplete }: MetricsChartProps) {
 
   if (!isFormComplete) {
     return (
-      <div className="bg-primary-800/50 border border-primary-700 rounded-xl p-6">
+      <div className="bg-white/[0.04] backdrop-blur-md border border-white/[0.1] rounded-2xl p-6">
         <div className="h-[300px] flex items-center justify-center text-primary-300">
           {t.roi.calculator.enterDetails}
         </div>
@@ -63,16 +63,18 @@ export function MetricsChart({ results, isFormComplete }: MetricsChartProps) {
       {
         label: t.roi.calculator.results.annualSavings,
         data: generateForecastData(results.annualSavings),
-        borderColor: 'rgb(34, 197, 94)',
-        backgroundColor: 'rgba(34, 197, 94, 0.1)',
-        tension: 0.4
+        borderColor: 'rgb(52, 211, 153)',
+        backgroundColor: 'rgba(52, 211, 153, 0.1)',
+        tension: 0.4,
+        pointBackgroundColor: 'rgb(52, 211, 153)',
       },
       {
         label: t.roi.calculator.results.timeFreed,
         data: generateForecastData(results.hoursFreedAnnually),
-        borderColor: 'rgb(59, 130, 246)',
-        backgroundColor: 'rgba(59, 130, 246, 0.1)',
-        tension: 0.4
+        borderColor: 'rgb(96, 165, 250)',
+        backgroundColor: 'rgba(96, 165, 250, 0.1)',
+        tension: 0.4,
+        pointBackgroundColor: 'rgb(96, 165, 250)',
       }
     ]
   };
@@ -83,15 +85,19 @@ export function MetricsChart({ results, isFormComplete }: MetricsChartProps) {
       legend: {
         position: 'top' as const,
         labels: {
-          color: '#fff',
+          color: 'rgba(255, 255, 255, 0.7)',
           font: {
             family: "'Inter', sans-serif",
             size: 12
-          }
+          },
+          usePointStyle: true,
+          pointStyle: 'circle',
         }
       },
       tooltip: {
-        backgroundColor: 'rgba(17, 24, 39, 0.9)',
+        backgroundColor: 'rgba(15, 23, 42, 0.95)',
+        borderColor: 'rgba(255, 255, 255, 0.1)',
+        borderWidth: 1,
         titleFont: {
           family: "'Inter', sans-serif",
           size: 14,
@@ -101,12 +107,13 @@ export function MetricsChart({ results, isFormComplete }: MetricsChartProps) {
           family: "'Inter', sans-serif",
           size: 12
         },
-        padding: 12,
+        padding: 14,
+        cornerRadius: 12,
         callbacks: {
           label: function(context: any) {
             const label = context.dataset.label || '';
             const value = context.parsed.y;
-            return label.includes('Savings') 
+            return label.includes('Savings')
               ? `${label}: ${formatCurrency(value)}`
               : `${label}: ${Math.round(value)} hours`;
           }
@@ -117,10 +124,10 @@ export function MetricsChart({ results, isFormComplete }: MetricsChartProps) {
       y: {
         beginAtZero: true,
         grid: {
-          color: 'rgba(255, 255, 255, 0.1)'
+          color: 'rgba(255, 255, 255, 0.06)'
         },
         ticks: {
-          color: '#fff',
+          color: 'rgba(255, 255, 255, 0.5)',
           font: {
             family: "'Inter', sans-serif",
             size: 12
@@ -132,10 +139,10 @@ export function MetricsChart({ results, isFormComplete }: MetricsChartProps) {
       },
       x: {
         grid: {
-          color: 'rgba(255, 255, 255, 0.1)'
+          color: 'rgba(255, 255, 255, 0.06)'
         },
         ticks: {
-          color: '#fff',
+          color: 'rgba(255, 255, 255, 0.5)',
           font: {
             family: "'Inter', sans-serif",
             size: 12
@@ -150,7 +157,7 @@ export function MetricsChart({ results, isFormComplete }: MetricsChartProps) {
   };
 
   return (
-    <div className="bg-primary-800/50 border border-primary-700 rounded-xl p-6">
+    <div className="bg-white/[0.04] backdrop-blur-md border border-white/[0.1] rounded-2xl p-6">
       <Line data={data} options={options} />
     </div>
   );

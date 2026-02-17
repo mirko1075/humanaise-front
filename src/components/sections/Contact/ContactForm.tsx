@@ -18,8 +18,19 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form
+      name="contact"
+      method="POST"
+      netlify-honeypot="bot-field"
+      data-netlify="true" 
+      onSubmit={handleSubmit} 
+      className="space-y-6">
       <div>
+        <p className="hidden">
+          <label>
+            Don’t fill this out if you’re human: <input name="bot-field" type="text" />
+          </label>
+        </p>
         <label htmlFor="name" className="block text-sm font-medium text-primary-200 mb-1">
           {contact.form.labels.name}
         </label>

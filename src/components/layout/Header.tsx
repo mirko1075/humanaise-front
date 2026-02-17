@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Container } from '../ui/Container';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { useTranslation } from '../../hooks/useTranslation';
@@ -14,7 +15,6 @@ export function Header() {
     { href: '/#about', label: t.common.nav.about },
     { href: '/#services', label: t.common.nav.services },
     { href: '/#roi-calculator', label: t.common.nav.roiCalculator },
-    { href: '/#success-stories', label: t.common.nav.successStories },
     { href: '/#contact', label: t.common.nav.contact }
   ];
 
@@ -36,20 +36,20 @@ export function Header() {
   };
 
   return (
-    <header className="fixed w-full bg-indigo-900/90 backdrop-blur-sm z-50 shadow-lg">
+    <header className="fixed w-full bg-indigo-950/80 backdrop-blur-xl z-50 border-b border-white/[0.06]">
       <Container>
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
           <a href="/"><img src={logo} width="192px" alt="HumanAIse" /></a>
           </div>
-          
+
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-indigo-200 hover:text-white transition-colors"
+                className="text-indigo-200/80 hover:text-white transition-colors duration-200 text-sm"
               >
                 {item.label}
               </a>
@@ -59,8 +59,8 @@ export function Header() {
 
           <div className="flex items-center space-x-4 md:hidden">
             <LanguageSwitcher />
-            <button 
-              className="text-white p-2 hover:bg-indigo-800/50 rounded-lg transition-colors"
+            <button
+              className="text-white p-2 hover:bg-white/[0.08] rounded-lg transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
@@ -71,26 +71,35 @@ export function Header() {
       </Container>
 
       {/* Mobile Navigation Menu */}
-      <div 
-        className={`md:hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-        } overflow-hidden bg-indigo-800`}
-      >
-        <Container>
-          <nav className="py-4 space-y-2">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="block px-4 py-2 text-indigo-200 hover:text-white hover:bg-indigo-700/50 rounded-lg transition-colors"
-                onClick={(e) => { handleNavClick(e, item.href); setIsMenuOpen(false); }}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </Container>
-      </div>
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            className="md:hidden overflow-hidden bg-indigo-950/95 backdrop-blur-xl border-t border-white/[0.06]"
+          >
+            <Container>
+              <nav className="py-4 space-y-1">
+                {navItems.map((item, index) => (
+                  <motion.a
+                    key={item.href}
+                    href={item.href}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    className="block px-4 py-3 text-indigo-200 hover:text-white hover:bg-white/[0.06] rounded-lg transition-colors"
+                    onClick={(e) => { handleNavClick(e, item.href); setIsMenuOpen(false); }}
+                  >
+                    {item.label}
+                  </motion.a>
+                ))}
+              </nav>
+            </Container>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
