@@ -33,6 +33,16 @@ export interface Translation {
       subtitle: string;
     };
   };
+  news: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    feedAriaLabel: string;
+    clientLabel: string;
+    freshBadge: string;
+    seoTitle: string;
+    seoDescription: string;
+  };
   about: {
     nav: {
       mission: string;
@@ -192,12 +202,12 @@ export interface Translation {
     privacyPolicy?: {
       title: string;
       lastUpdated: string;
-      sections?: any;
+      sections?: unknown;
     };
     termsOfService?: {
       title: string;
       lastUpdated: string;
-      sections?: any;
+      sections?: unknown;
     };
   };
 }

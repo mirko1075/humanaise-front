@@ -1,5 +1,4 @@
 import { Language } from '../../../types/language';
-import { LucideIcon } from 'lucide-react';
 
 type ServiceTranslations = {
   title: string;

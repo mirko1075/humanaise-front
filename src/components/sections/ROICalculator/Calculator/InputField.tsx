@@ -1,7 +1,6 @@
 import React from 'react';
 import { NumericInput } from '../../../ui/NumericInput';
 import { ROIInputs } from '../../../../types/roi';
-import { validationRules } from './validation';
 
 interface InputFieldProps {
   field: keyof ROIInputs;
@@ -22,7 +21,6 @@ export function InputField({
   prefix,
   suffix 
 }: InputFieldProps) {
-  const rule = validationRules[field];
   const min = field === 'automationPercentage' ? 0 : field === 'hoursPerWeek' ? 1 : 0;
   const max = field === 'automationPercentage' ? 100 : field === 'hoursPerWeek' ? 168 : undefined;
   const step = ['employeeCount', 'hoursPerWeek'].includes(field) ? 1 : 0.01;

@@ -61,7 +61,7 @@ export function Header() {
                 {item.hasFreshNews ? (
                   <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/35 bg-emerald-400/12 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-200">
                     <BellDot className="h-3 w-3" aria-hidden="true" />
-                    New
+                    {t.news.freshBadge}
                   </span>
                 ) : null}
               </a>
@@ -108,7 +108,7 @@ export function Header() {
                     {item.hasFreshNews ? (
                       <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/35 bg-emerald-400/12 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-200">
                         <BellDot className="h-3 w-3" aria-hidden="true" />
-                        New
+                        {t.news.freshBadge}
                       </span>
                     ) : null}
                   </motion.a>

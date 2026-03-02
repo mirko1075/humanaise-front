@@ -2,17 +2,40 @@ import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Container } from '../ui/Container';
 import { fadeInUp, scrollViewport } from '../../utils/animations';
-import { newsItems } from '../../utils/news';
+import { useLanguage } from '../../hooks/useLanguage';
+import { useTranslation } from '../../hooks/useTranslation';
+import type { Language } from '../../types/language';
+import { getNewsItems } from '../../utils/news';
 
-const newsDateFormatter = new Intl.DateTimeFormat('en-US', {
-  day: 'numeric',
-  month: 'long',
-  timeZone: 'UTC',
-  year: 'numeric',
-});
+const newsDateFormatters: Record<Language, Intl.DateTimeFormat> = {
+  en: new Intl.DateTimeFormat('en-US', {
+    day: 'numeric',
+    month: 'long',
+    timeZone: 'UTC',
+    year: 'numeric',
+  }),
+  it: new Intl.DateTimeFormat('it-IT', {
+    day: 'numeric',
+    month: 'long',
+    timeZone: 'UTC',
+    year: 'numeric',
+  }),
+  es: new Intl.DateTimeFormat('es-ES', {
+    day: 'numeric',
+    month: 'long',
+    timeZone: 'UTC',
+    year: 'numeric',
+  }),
+  fr: new Intl.DateTimeFormat('fr-FR', {
+    day: 'numeric',
+    month: 'long',
+    timeZone: 'UTC',
+    year: 'numeric',
+  }),
+};
 
-function formatNewsDate(date: string) {
-  return newsDateFormatter.format(new Date(`${date}T00:00:00Z`));
+function formatNewsDate(date: string, language: Language) {
+  return newsDateFormatters[language].format(new Date(`${date}T00:00:00Z`));
 }
 
 function getNewsYear(date: string) {
@@ -54,6 +77,10 @@ function parseContentBlocks(content: string): NewsContentBlock[] {
 }
 
 export function NewsSection() {
+  const { language } = useLanguage();
+  const t = useTranslation();
+  const newsItems = getNewsItems(language);
+
   return (
     <section
       id="news"
@@ -68,13 +95,13 @@ export function NewsSection() {
           viewport={scrollViewport}
         >
           <p className="text-sm font-semibold uppercase tracking-[0.32em] text-primary-300">
-            Recent Updates
+            {t.news.eyebrow}
           </p>
           <h2 className="mt-4 text-4xl font-semibold text-slate-50 sm:text-5xl">
-            Latest News
+            {t.news.title}
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-200 sm:text-lg">
-            Product launches, client systems, and operational AI milestones from the HumanAIse team.
+            {t.news.subtitle}
           </p>
         </motion.div>
 
@@ -86,7 +113,7 @@ export function NewsSection() {
 
           <div
             className="news-scrollbar max-h-[560px] overflow-y-auto scroll-smooth px-4 py-5 sm:px-8 sm:py-7"
-            aria-label="Latest News feed"
+            aria-label={t.news.feedAriaLabel}
           >
             <div
               className="relative"
@@ -102,10 +129,10 @@ export function NewsSection() {
                         {getNewsYear(item.date)}
                       </span>
                       <p className="mt-3 text-sm font-medium text-primary-200/80">
-                        <time dateTime={item.date}>{formatNewsDate(item.date)}</time>
+                        <time dateTime={item.date}>{formatNewsDate(item.date, language)}</time>
                       </p>
                       <div className="mt-3 text-sm leading-6 text-primary-100/85">
-                        <span className="mr-1 text-primary-200/60">Client:</span>
+                        <span className="mr-1 text-primary-200/60">{t.news.clientLabel}:</span>
                         {item.client.website ? (
                           <a
                             href={item.client.website}

@@ -33,6 +33,18 @@ export const it: Translation = {
         "Colmiamo il divario tra umani e intelligenza artificiale, rendendo l'AI accessibile, intuitiva e facile da integrare nelle operazioni aziendali quotidiane.",
     },
   },
+  news: {
+    eyebrow: "Aggiornamenti recenti",
+    title: "Ultime news",
+    subtitle:
+      "Lanci di prodotto, sistemi per clienti e traguardi di operational AI del team HumanAIse.",
+    feedAriaLabel: "Feed ultime news",
+    clientLabel: "Cliente",
+    freshBadge: "Nuova",
+    seoTitle: "Ultime news di HumanAIse",
+    seoDescription:
+      "Gli ultimi traguardi HumanAIse in operational AI, sistemi di automazione e rilasci in produzione.",
+  },
   about: {
     nav: {
       mission: "La Nostra Missione",

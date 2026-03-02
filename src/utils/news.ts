@@ -1,19 +1,72 @@
-import newsData from '../data/news.json';
-import type { NewsItem } from '../types/news';
+import { en } from '../constants/i18n/en';
+import { es } from '../constants/i18n/es';
+import { fr } from '../constants/i18n/fr';
+import { it } from '../constants/i18n/it';
+import newsData from '../data/news';
+import type { Translation } from '../constants/i18n/types';
+import type { Language } from '../types/language';
+import type { NewsItem, NewsItemData, NewsTranslation } from '../types/news';
 
 const RECENT_NEWS_WINDOW_DAYS = 14;
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 const BASE_URL = 'https://humanaise.com';
 const OG_IMAGE = `${BASE_URL}/copertina.jpg`;
+const FALLBACK_LANGUAGES: Record<Language, Language[]> = {
+  en: ['en', 'it', 'es', 'fr'],
+  it: ['it', 'en', 'es', 'fr'],
+  es: ['es', 'en', 'it', 'fr'],
+  fr: ['fr', 'en', 'it', 'es'],
+};
 
-export const newsItems: NewsItem[] = [...newsData].sort((left, right) =>
+const newsSectionTranslations: Record<Language, Translation['news']> = {
+  en: en.news,
+  it: it.news,
+  es: es.news,
+  fr: fr.news,
+};
+
+const sortedNewsItemsData: NewsItemData[] = [...newsData].sort((left, right) =>
   right.date.localeCompare(left.date),
 );
+
+function resolveNewsTranslation(
+  item: NewsItemData,
+  language: Language,
+): { contentLanguage: Language; translation: NewsTranslation } {
+  for (const candidateLanguage of FALLBACK_LANGUAGES[language]) {
+    const translation = item.translations[candidateLanguage];
+    if (translation) {
+      return {
+        contentLanguage: candidateLanguage,
+        translation,
+      };
+    }
+  }
+
+  throw new Error(`News item "${item.id}" is missing translations.`);
+}
+
+export function getNewsItems(language: Language): NewsItem[] {
+  return sortedNewsItemsData.map((item) => {
+    const { contentLanguage, translation } = resolveNewsTranslation(item, language);
+
+    return {
+      id: item.id,
+      date: item.date,
+      client: item.client,
+      title: translation.title,
+      metrics: translation.metrics,
+      content: translation.content,
+      tags: translation.tags,
+      contentLanguage,
+    };
+  });
+}
 
 export function hasRecentNews(referenceDate = new Date()) {
   const referenceTime = referenceDate.getTime();
 
-  return newsItems.some((item) => {
+  return sortedNewsItemsData.some((item) => {
     const publishedTime = new Date(`${item.date}T00:00:00Z`).getTime();
     const diffInDays = (referenceTime - publishedTime) / MS_PER_DAY;
 
@@ -33,8 +86,10 @@ function toPlainText(content: string) {
     .trim();
 }
 
-export function getHomepageNewsStructuredData(language: string) {
+export function getHomepageNewsStructuredData(language: Language) {
   const pageUrl = `${BASE_URL}/${language}`;
+  const localizedNewsItems = getNewsItems(language);
+  const newsCopy = newsSectionTranslations[language];
 
   const publisher = {
     '@type': 'Organization',
@@ -50,10 +105,9 @@ export function getHomepageNewsStructuredData(language: string) {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     '@id': `${pageUrl}#news`,
-    name: 'HumanAIse Latest News',
+    name: newsCopy.seoTitle,
     url: pageUrl,
-    description:
-      'Latest HumanAIse milestones in operational AI, automation systems, and production deployments.',
+    description: newsCopy.seoDescription,
     inLanguage: language,
     isPartOf: {
       '@type': 'WebSite',
@@ -63,8 +117,8 @@ export function getHomepageNewsStructuredData(language: string) {
     mainEntity: {
       '@type': 'ItemList',
       itemListOrder: 'https://schema.org/ItemListOrderDescending',
-      numberOfItems: newsItems.length,
-      itemListElement: newsItems.map((item, index) => ({
+      numberOfItems: localizedNewsItems.length,
+      itemListElement: localizedNewsItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         item: {
@@ -74,7 +128,7 @@ export function getHomepageNewsStructuredData(language: string) {
           dateModified: toIsoDate(item.date),
           author: publisher,
           publisher,
-          inLanguage: language,
+          inLanguage: item.contentLanguage,
           about: item.tags.map((tag) => ({
             '@type': 'Thing',
             name: tag,

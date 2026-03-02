@@ -38,11 +38,11 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   useEffect(() => {
     document.documentElement.lang = language;
     
-    // Set initial URL
+    // Keep URL and document language synchronized with the active language.
     const currentHash = window.location.hash || '#home';
     const newUrl = `/${language}${currentHash}`;
     window.history.replaceState(null, '', newUrl);
-  }, []);
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage }}>

@@ -33,6 +33,18 @@ export const es: Translation = {
         "Cerramos la brecha entre humanos e inteligencia artificial, haciendo la IA accesible, intuitiva y fácil de integrar en las operaciones comerciales diarias.",
     },
   },
+  news: {
+    eyebrow: "Actualizaciones recientes",
+    title: "Últimas noticias",
+    subtitle:
+      "Lanzamientos de producto, sistemas para clientes e hitos de IA operativa del equipo HumanAIse.",
+    feedAriaLabel: "Feed de últimas noticias",
+    clientLabel: "Cliente",
+    freshBadge: "Nueva",
+    seoTitle: "Últimas noticias de HumanAIse",
+    seoDescription:
+      "Los últimos hitos de HumanAIse en IA operativa, sistemas de automatización y despliegues en producción.",
+  },
   about: {
     nav: {
       mission: "Nuestra Misión",

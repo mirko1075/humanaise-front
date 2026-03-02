@@ -33,6 +33,18 @@ export const fr: Translation = {
         "Combler le fossé entre les humains et l'intelligence artificielle, rendant l'IA accessible, intuitive et facile à intégrer dans les opérations commerciales quotidiennes.",
     },
   },
+  news: {
+    eyebrow: "Mises à jour récentes",
+    title: "Dernières actualités",
+    subtitle:
+      "Lancements de produits, systèmes clients et jalons d'IA opérationnelle de l'équipe HumanAIse.",
+    feedAriaLabel: "Flux des dernières actualités",
+    clientLabel: "Client",
+    freshBadge: "Nouveau",
+    seoTitle: "Dernières actualités de HumanAIse",
+    seoDescription:
+      "Les derniers jalons de HumanAIse en IA opérationnelle, systèmes d'automatisation et déploiements en production.",
+  },
   about: {
     nav: {
       mission: "Notre Mission",

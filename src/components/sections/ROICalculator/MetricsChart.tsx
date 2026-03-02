@@ -2,12 +2,14 @@ import React from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
+  ChartOptions,
   LinearScale,
   PointElement,
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  TooltipItem
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { ROIResults } from '../../../types/roi';
@@ -79,7 +81,7 @@ export function MetricsChart({ results, isFormComplete }: MetricsChartProps) {
     ]
   };
 
-  const options = {
+  const options: ChartOptions<'line'> = {
     responsive: true,
     plugins: {
       legend: {
@@ -110,10 +112,11 @@ export function MetricsChart({ results, isFormComplete }: MetricsChartProps) {
         padding: 14,
         cornerRadius: 12,
         callbacks: {
-          label: function(context: any) {
+          label(context: TooltipItem<'line'>) {
             const label = context.dataset.label || '';
-            const value = context.parsed.y;
-            return label.includes('Savings')
+            const value = typeof context.parsed.y === 'number' ? context.parsed.y : 0;
+
+            return context.datasetIndex === 0
               ? `${label}: ${formatCurrency(value)}`
               : `${label}: ${Math.round(value)} hours`;
           }
@@ -132,8 +135,12 @@ export function MetricsChart({ results, isFormComplete }: MetricsChartProps) {
             family: "'Inter', sans-serif",
             size: 12
           },
-          callback: function(value: any) {
-            return value >= 1000 ? `${value/1000}k` : value;
+          callback(value) {
+            if (typeof value !== 'number') {
+              return value;
+            }
+
+            return value >= 1000 ? `${value / 1000}k` : value;
           }
         }
       },

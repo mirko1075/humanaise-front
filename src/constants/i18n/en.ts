@@ -33,6 +33,18 @@ export const en: Translation = {
         "Bridging the gap between humans and artificial intelligence, making AI accessible, intuitive, and easy to integrate into everyday business operations.",
     },
   },
+  news: {
+    eyebrow: "Recent Updates",
+    title: "Latest News",
+    subtitle:
+      "Product launches, client systems, and operational AI milestones from the HumanAIse team.",
+    feedAriaLabel: "Latest news feed",
+    clientLabel: "Client",
+    freshBadge: "New",
+    seoTitle: "HumanAIse Latest News",
+    seoDescription:
+      "Latest HumanAIse milestones in operational AI, automation systems, and production deployments.",
+  },
   about: {
     nav: {
       mission: "Our Mission",
