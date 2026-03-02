@@ -1,27 +1,33 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { BellDot, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Container } from '../ui/Container';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { useLanguage } from '../../hooks/useLanguage';
 import { useTranslation } from '../../hooks/useTranslation';
+import { hasRecentNews } from '../../utils/news';
 import logo from '../../imgs/logo.png';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslation();
+  const { language } = useLanguage();
+  const hasFreshNews = hasRecentNews();
+  const homePath = `/${language}`;
 
   const navItems = [
-    { href: '/#home', label: t.common.nav.home },
-    { href: '/#about', label: t.common.nav.about },
-    { href: '/#services', label: t.common.nav.services },
-    { href: '/#roi-calculator', label: t.common.nav.roiCalculator },
-    { href: '/#contact', label: t.common.nav.contact }
+    { href: `${homePath}#home`, label: t.common.nav.home },
+    { href: `${homePath}#about`, label: t.common.nav.about },
+    { href: `${homePath}#news`, label: t.common.nav.news, hasFreshNews },
+    { href: `${homePath}#services`, label: t.common.nav.services },
+    { href: `${homePath}#roi-calculator`, label: t.common.nav.roiCalculator },
+    { href: `${homePath}#contact`, label: t.common.nav.contact }
   ];
 
-  const isHomePage = window.location.pathname === '/';
+  const isHomePage = window.location.pathname === '/' || window.location.pathname === homePath;
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    const hash = href.replace('/', '');
+    const hash = href.slice(href.indexOf('#'));
     const targetId = hash.replace('#', '');
 
     if (isHomePage) {
@@ -29,7 +35,7 @@ export function Header() {
       const el = document.getElementById(targetId);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
-        window.history.replaceState(null, '', hash);
+        window.history.replaceState(null, '', `${homePath}${hash}`);
       }
     }
     // If not on homepage, let the browser navigate to /#section
@@ -49,9 +55,15 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-indigo-200/80 hover:text-white transition-colors duration-200 text-sm"
+                className="inline-flex items-center gap-2 text-indigo-200/80 hover:text-white transition-colors duration-200 text-sm"
               >
-                {item.label}
+                <span>{item.label}</span>
+                {item.hasFreshNews ? (
+                  <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/35 bg-emerald-400/12 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-200">
+                    <BellDot className="h-3 w-3" aria-hidden="true" />
+                    New
+                  </span>
+                ) : null}
               </a>
             ))}
             <LanguageSwitcher />
@@ -89,10 +101,16 @@ export function Header() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className="block px-4 py-3 text-indigo-200 hover:text-white hover:bg-white/[0.06] rounded-lg transition-colors"
+                    className="flex items-center justify-between gap-3 px-4 py-3 text-indigo-200 hover:text-white hover:bg-white/[0.06] rounded-lg transition-colors"
                     onClick={(e) => { handleNavClick(e, item.href); setIsMenuOpen(false); }}
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    {item.hasFreshNews ? (
+                      <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/35 bg-emerald-400/12 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-200">
+                        <BellDot className="h-3 w-3" aria-hidden="true" />
+                        New
+                      </span>
+                    ) : null}
                   </motion.a>
                 ))}
               </nav>

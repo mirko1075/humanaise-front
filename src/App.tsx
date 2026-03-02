@@ -1,5 +1,6 @@
 import React from 'react';
 import { SEO } from './components/SEO';
+import { NewsSection } from './components/home/NewsSection';
 import { Header } from './components/layout/Header';
 import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
@@ -9,14 +10,16 @@ import { Services } from './components/sections/Services';
 import { Industries } from './components/sections/Industries';
 import { ROICalculator } from './components/sections/ROICalculator';
 import { WhyChooseUs } from './components/sections/WhyChooseUs';
-import { SuccessStories } from './components/sections/SuccessStories';
 import { Contact } from './components/sections/Contact';
 import { Footer } from './components/layout/Footer';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsOfService } from './pages/TermsOfService';
+import { getHomepageNewsStructuredData } from './utils/news';
+import { useLanguage } from './hooks/useLanguage';
 
 export default function App() {
   const pathname = window.location.pathname;
+  const { language } = useLanguage();
   const isPrivacyPolicy = pathname.includes('/privacy-policy');
   const isTermsOfService = pathname.includes('/terms-of-service');
 
@@ -27,7 +30,7 @@ export default function App() {
         <SEO
           title="Privacy Policy"
           description="HumanAIse Privacy Policy - Learn how we collect, use, and protect your personal data."
-          canonical="https://humanaise.com/privacy-policy"
+          canonical={`https://humanaise.com/${language}/privacy-policy`}
         />
         <Header />
         <main>
@@ -44,7 +47,7 @@ export default function App() {
         <SEO
           title="Terms of Service"
           description="HumanAIse Terms of Service - Read our terms and conditions for using our AI automation services."
-          canonical="https://humanaise.com/terms-of-service"
+          canonical={`https://humanaise.com/${language}/terms-of-service`}
         />
         <Header />
         <main>
@@ -58,10 +61,15 @@ export default function App() {
   // Render homepage
   return (
     <div className="min-h-screen bg-primary-950">
-      <SEO />
+      <SEO
+        description="Operational AI systems for SMEs, production automation workflows, and the latest HumanAIse news on client deployments."
+        keywords="AI automation, operational AI, workflow automation, SME automation, quotation management, transcription automation, AI deployment news"
+        structuredData={getHomepageNewsStructuredData(language)}
+      />
       <Header />
       <main>
         <Hero />
+        <NewsSection />
         <About />
         <CoreValues />
         <Philosophy />

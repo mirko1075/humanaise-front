@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node src/utils/seo/generateSitemap.js && vite build",
+    "build": "npm run generate-seo && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "generate-seo": "node src/utils/seo/generateSitemap.js && node src/utils/seo/generateRobotsTxt.js",
     "generate-sitemap": "node src/utils/seo/generateSitemap.js",
+    "generate-robots": "node src/utils/seo/generateRobotsTxt.js",
     "make-favicons": "node scripts/make-favicons.js",
     "generate-ico": "node scripts/generate-ico.js"
   },

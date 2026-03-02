@@ -5,6 +5,7 @@ export interface Translation {
     nav: {
       home: string;
       about: string;
+      news: string;
       services: string;
       roiCalculator: string;
       successStories: string;
@@ -127,13 +128,17 @@ export interface Translation {
     title: string;
     subtitle: string;
     whatsappDisclaimer?: string;
+    budgetDisclaimer: string;
     form: {
       name: string;
       email: string;
       company: string;
       industry: string;
       message: string;
+      budget: string;
+      timeline: string;
       phone: string;
+      whatsapp: string;
       location: string;
       placeholders: {
         name: string;
@@ -141,8 +146,29 @@ export interface Translation {
         company: string;
         industry: string;
         message: string;
+        budget: string;
+        timeline: string;
       };
       submit: string;
+      industryOptions: {
+        construction: string;
+        hospitality: string;
+        healthcare: string;
+        saas: string;
+        other: string;
+      };
+      budgetOptions: {
+        under1k: string;
+        from1kTo5k: string;
+        from5kTo15k: string;
+        over15k: string;
+      };
+      timelineOptions: {
+        immediately: string;
+        oneToThreeMonths: string;
+        threeToSixMonths: string;
+        justExploring: string;
+      };
     };
   };
   success: {

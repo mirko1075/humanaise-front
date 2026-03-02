@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from '../hooks/useTranslation';
 import { useLanguage } from '../hooks/useLanguage';
+import { LANGUAGES } from '../constants/languages';
 
 const BASE_URL = 'https://humanaise.com';
 const OG_IMAGE = `${BASE_URL}/copertina.jpg`;
@@ -12,12 +13,28 @@ const LOCALE_MAP: Record<string, string> = {
   fr: 'fr_FR',
 };
 
+function getRouteSuffix(pathname: string) {
+  if (pathname === '/') {
+    return '';
+  }
+
+  const segments = pathname.split('/').filter(Boolean);
+  const [first, ...rest] = segments;
+
+  if (first && first in LOCALE_MAP) {
+    return rest.length ? `/${rest.join('/')}` : '';
+  }
+
+  return pathname;
+}
+
 interface SEOProps {
   title?: string;
   description?: string;
   canonical?: string;
   keywords?: string;
   author?: string;
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
 export function SEO({
@@ -25,18 +42,58 @@ export function SEO({
   description,
   canonical,
   keywords = 'Making AI feel Human. AI automation, business automation, artificial intelligence, workflow optimization, AI solutions',
-  author = 'HumanAIse'
+  author = 'HumanAIse',
+  structuredData
 }: SEOProps) {
   const t = useTranslation();
   const { language } = useLanguage();
 
   const defaultTitle = 'HumanAIse - AI Automation Solutions';
   const defaultDescription = t.home.hero.subtitle;
+  const routeSuffix = getRouteSuffix(window.location.pathname);
+  const currentPath = `/${language}${routeSuffix}`;
 
   const seoTitle = title ? `${title} | ${defaultTitle}` : defaultTitle;
   const seoDescription = description || defaultDescription;
-  const seoCanonical = canonical || BASE_URL;
+  const seoCanonical = canonical || `${BASE_URL}${currentPath}`;
   const ogLocale = LOCALE_MAP[language] || 'en_US';
+  const alternateLanguages = Object.keys(LANGUAGES) as Array<keyof typeof LANGUAGES>;
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "HumanAIse",
+    "url": BASE_URL,
+    "logo": OG_IMAGE,
+    "description": seoDescription,
+    "sameAs": [
+      "https://twitter.com/HumanaiseAI",
+      "https://linkedin.com/company/humanaise-ai"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+39-392-866-5301",
+      "contactType": "customer service",
+      "email": "info@humanaise.com",
+      "areaServed": "Worldwide",
+      "availableLanguage": ["English", "Italian", "Spanish", "French"]
+    }
+  };
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "HumanAIse",
+    "url": BASE_URL,
+    "inLanguage": language
+  };
+  const structuredDataNodes = [
+    organizationSchema,
+    websiteSchema,
+    ...(structuredData
+      ? Array.isArray(structuredData)
+        ? structuredData
+        : [structuredData]
+      : []),
+  ];
 
   return (
     <Helmet>
@@ -54,6 +111,11 @@ export function SEO({
       <meta property="og:description" content={seoDescription} />
       <meta property="og:image" content={OG_IMAGE} />
       <meta property="og:locale" content={ogLocale} />
+      {alternateLanguages
+        .filter((lang) => lang !== language)
+        .map((lang) => (
+          <meta key={lang} property="og:locale:alternate" content={LOCALE_MAP[lang]} />
+        ))}
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -72,29 +134,19 @@ export function SEO({
 
       {/* Canonical */}
       <link rel="canonical" href={seoCanonical} />
+      {alternateLanguages.map((lang) => (
+        <link
+          key={lang}
+          rel="alternate"
+          hrefLang={lang}
+          href={`${BASE_URL}/${lang}${routeSuffix}`}
+        />
+      ))}
+      <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}/en${routeSuffix}`} />
 
       {/* Structured Data */}
       <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "HumanAIse",
-          "url": BASE_URL,
-          "logo": OG_IMAGE,
-          "description": seoDescription,
-          "sameAs": [
-            "https://twitter.com/HumanaiseAI",
-            "https://linkedin.com/company/humanaise-ai"
-          ],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+39-392-866-5301",
-            "contactType": "customer service",
-            "email": "info@humanaise.com",
-            "areaServed": "Worldwide",
-            "availableLanguage": ["English", "Italian", "Spanish", "French"]
-          }
-        })}
+        {JSON.stringify(structuredDataNodes)}
       </script>
     </Helmet>
   );

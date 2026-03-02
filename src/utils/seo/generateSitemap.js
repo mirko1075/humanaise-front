@@ -2,49 +2,58 @@ import fs from "fs";
 
 const baseUrl = "https://humanaise.com";
 const languages = ["en", "it", "es", "fr"];
+const staticRoutes = ["", "/privacy-policy", "/terms-of-service"];
 
-export function generateSitemap() {
-  const today = new Date().toISOString().split("T")[0];
+function localizedUrl(language, route) {
+  return `${baseUrl}/${language}${route}`;
+}
 
-  const languageAlternates = (path) =>
-    languages
-      .map(
-        (lang) => `
+function languageAlternates(route) {
+  return languages
+    .map(
+      (lang) => `
     <xhtml:link
       rel="alternate"
       hrefLang="${lang}"
-      href="${baseUrl}${path}"
+      href="${localizedUrl(lang, route)}"
     />`
-      )
-      .join("") +
+    )
+    .join("") +
     `
     <xhtml:link
       rel="alternate"
       hrefLang="x-default"
-      href="${baseUrl}${path}"
+      href="${localizedUrl("en", route)}"
     />`;
+}
+
+function getRoutePriority(route) {
+  if (route === "") return "1.0";
+  return "0.3";
+}
+
+function getRouteChangefreq(route) {
+  if (route === "") return "weekly";
+  return "yearly";
+}
+
+export function generateSitemap() {
+  const today = new Date().toISOString().split("T")[0];
+  const urls = staticRoutes.flatMap((route) =>
+    languages.map(
+      (language) => `  <url>
+    <loc>${localizedUrl(language, route)}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${getRouteChangefreq(route)}</changefreq>
+    <priority>${getRoutePriority(route)}</priority>${languageAlternates(route)}
+  </url>`
+    )
+  );
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>${baseUrl}/</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>${languageAlternates("/")}
-  </url>
-  <url>
-    <loc>${baseUrl}/privacy-policy</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/terms-of-service</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
+${urls.join("\n")}
 </urlset>`;
 
   fs.writeFileSync("public/sitemap.xml", sitemap);
