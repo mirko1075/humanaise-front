@@ -15,7 +15,7 @@ export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState({ hasError: false, message: '' });
 
-  const isValidSubmission = () => {
+  const validateSubmission = (): string | null => {
     const name = formData.name?.trim() || '';
     const email = formData.email?.trim() || '';
     const company = formData.company?.trim() || '';
@@ -24,24 +24,24 @@ export function Contact() {
     const budget = formData.budget?.trim() || '';
     const timeline = formData.timeline?.trim() || '';
 
-    if (name.length < 3) return false;
-    if (!email.includes('@') || email.length < 5) return false;
-    if (company.length < 2) return false;
-    if (!industry) return false;
-    if (message.length < 40) return false;
-    if (message.split(/\s+/).filter(Boolean).length < 8) return false;
-    if (!budget) return false;
-    if (!timeline) return false;
+    if (name.length < 3) return 'Please enter your full name (at least 3 characters).';
+    if (!email.includes('@') || email.length < 5) return 'Please enter a valid work email address.';
+    if (company.length < 2) return 'Please enter your company name.';
+    if (!industry) return 'Please select your industry.';
+    if (message.length < 40 || message.split(/\s+/).filter(Boolean).length < 8) return 'Please describe your problem in detail (at least 40 characters and 8 words).';
+    if (!budget) return 'Please select your estimated budget.';
+    if (!timeline) return 'Please select your project timeline.';
 
-    return true;
+    return null;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError({ hasError: false, message: '' });
 
-    if (!isValidSubmission()) {
-      setError({ hasError: true, message: 'Please fill out all fields correctly.' });
+    const validationError = validateSubmission();
+    if (validationError) {
+      setError({ hasError: true, message: validationError });
       return;
     }
 
