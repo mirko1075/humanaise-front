@@ -26,16 +26,27 @@ export function Header() {
 
   const isHomePage = window.location.pathname === '/' || window.location.pathname === homePath;
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    const hash = href.slice(href.indexOf('#'));
+  const scrollToSection = (hash: string) => {
     const targetId = hash.replace('#', '');
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      window.history.replaceState(null, '', `${homePath}${hash}`);
+    }
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, closeMobile = false) => {
+    const hash = href.slice(href.indexOf('#'));
 
     if (isHomePage) {
       e.preventDefault();
-      const el = document.getElementById(targetId);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-        window.history.replaceState(null, '', `${homePath}${hash}`);
+      if (closeMobile && isMenuOpen) {
+        setIsMenuOpen(false);
+        // Wait for the menu close animation (250ms) before scrolling,
+        // so the layout shift doesn't interfere with scroll position
+        setTimeout(() => scrollToSection(hash), 300);
+      } else {
+        scrollToSection(hash);
       }
     }
     // If not on homepage, let the browser navigate to /#section
@@ -102,7 +113,7 @@ export function Header() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
                     className="flex items-center justify-between gap-3 px-4 py-3 text-indigo-200 hover:text-white hover:bg-white/[0.06] rounded-lg transition-colors"
-                    onClick={(e) => { handleNavClick(e, item.href); setIsMenuOpen(false); }}
+                    onClick={(e) => handleNavClick(e, item.href, true)}
                   >
                     <span>{item.label}</span>
                     {item.hasFreshNews ? (

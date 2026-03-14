@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '../ui/Container';
-import { Users, Scale, Brain, BarChart3, Shield } from 'lucide-react';
+import { Users, Lock, Scale, Brain, BarChart3, Shield } from 'lucide-react';
 import { Card } from '../ui/Card';
 import { useTranslation } from '../../hooks/useTranslation';
 import { staggerContainer, staggerItem, fadeInUp, scrollViewport } from '../../utils/animations';
@@ -9,6 +9,9 @@ import { staggerContainer, staggerItem, fadeInUp, scrollViewport } from '../../u
 const reasons = [
   {
     icon: Users,
+  },
+  {
+    icon: Lock,
   },
   {
     icon: Scale,

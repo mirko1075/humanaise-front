@@ -107,25 +107,68 @@ export interface Translation {
   roi: {
     title: string;
     subtitle: string;
-    calculator: {
-      inputTitle: string;
-      currentCost: string;
-      employeeCount: string;
-      hoursPerWeek: string;
-      hourlyRate: string;
-      automationPercentage: string;
-      calculate: string;
-      reset: string;
-      enterDetails: string;
-      results: {
-        title: string;
-        annualSavings: string;
-        timeFreed: string;
-        roi: string;
-        hours: string;
-        description: string;
-      };
+    panels: {
+      staff: string;
+      investment: string;
     };
+    inputs: {
+      employees: string;
+      annualCostPerPerson: string;
+      autoTaskPercent: string;
+      aiEfficiency: string;
+      setupCost: string;
+      licensesPerYear: string;
+      maintenancePerYear: string;
+      analysisHorizon: string;
+    };
+    help: {
+      employees: string;
+      annualCostPerPerson: string;
+      autoTaskPercent: string;
+      aiEfficiency: string;
+      setupCost: string;
+      licensesPerYear: string;
+      maintenancePerYear: string;
+      analysisHorizon: string;
+    };
+    metrics: {
+      totalSavings: string;
+      totalAiCost: string;
+      netRoi: string;
+      paybackPeriod: string;
+    };
+    breakdown: {
+      title: string;
+      personnelCost: string;
+      autoHours: string;
+      effectiveSavingsYear: string;
+      aiCostYear: string;
+    };
+    verdict: {
+      excellent: string;
+      solid: string;
+      marginal: string;
+      negative: string;
+      configure: string;
+    };
+    chart: {
+      title: string;
+      savings: string;
+      aiCost: string;
+      net: string;
+    };
+    scenarios: {
+      title: string;
+      items: Array<{ title: string; description: string }>;
+    };
+    units: {
+      now: string;
+      year: string;
+      months: string;
+      lessThanMonth: string;
+      na: string;
+    };
+    footer: string;
   };
   reasons: {
     title: string;

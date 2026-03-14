@@ -171,29 +171,75 @@ export const en: Translation = {
     ],
   },
   roi: {
-    title: "ROI Calculator",
-    subtitle:
-      "Calculate the potential return on investment for your AI automation project",
-    calculator: {
-      inputTitle: "Enter Your Details",
-      currentCost: "Current Implementation Cost",
-      employeeCount: "Number of Employees",
-      hoursPerWeek: "Hours Worked per Week",
-      hourlyRate: "Average Hourly Rate",
-      automationPercentage: "Expected Automation Percentage",
-      calculate: "Calculate ROI",
-      reset: "Reset",
-      enterDetails: "Enter your details to calculate potential ROI",
-      results: {
-        title: "Your Potential Returns",
-        annualSavings: "Annual Cost Savings",
-        timeFreed: "Hours Freed Annually",
-        roi: "Return on Investment",
-        hours: "hours",
-        description:
-          "These calculations are estimates based on the information provided. Actual results may vary depending on specific implementation details and business conditions.",
-      },
+    title: "AI ROI Calculator",
+    subtitle: "Calculate the return on investment of AI automation vs. personnel costs.",
+    panels: {
+      staff: "Current Staff",
+      investment: "AI Investment",
     },
+    inputs: {
+      employees: "Employees involved",
+      annualCostPerPerson: "Annual cost / person (salary + overhead)",
+      autoTaskPercent: "% time on automatable tasks",
+      aiEfficiency: "AI efficiency on those tasks",
+      setupCost: "Setup / implementation (one-time)",
+      licensesPerYear: "Licenses / API / year",
+      maintenancePerYear: "Maintenance & updates / year",
+      analysisHorizon: "Analysis horizon",
+    },
+    help: {
+      employees: "Number of people whose work could be partially automated by AI.",
+      annualCostPerPerson: "Total annual cost per employee, including salary, taxes, and benefits.",
+      autoTaskPercent: "Percentage of working time spent on repetitive, rule-based tasks that AI could handle.",
+      aiEfficiency: "How much of those automatable tasks AI can realistically take over (not all tasks are 100% automatable).",
+      setupCost: "One-time cost for designing, developing, and deploying the AI solution.",
+      licensesPerYear: "Annual cost for AI platform subscriptions, API calls, and third-party services.",
+      maintenancePerYear: "Annual cost for updates, monitoring, bug fixes, and ongoing improvements.",
+      analysisHorizon: "Number of years to project the ROI calculation forward.",
+    },
+    metrics: {
+      totalSavings: "Total Savings",
+      totalAiCost: "Total AI Cost",
+      netRoi: "Net ROI",
+      paybackPeriod: "Payback Period",
+    },
+    breakdown: {
+      title: "Annual savings breakdown",
+      personnelCost: "Involved personnel cost",
+      autoHours: "Hours on automatable tasks",
+      effectiveSavingsYear: "Effective savings / year",
+      aiCostYear: "AI cost / year (recurring)",
+    },
+    verdict: {
+      excellent: "Excellent investment.",
+      solid: "Solid investment.",
+      marginal: "Marginal investment.",
+      negative: "Investment at a loss.",
+      configure: "Configure parameters to see the evaluation.",
+    },
+    chart: {
+      title: "Cumulative projection",
+      savings: "Savings",
+      aiCost: "AI Cost",
+      net: "Net",
+    },
+    scenarios: {
+      title: "Preset Scenarios",
+      items: [
+        { title: "Freelance / self-employed", description: "Email, quotes, social, repetitive admin" },
+        { title: "Construction firm", description: "Quotes, supplier management, technical docs" },
+        { title: "Private clinic", description: "Bookings, reports, initial triage" },
+        { title: "Accounting firm", description: "Document processing, client replies, tax forms" },
+      ],
+    },
+    units: {
+      now: "Now",
+      year: "Year",
+      months: "months",
+      lessThanMonth: "< 1 month",
+      na: "N/A",
+    },
+    footer: "Values are indicative estimates. For a personalized analysis, contact us.",
   },
   contact: {
     title: "Contact Us",
@@ -277,6 +323,11 @@ export const en: Translation = {
         title: "Human-Centric Approach",
         description:
           "We prioritize user-friendly solutions that enhance human capabilities.",
+      },
+      {
+        title: "Privacy & GDPR Compliant",
+        description:
+          "Your data is safe. All our solutions are designed with privacy by design and fully comply with GDPR regulations.",
       },
       {
         title: "Scalable Solutions",
