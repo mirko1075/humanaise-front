@@ -24,6 +24,7 @@ export function Footer() {
 
   const legalLinks = [
     { href: '/privacy-policy', label: t.footer.legal?.privacyPolicy ?? 'Privacy Policy' },
+    { href: '/cookies', label: t.footer.legal?.cookiePolicy ?? 'Cookie Policy' },
     { href: '/terms-of-service', label: t.footer.legal?.termsOfService ?? 'Terms of Service' }
   ];
 

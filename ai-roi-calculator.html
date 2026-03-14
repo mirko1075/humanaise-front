@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI ROI Calculator — Humanaise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --surface2: #18181f;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.13);
+    --text: #f0ede8;
+    --muted: #6b6878;
+    --accent: #7fffb2;
+    --accent2: #4fd9ff;
+    --danger: #ff6b6b;
+    --warning: #ffb547;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+    --sans: 'Outfit', sans-serif;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+
+  .glow-orb {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.12;
+  }
+  .orb1 { top: -200px; right: -100px; background: var(--accent); }
+  .orb2 { bottom: -200px; left: -100px; background: var(--accent2); }
+
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 3.5rem;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .brand {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .brand span {
+    color: var(--accent);
+  }
+
+  .badge {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    border: 1px solid rgba(127,255,178,0.3);
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .panel:nth-child(2) { animation-delay: 0.1s; }
+
+  .panel-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .panel-title::before {
+    content: '';
+    display: block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .panel:nth-child(2) .panel-title::before { background: var(--accent2); }
+
+  .control {
+    margin-bottom: 1.1rem;
+  }
+  .control-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+  }
+  .control-label {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .control-value {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    min-width: 70px;
+    text-align: right;
+  }
+
+  .inline-input {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border2);
+    outline: none;
+    text-align: right;
+    width: 80px;
+    padding: 2px 4px;
+    border-radius: 0;
+    transition: border-color 0.2s;
+    -moz-appearance: textfield;
+  }
+  .inline-input::-webkit-outer-spin-button,
+  .inline-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+  .inline-input:focus { border-bottom-color: var(--accent); color: var(--accent); }
+  .inline-input.suffix-pct::after { content: '%'; }
+  .suffix-pct { width: 52px; }
+  .suffix-anni { width: 40px; }
+
+  input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 2px;
+    background: var(--border2);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--text);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 1px var(--border2);
+    transition: transform 0.15s;
+  }
+  input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.3); }
+  .panel:nth-child(2) input[type=range]::-webkit-slider-thumb { background: var(--accent2); }
+  .panel:nth-child(1) input[type=range]:focus::-webkit-slider-thumb { background: var(--accent); }
+
+  select {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 13px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  @media (max-width: 640px) { .metrics { grid-template-columns: repeat(2, 1fr); } }
+
+  .metric {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.1rem 1rem;
+    transition: border-color 0.3s;
+  }
+  .metric.positive { border-color: rgba(127,255,178,0.2); }
+  .metric.negative { border-color: rgba(255,107,107,0.2); }
+
+  .metric-label {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: var(--mono);
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .metric-value {
+    font-family: var(--mono);
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .metric-value.green { color: var(--accent); }
+  .metric-value.red { color: var(--danger); }
+  .metric-value.blue { color: var(--accent2); }
+  .metric-value.amber { color: var(--warning); }
+
+  .chart-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .chart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: var(--mono);
+  }
+  .legend-dot {
+    width: 8px; height: 8px;
+    border-radius: 2px;
+  }
+
+  .chart-wrap {
+    position: relative;
+    width: 100%;
+    height: 240px;
+  }
+
+  .breakdown {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s 0.35s ease both;
+  }
+
+  .breakdown-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .breakdown-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .breakdown-bar-label {
+    font-size: 12px;
+    color: var(--muted);
+    min-width: 170px;
+  }
+  .breakdown-bar-track {
+    flex: 1;
+    height: 6px;
+    background: var(--surface2);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .breakdown-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.4s ease;
+  }
+  .breakdown-bar-val {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text);
+    min-width: 70px;
+    text-align: right;
+  }
+
+  .scenarios {
+    animation: fadeUp 0.6s 0.4s ease both;
+    margin-bottom: 1.5rem;
+  }
+
+  .scenarios-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+  }
+  @media (max-width: 640px) { .scenario-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .scenario-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: var(--sans);
+    font-size: 13px;
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    line-height: 1.4;
+  }
+  .scenario-btn:hover {
+    border-color: var(--border2);
+    color: var(--text);
+    background: var(--surface2);
+  }
+  .scenario-btn strong {
+    display: block;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  footer {
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    animation: fadeUp 0.6s 0.5s ease both;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+  }
+
+  .verdict {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    font-size: 14px;
+    margin-top: 1rem;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+  .verdict.positive { border-color: rgba(127,255,178,0.25); }
+  .verdict.negative { border-color: rgba(255,107,107,0.25); }
+  .verdict-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+  .verdict-text { color: var(--muted); line-height: 1.6; }
+  .verdict-text strong { color: var(--text); font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="glow-orb orb1"></div>
+<div class="glow-orb orb2"></div>
+
+<div class="wrapper">
+
+  <header>
+    <div class="brand"><span>Humanaise</span> · AI ROI Calculator</div>
+    <div class="badge">v1.0</div>
+  </header>
+
+  <h1>Quanto vale l'AI<br/>per la tua <em>azienda</em>?</h1>
+  <p class="subtitle">Calcola il ritorno sull'investimento dell'automazione AI rispetto al costo del personale.</p>
+
+  <div class="grid-2">
+    <div class="panel">
+      <div class="panel-title">Personale attuale</div>
+
+      <div class="control">
+        <div class="control-header">
+          <span class="control-label">Dipendenti coinvolti</span>
+          <input type="number" class="inline-input" id="out-hc" value="5" min="1" max="999" step="1" oninput="syncFromText('sl-hc','out-hc',1,999,1)"/>
+        </div>
+        <input type="range" min="1" max="50" step="1" value="5" id="sl-hc" oninput="syncFromSlider('sl-hc','out-hc')"/>
+      </div>
+
+      <div class="control">
+        <div class="control-header">
+          <span class="control-label">Costo annuo / persona (RAL + oneri)</span>
+          <input type="number" class="inline-input" id="out-sal" value="40000" min="0" max="9999999" step="100" oninput="syncFromText('sl-sal','out-sal',0,120000,100)"/>
+        </div>
+        <input type="range" min="5000" max="120000" step="100" value="40000" id="sl-sal" oninput="syncFromSlider('sl-sal','out-sal')"/>
+      </div>
+
+      <div class="control">
+        <div class="control-header">
+          <span class="control-label">% tempo su task automatizzabili</span>
+          <input type="number" class="inline-input suffix-pct" id="out-pct" value="40" min="1" max="100" step="1" oninput="syncFromText('sl-pct','out-pct',1,100,1)"/>
+        </div>
+        <input type="range" min="5" max="80" step="1" value="40" id="sl-pct" oninput="syncFromSlider('sl-pct','out-pct')"/>
+      </div>
+
+      <div class="control">
+        <div class="control-header">
+          <span class="control-label">Efficienza AI su quei task</span>
+          <input type="number" class="inline-input suffix-pct" id="out-eff" value="75" min="1" max="100" step="1" oninput="syncFromText('sl-eff','out-eff',1,100,1)"/>
+        </div>
+        <input type="range" min="20" max="95" step="1" value="75" id="sl-eff" oninput="syncFromSlider('sl-eff','out-eff')"/>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Investimento AI</div>
+
+      <div class="control">
+        <div class="control-header">
+          <span class="control-label">Setup / implementazione (una tantum)</span>
+          <input type="number" class="inline-input" id="out-setup" value="15000" min="0" max="9999999" step="100" oninput="syncFromText('sl-setup','out-setup',0,100000,100)"/>
+        </div>
+        <input type="range" min="0" max="100000" step="100" value="15000" id="sl-setup" oninput="syncFromSlider('sl-setup','out-setup')"/>
+      </div>
+
+      <div class="control">
+        <div class="control-header">
+          <span class="control-label">Licenze / API / anno</span>
+          <input type="number" class="inline-input" id="out-lic" value="6000" min="0" max="9999999" step="100" oninput="syncFromText('sl-lic','out-lic',0,60000,100)"/>
+        </div>
+        <input type="range" min="0" max="60000" step="100" value="6000" id="sl-lic" oninput="syncFromSlider('sl-lic','out-lic')"/>
+      </div>
+
+      <div class="control">
+        <div class="control-header">
+          <span class="control-label">Manutenzione & aggiornamenti / anno</span>
+          <input type="number" class="inline-input" id="out-maint" value="3000" min="0" max="9999999" step="100" oninput="syncFromText('sl-maint','out-maint',0,30000,100)"/>
+        </div>
+        <input type="range" min="0" max="30000" step="100" value="3000" id="sl-maint" oninput="syncFromSlider('sl-maint','out-maint')"/>
+      </div>
+
+      <div class="control">
+        <div class="control-header">
+          <span class="control-label">Orizzonte analisi</span>
+          <input type="number" class="inline-input suffix-anni" id="out-horizon" value="3" min="1" max="20" step="1" oninput="syncFromText('sl-horizon','out-horizon',1,20,1)"/>
+        </div>
+        <input type="range" min="1" max="10" step="1" value="3" id="sl-horizon" oninput="syncFromSlider('sl-horizon','out-horizon')"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="metrics">
+    <div class="metric" id="m-saving">
+      <div class="metric-label">Risparmio totale</div>
+      <div class="metric-value green" id="stat-saving">€0</div>
+    </div>
+    <div class="metric" id="m-cost">
+      <div class="metric-label">Costo AI totale</div>
+      <div class="metric-value red" id="stat-cost">€0</div>
+    </div>
+    <div class="metric" id="m-roi">
+      <div class="metric-label">ROI netto</div>
+      <div class="metric-value blue" id="stat-roi">0%</div>
+    </div>
+    <div class="metric" id="m-payback">
+      <div class="metric-label">Payback period</div>
+      <div class="metric-value amber" id="stat-payback">—</div>
+    </div>
+  </div>
+
+  <div class="breakdown">
+    <div class="breakdown-title">Decomposizione risparmio annuale</div>
+    <div class="breakdown-bar-row">
+      <div class="breakdown-bar-label">Costo personale coinvolto</div>
+      <div class="breakdown-bar-track"><div class="breakdown-bar-fill" id="bar-total" style="width:100%; background: rgba(255,255,255,0.1);"></div></div>
+      <div class="breakdown-bar-val" id="bv-total">—</div>
+    </div>
+    <div class="breakdown-bar-row">
+      <div class="breakdown-bar-label">Ore su task automatizzabili</div>
+      <div class="breakdown-bar-track"><div class="breakdown-bar-fill" id="bar-auto" style="background: #4fd9ff;"></div></div>
+      <div class="breakdown-bar-val" id="bv-auto">—</div>
+    </div>
+    <div class="breakdown-bar-row">
+      <div class="breakdown-bar-label">Risparmio effettivo / anno</div>
+      <div class="breakdown-bar-track"><div class="breakdown-bar-fill" id="bar-save" style="background: #7fffb2;"></div></div>
+      <div class="breakdown-bar-val" id="bv-save">—</div>
+    </div>
+    <div class="breakdown-bar-row">
+      <div class="breakdown-bar-label">Costo AI / anno (ricorrente)</div>
+      <div class="breakdown-bar-track"><div class="breakdown-bar-fill" id="bar-ai" style="background: #ff6b6b;"></div></div>
+      <div class="breakdown-bar-val" id="bv-ai">—</div>
+    </div>
+    <div id="verdict-box" class="verdict">
+      <div class="verdict-icon" id="verdict-icon">—</div>
+      <div class="verdict-text" id="verdict-text">Configura i parametri per vedere la valutazione.</div>
+    </div>
+  </div>
+
+  <div class="chart-panel">
+    <div class="chart-header">
+      <div class="panel-title" style="margin:0;">Proiezione cumulata</div>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#7fffb2;"></div>Risparmio</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ff6b6b;"></div>Costo AI</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#4fd9ff;"></div>Netto</div>
+      </div>
+    </div>
+    <div class="chart-wrap">
+      <canvas id="roiChart"></canvas>
+    </div>
+  </div>
+
+  <div class="scenarios">
+    <div class="scenarios-title">Scenari predefiniti</div>
+    <div class="scenario-grid">
+      <button class="scenario-btn" onclick="loadScenario('freelance')">
+        <strong>Freelance / self-employed</strong>
+        Email, preventivi, social, admin ripetitivo
+      </button>
+      <button class="scenario-btn" onclick="loadScenario('edile')">
+        <strong>Impresa edile</strong>
+        Preventivi, gestione fornitori, doc tecnica
+      </button>
+      <button class="scenario-btn" onclick="loadScenario('clinica')">
+        <strong>Clinica privata</strong>
+        Prenotazioni, referti, triage iniziale
+      </button>
+      <button class="scenario-btn" onclick="loadScenario('studio')">
+        <strong>Studio commercialista</strong>
+        Elaborazione doc, risposte clienti, F24
+      </button>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <footer>
+    Realizzato da <a href="https://humanaise.com" target="_blank">Humanaise</a> · I valori sono stime indicative. Per un'analisi personalizzata, <a href="mailto:info@humanaise.com">contattaci</a>.
+  </footer>
+
+</div>
+
+<script>
+let roiChart;
+
+const scenarios = {
+  freelance: { hc:1, sal:25000, pct:50, eff:70, setup:800, lic:1200, maint:300, horizon:2 },
+  edile: { hc:8, sal:38000, pct:45, eff:70, setup:12000, lic:5000, maint:2000, horizon:3 },
+  clinica: { hc:6, sal:35000, pct:55, eff:80, setup:18000, lic:8000, maint:3000, horizon:3 },
+  studio: { hc:5, sal:40000, pct:60, eff:75, setup:10000, lic:6000, maint:2500, horizon:3 },
+};
+
+function syncFromSlider(slId, outId) {
+  const val = parseFloat(document.getElementById(slId).value);
+  document.getElementById(outId).value = val;
+  update();
+}
+
+function syncFromText(slId, outId, min, slMax, step) {
+  let val = parseFloat(document.getElementById(outId).value);
+  if (isNaN(val)) return;
+  val = Math.max(min, val);
+  const slVal = Math.min(slMax, val);
+  document.getElementById(slId).value = slVal;
+  update();
+}
+
+function loadScenario(key) {
+  const s = scenarios[key];
+  const set = (sl, out, v) => {
+    document.getElementById(sl).value = v;
+    document.getElementById(out).value = v;
+  };
+  set('sl-hc','out-hc', s.hc);
+  set('sl-sal','out-sal', s.sal);
+  set('sl-pct','out-pct', s.pct);
+  set('sl-eff','out-eff', s.eff);
+  set('sl-setup','out-setup', s.setup);
+  set('sl-lic','out-lic', s.lic);
+  set('sl-maint','out-maint', s.maint);
+  set('sl-horizon','out-horizon', s.horizon);
+  update();
+}
+
+function fmtEur(n, short=true) {
+  const abs = Math.abs(n);
+  const sign = n < 0 ? '-' : '';
+  if (short) {
+    if (abs >= 1000000) return sign + '€' + (abs/1000000).toFixed(1) + 'M';
+    if (abs >= 1000) return sign + '€' + Math.round(abs/1000) + 'k';
+    return sign + '€' + Math.round(abs);
+  }
+  return sign + '€' + Math.round(abs).toLocaleString('it-IT');
+}
+
+function update() {
+  const hc = parseFloat(document.getElementById('out-hc').value) || 0;
+  const sal = parseFloat(document.getElementById('out-sal').value) || 0;
+  const pct = (parseFloat(document.getElementById('out-pct').value) || 0) / 100;
+  const eff = (parseFloat(document.getElementById('out-eff').value) || 0) / 100;
+  const setup = parseFloat(document.getElementById('out-setup').value) || 0;
+  const lic = parseFloat(document.getElementById('out-lic').value) || 0;
+  const maint = parseFloat(document.getElementById('out-maint').value) || 0;
+  const horizon = parseFloat(document.getElementById('out-horizon').value) || 1;
+
+  const totalPersonnel = hc * sal;
+  const autoPersonnel = totalPersonnel * pct;
+  const annualSaving = autoPersonnel * eff;
+  const annualAiCost = lic + maint;
+  const totalSaving = annualSaving * horizon;
+  const totalAiCost = setup + annualAiCost * horizon;
+  const netValue = totalSaving - totalAiCost;
+  const roiPct = totalAiCost > 0 ? (netValue / totalAiCost) * 100 : 0;
+  const paybackMonths = (annualSaving - annualAiCost) > 0
+    ? (setup / (annualSaving - annualAiCost)) * 12 : null;
+
+  document.getElementById('stat-saving').textContent = fmtEur(totalSaving);
+  document.getElementById('stat-cost').textContent = fmtEur(totalAiCost);
+
+  const roiEl = document.getElementById('stat-roi');
+  roiEl.textContent = (roiPct >= 0 ? '+' : '') + Math.round(roiPct) + '%';
+  roiEl.className = 'metric-value ' + (roiPct >= 0 ? 'blue' : 'red');
+
+  document.getElementById('stat-payback').textContent = paybackMonths !== null
+    ? (paybackMonths < 1 ? '< 1 mese' : Math.round(paybackMonths) + ' mesi')
+    : 'N/A';
+
+  const maxBar = totalPersonnel;
+  document.getElementById('bar-total').style.width = '100%';
+  document.getElementById('bv-total').textContent = fmtEur(totalPersonnel);
+  document.getElementById('bar-auto').style.width = Math.round((autoPersonnel / maxBar) * 100) + '%';
+  document.getElementById('bv-auto').textContent = fmtEur(autoPersonnel);
+  document.getElementById('bar-save').style.width = Math.round((annualSaving / maxBar) * 100) + '%';
+  document.getElementById('bv-save').textContent = fmtEur(annualSaving);
+  document.getElementById('bar-ai').style.width = Math.round((Math.min(annualAiCost, maxBar) / maxBar) * 100) + '%';
+  document.getElementById('bv-ai').textContent = fmtEur(annualAiCost);
+
+  const vbox = document.getElementById('verdict-box');
+  const vicon = document.getElementById('verdict-icon');
+  const vtext = document.getElementById('verdict-text');
+
+  if (roiPct >= 200) {
+    vbox.className = 'verdict positive';
+    vicon.textContent = '✦';
+    vtext.innerHTML = `<strong>Investimento eccellente.</strong> Con un ROI del ${Math.round(roiPct)}% e payback in ${paybackMonths !== null ? Math.round(paybackMonths) + ' mesi' : 'breve tempo'}, l'automazione AI si ripaga abbondantemente. Ogni euro investito ne genera ${(roiPct/100+1).toFixed(1)}.`;
+  } else if (roiPct >= 50) {
+    vbox.className = 'verdict positive';
+    vicon.textContent = '↑';
+    vtext.innerHTML = `<strong>Investimento solido.</strong> ROI del ${Math.round(roiPct)}% sull'orizzonte scelto. Il risparmio netto di ${fmtEur(netValue)} giustifica chiaramente l'implementazione.`;
+  } else if (roiPct >= 0) {
+    vbox.className = 'verdict';
+    vicon.textContent = '→';
+    vtext.innerHTML = `<strong>Investimento marginale.</strong> Il ROI del ${Math.round(roiPct)}% è positivo ma contenuto. Valuta di aumentare la % di task automatizzabili o ridurre i costi di setup.`;
+  } else {
+    vbox.className = 'verdict negative';
+    vicon.textContent = '↓';
+    vtext.innerHTML = `<strong>Investimento in perdita.</strong> Il costo AI supera il risparmio generato. Riduci setup e licenze, oppure aumenta il numero di dipendenti o la percentuale di task automatizzabili.`;
+  }
+
+  const steps = horizon * 12;
+  const stepSize = Math.max(1, Math.round(steps / 20));
+  const labels = [], savings = [], costs = [], nets = [];
+
+  for (let m = 0; m <= steps; m += stepSize) {
+    const yr = m / 12;
+    if (m === 0) labels.push('Ora');
+    else if (m % 12 === 0) labels.push('Anno ' + Math.round(yr));
+    else labels.push(Math.round(yr * 10) / 10 + 'a');
+    savings.push(Math.round(annualSaving * yr));
+    costs.push(Math.round(setup + annualAiCost * yr));
+    nets.push(Math.round(annualSaving * yr - (setup + annualAiCost * yr)));
+  }
+
+  if (roiChart) {
+    roiChart.data.labels = labels;
+    roiChart.data.datasets[0].data = savings;
+    roiChart.data.datasets[1].data = costs;
+    roiChart.data.datasets[2].data = nets;
+    roiChart.update();
+    return;
+  }
+
+  roiChart = new Chart(document.getElementById('roiChart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        { label: 'Risparmio', data: savings, borderColor: '#7fffb2', backgroundColor: 'rgba(127,255,178,0.05)', fill: true, tension: 0.3, pointRadius: 0, borderWidth: 2 },
+        { label: 'Costo AI', data: costs, borderColor: '#ff6b6b', backgroundColor: 'rgba(255,107,107,0.05)', fill: true, tension: 0.3, pointRadius: 0, borderWidth: 2 },
+        { label: 'Netto', data: nets, borderColor: '#4fd9ff', fill: false, tension: 0.3, pointRadius: 0, borderWidth: 2, borderDash: [5,3] }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#18181f',
+          borderColor: 'rgba(255,255,255,0.1)',
+          borderWidth: 1,
+          titleColor: '#6b6878',
+          bodyColor: '#f0ede8',
+          titleFont: { family: 'DM Mono', size: 11 },
+          bodyFont: { family: 'DM Mono', size: 12 },
+          callbacks: { label: ctx => ' ' + fmtEur(ctx.parsed.y) }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { autoSkip: true, maxTicksLimit: 8, font: { size: 11, family: 'DM Mono' }, color: '#6b6878' },
+          grid: { color: 'rgba(255,255,255,0.04)' }
+        },
+        y: {
+          ticks: { font: { size: 11, family: 'DM Mono' }, color: '#6b6878', callback: v => fmtEur(v) },
+          grid: { color: 'rgba(255,255,255,0.04)' }
+        }
+      }
+    }
+  });
+}
+
+update();
+</script>
+</body>
+</html>

@@ -12,16 +12,19 @@ import { ROICalculator } from './components/sections/ROICalculator';
 import { WhyChooseUs } from './components/sections/WhyChooseUs';
 import { Contact } from './components/sections/Contact';
 import { Footer } from './components/layout/Footer';
+import { CookieBanner } from './components/CookieBanner';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsOfService } from './pages/TermsOfService';
+import { CookiePolicy } from './pages/CookiePolicy';
 import { getHomepageNewsStructuredData } from './utils/news';
 import { useLanguage } from './hooks/useLanguage';
 
 export default function App() {
   const pathname = window.location.pathname;
   const { language } = useLanguage();
-  const isPrivacyPolicy = pathname.includes('/privacy-policy');
-  const isTermsOfService = pathname.includes('/terms-of-service');
+  const isPrivacyPolicy = pathname.includes('/privacy-policy') || pathname.includes('/privacy');
+  const isTermsOfService = pathname.includes('/terms-of-service') || pathname.includes('/terms');
+  const isCookiePolicy = pathname.includes('/cookies');
 
   // Render legal pages
   if (isPrivacyPolicy) {
@@ -37,6 +40,25 @@ export default function App() {
           <PrivacyPolicy />
         </main>
         <Footer />
+        <CookieBanner />
+      </div>
+    );
+  }
+
+  if (isCookiePolicy) {
+    return (
+      <div className="min-h-screen bg-primary-950">
+        <SEO
+          title="Cookie Policy"
+          description="HumanAIse Cookie Policy - Learn about the cookies we use and how to manage them."
+          canonical={`https://humanaise.com/${language}/cookies`}
+        />
+        <Header />
+        <main>
+          <CookiePolicy />
+        </main>
+        <Footer />
+        <CookieBanner />
       </div>
     );
   }
@@ -45,8 +67,8 @@ export default function App() {
     return (
       <div className="min-h-screen bg-primary-950">
         <SEO
-          title="Terms of Service"
-          description="HumanAIse Terms of Service - Read our terms and conditions for using our AI automation services."
+          title="Terms and Conditions"
+          description="HumanAIse Terms and Conditions - Read our terms for using our AI automation services."
           canonical={`https://humanaise.com/${language}/terms-of-service`}
         />
         <Header />
@@ -54,6 +76,7 @@ export default function App() {
           <TermsOfService />
         </main>
         <Footer />
+        <CookieBanner />
       </div>
     );
   }
@@ -80,6 +103,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <CookieBanner />
     </div>
   );
 }

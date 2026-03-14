@@ -238,6 +238,7 @@ export interface Translation {
     whatsappDisclaimer?: string;
     legal?: {
       privacyPolicy: string;
+      cookiePolicy: string;
       termsOfService: string;
     };
   };

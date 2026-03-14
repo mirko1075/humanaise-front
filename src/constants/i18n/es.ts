@@ -383,6 +383,7 @@ export const es: Translation = {
     whatsappDisclaimer: "Utilizamos WhatsApp exclusivamente para atención al cliente y consultas comerciales.",
     legal: {
       privacyPolicy: "Política de Privacidad",
+      cookiePolicy: "Política de Cookies",
       termsOfService: "Términos de Servicio",
     },
   },

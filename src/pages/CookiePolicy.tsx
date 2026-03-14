@@ -23,20 +23,20 @@ function Section({ section }: { section: LegalSection }) {
   );
 }
 
-export const TermsOfService: React.FC = () => {
+export const CookiePolicy: React.FC = () => {
   const { language } = useLanguage();
-  const { termsAndConditions } = getLegalContent(language);
+  const { cookiePolicy } = getLegalContent(language);
 
   return (
     <div className="min-h-screen bg-primary-900 pt-24 pb-16">
       <Container>
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-white mb-8">{termsAndConditions.title}</h1>
+          <h1 className="text-4xl font-bold text-white mb-8">{cookiePolicy.title}</h1>
           <div className="prose prose-invert prose-lg max-w-none">
             <p className="text-primary-200 mb-6">
-              Last updated: {termsAndConditions.lastUpdated}
+              Last updated: {cookiePolicy.lastUpdated}
             </p>
-            {termsAndConditions.sections.map((section, i) => (
+            {cookiePolicy.sections.map((section, i) => (
               <Section key={i} section={section} />
             ))}
           </div>

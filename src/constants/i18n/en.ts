@@ -378,6 +378,7 @@ export const en: Translation = {
     whatsappDisclaimer: "We use WhatsApp exclusively for customer support and business inquiries.",
     legal: {
       privacyPolicy: "Privacy Policy",
+      cookiePolicy: "Cookie Policy",
       termsOfService: "Terms of Service",
     },
   },

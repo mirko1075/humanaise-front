@@ -385,6 +385,7 @@ export const fr: Translation = {
     whatsappDisclaimer: "Nous utilisons WhatsApp exclusivement pour le support client et les demandes commerciales.",
     legal: {
       privacyPolicy: "Politique de Confidentialité",
+      cookiePolicy: "Politique de Cookies",
       termsOfService: "Conditions d'Utilisation",
     },
   },
