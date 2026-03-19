@@ -27,21 +27,11 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
     localStorage.setItem('language', lang);
-    
-    // Update URL and document language
-    const currentHash = window.location.hash || '#home';
-    const newUrl = `/${lang}${currentHash}`;
-    window.history.pushState(null, '', newUrl);
     document.documentElement.lang = lang;
   };
 
   useEffect(() => {
     document.documentElement.lang = language;
-    
-    // Keep URL and document language synchronized with the active language.
-    const currentHash = window.location.hash || '#home';
-    const newUrl = `/${language}${currentHash}`;
-    window.history.replaceState(null, '', newUrl);
   }, [language]);
 
   return (

@@ -256,7 +256,7 @@ export const fr: Translation = {
       email: "Email Professionnel",
       company: "Entreprise",
       industry: "Secteur",
-      message: "Quel problème essayez-vous de résoudre ?",
+      message: "Describe a process you want to automate",
       budget: "Budget Estimé",
       timeline: "Calendrier du Projet",
       placeholders: {
@@ -264,14 +264,17 @@ export const fr: Translation = {
         email: "votre.email@entreprise.com",
         company: "Nom de votre entreprise",
         industry: "Sélectionnez votre secteur",
-        message: "Décrivez le flux de travail actuel et où vous perdez du temps ou de l'argent.",
+        message: "Describe the process — what you do manually today and where you lose time.",
         budget: "Sélectionnez votre fourchette de budget",
         timeline: "Sélectionnez votre calendrier",
+        phone: "Your phone or WhatsApp number",
       },
       phone: "Téléphone",
       whatsapp: "WhatsApp",
       location: "Localisation",
       submit: "Envoyer la Demande",
+      successTitle: "Request Sent!",
+      successMessage: "We'll get back to you with a tailored proposal.",
       industryOptions: {
         construction: "Construction",
         hospitality: "Hôtellerie",
@@ -387,6 +390,190 @@ export const fr: Translation = {
       privacyPolicy: "Politique de Confidentialité",
       cookiePolicy: "Politique de Cookies",
       termsOfService: "Conditions d'Utilisation",
+    },
+  },
+  landing: {
+    hero: {
+      title: "Automate your business processes, make them simpler and more human",
+      subtitle: "Reduce manual work, eliminate errors and streamline operations using automation integrated with your tools.",
+      ctaPrimary: "Request a demo",
+      ctaSecondary: "See how it works",
+    },
+    problem: {
+      title: "Does this sound familiar?",
+      subtitle: "Every day, your team wastes hours on tasks that could run on their own.",
+      painPoints: [
+        "Reading and sorting emails manually, one by one",
+        "Copying data between tools, spreadsheets, and documents",
+        "Creating the same reports and documents over and over",
+        "Chasing approvals and follow-ups across channels",
+        "Losing time on repetitive admin instead of real work",
+      ],
+      closing: "This work is repetitive, slow, and prone to errors. There's a better way.",
+    },
+    vision: {
+      title: "Our Philosophy",
+      subtitle: "Technology should free your time, not consume it.",
+      message: "Leave repetitive work to machines. Focus on what matters.",
+    },
+    services: {
+      title: "What We Automate",
+      subtitle: "Concrete capabilities that simplify your daily operations.",
+      items: [
+        {
+          title: "Email Automation",
+          description: "Automatically extract data from incoming emails, categorize requests, and trigger the right actions — no manual reading required.",
+        },
+        {
+          title: "Document Automation",
+          description: "Generate Word, PDF, and structured documents from your data automatically. No more copy-pasting into templates.",
+        },
+        {
+          title: "WhatsApp Automation",
+          description: "Handle client messages, collect requests, and send updates through WhatsApp — automatically and at scale.",
+        },
+        {
+          title: "Workflow Automation",
+          description: "Connect your tools and orchestrate end-to-end processes that run without manual intervention.",
+        },
+      ],
+    },
+    useCases: {
+      title: "Real-World Use Cases",
+      subtitle: "See how automation works in practice.",
+      items: [
+        {
+          title: "Automated Request Handling",
+          description: "A client sends an email or WhatsApp message. The system reads the request, extracts key data, and routes it to the right person or process — instantly.",
+        },
+        {
+          title: "Document Generation Workflows",
+          description: "From a single form submission or data entry, the system generates quotes, contracts, or reports in the right format and sends them automatically.",
+        },
+        {
+          title: "Internal Process Automation",
+          description: "Approval chains, status updates, and task assignments that used to take days now happen in minutes — with full traceability.",
+        },
+      ],
+    },
+    howItWorks: {
+      title: "How It Works",
+      subtitle: "From analysis to go-live, in four simple steps.",
+      steps: [
+        {
+          title: "Analyze",
+          description: "We study your current process and identify what can be automated.",
+        },
+        {
+          title: "Design",
+          description: "We design a tailored automation flow that fits your tools and team.",
+        },
+        {
+          title: "Integrate",
+          description: "We connect the automation to your existing systems — email, CRM, documents, WhatsApp.",
+        },
+        {
+          title: "Go Live",
+          description: "Your automation goes live quickly, with support and monitoring from day one.",
+        },
+      ],
+    },
+    differentiation: {
+      title: "Why Humanaise",
+      subtitle: "What sets us apart from generic software solutions.",
+      items: [
+        {
+          title: "Tailored to Your Process",
+          description: "We don't sell a one-size-fits-all product. Every automation is designed around how you actually work.",
+        },
+        {
+          title: "Works With Your Tools",
+          description: "We integrate with the tools you already use — Gmail, Outlook, WhatsApp, Google Sheets, Microsoft 365, OneDrive, your CRM, and more.",
+        },
+        {
+          title: "Fast Implementation",
+          description: "Most automations are live within days, not months. No long onboarding or complex migrations.",
+        },
+        {
+          title: "Simplicity Over Complexity",
+          description: "We build solutions that your team can understand and trust, not black boxes that need a tech team to manage.",
+        },
+      ],
+    },
+    cta: {
+      title: "Want to simplify your operations?",
+      subtitle: "We can analyze one of your real processes and show you how to automate it.",
+      buttonText: "Request a demo",
+      microcopy: "No commitment · We analyze a real use case",
+    },
+    verticals: {
+      emailAutomation: {
+        seo: {
+          title: "Humanaise | Email & Document Automation",
+          description: "Transform emails and requests into automatic documents. Reduce manual work, eliminate errors, and speed up your operations.",
+        },
+        hero: {
+          title: "Transform emails and requests into automatic documents, without manual work",
+          subtitle: "We automate email management: we extract data, compile documents, and send everything automatically.",
+          cta: "Request a free demo",
+          microcopy: "No commitment · Analysis on your real use case",
+        },
+        pain: {
+          title: "Still handling everything manually?",
+          points: [
+            "Reading emails one by one",
+            "Copying data into documents",
+            "Filling Word templates manually",
+            "Sending replies manually",
+          ],
+          closing: "This work is repetitive, slow, and prone to errors.",
+        },
+        solution: {
+          title: "Complete process automation",
+          steps: [
+            "Receive emails or requests",
+            "The system automatically extracts the data",
+            "Generates the documents (Word/PDF)",
+            "Sends everything automatically",
+          ],
+          closing: "Without manual intervention.",
+        },
+        results: {
+          title: "What changes",
+          items: [
+            "Significant reduction in operational time",
+            "Elimination of manual errors",
+            "Faster responses to clients",
+            "Everything tracked in a single system",
+          ],
+        },
+        useCase: {
+          title: "Request and document management",
+          steps: [
+            "Email → structured data",
+            "Data → automatic documents",
+            "Documents → automatic sending",
+          ],
+        },
+        tailored: {
+          title: "Solutions tailored to your process",
+          description: "Every company has different flows. We analyze your case and build automation adapted to your way of working.",
+          subcopy: "We start with a demo on a real use case.",
+        },
+        trust: {
+          title: "Zero risk",
+          items: [
+            "Demo on your real use case",
+            "No initial commitment",
+            "Fast activation",
+          ],
+        },
+        cta: {
+          title: "Want to automate this process in your company?",
+          buttonText: "Request a free demo",
+          microcopy: "No commitment · Analysis on your real use case",
+        },
+      },
     },
   },
   legal: {

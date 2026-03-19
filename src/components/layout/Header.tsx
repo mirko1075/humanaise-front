@@ -1,55 +1,52 @@
 import { useState } from 'react';
-import { BellDot, Menu, X } from 'lucide-react';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Container } from '../ui/Container';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { useLanguage } from '../../hooks/useLanguage';
 import { useTranslation } from '../../hooks/useTranslation';
-import { hasRecentNews } from '../../utils/news';
 import logo from '../../imgs/logo.png';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslation();
-  const { language } = useLanguage();
-  const hasFreshNews = hasRecentNews();
-  const homePath = `/${language}`;
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navItems = [
-    { href: `${homePath}#home`, label: t.common.nav.home },
-    { href: `${homePath}#about`, label: t.common.nav.about },
-    { href: `${homePath}#news`, label: t.common.nav.news, hasFreshNews },
-    { href: `${homePath}#services`, label: t.common.nav.services },
-    { href: `${homePath}#roi-calculator`, label: t.common.nav.roiCalculator },
-    { href: `${homePath}#contact`, label: t.common.nav.contact }
+    { hash: '#home', label: t.common.nav.home },
+    { hash: '#services', label: t.common.nav.services },
+    { hash: '#use-cases', label: t.landing.useCases.title },
+    { hash: '#how-it-works', label: t.landing.howItWorks.title },
+    { hash: '#contact', label: t.common.nav.contact },
   ];
 
-  const isHomePage = window.location.pathname === '/' || window.location.pathname === homePath;
+  const isHomePage = location.pathname === '/' || /^\/[a-z]{2}$/.test(location.pathname);
 
   const scrollToSection = (hash: string) => {
     const targetId = hash.replace('#', '');
     const el = document.getElementById(targetId);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
-      window.history.replaceState(null, '', `${homePath}${hash}`);
     }
   };
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, closeMobile = false) => {
-    const hash = href.slice(href.indexOf('#'));
+  const handleNavClick = (e: React.MouseEvent, hash: string, closeMobile = false) => {
+    e.preventDefault();
+
+    if (closeMobile && isMenuOpen) {
+      setIsMenuOpen(false);
+    }
 
     if (isHomePage) {
-      e.preventDefault();
-      if (closeMobile && isMenuOpen) {
-        setIsMenuOpen(false);
-        // Wait for the menu close animation (250ms) before scrolling,
-        // so the layout shift doesn't interfere with scroll position
+      if (closeMobile) {
         setTimeout(() => scrollToSection(hash), 300);
       } else {
         scrollToSection(hash);
       }
+    } else {
+      navigate('/' + hash);
     }
-    // If not on homepage, let the browser navigate to /#section
   };
 
   return (
@@ -57,24 +54,18 @@ export function Header() {
       <Container>
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-          <a href="/"><img src={logo} width="192px" alt="HumanAIse" /></a>
+            <Link to="/"><img src={logo} width="192px" alt="HumanAIse" /></Link>
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className="inline-flex items-center gap-2 text-indigo-200/80 hover:text-white transition-colors duration-200 text-sm"
+                key={item.hash}
+                href={`/${item.hash}`}
+                onClick={(e) => handleNavClick(e, item.hash)}
+                className="text-indigo-200/80 hover:text-white transition-colors duration-200 text-sm"
               >
-                <span>{item.label}</span>
-                {item.hasFreshNews ? (
-                  <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/35 bg-emerald-400/12 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-200">
-                    <BellDot className="h-3 w-3" aria-hidden="true" />
-                    {t.news.freshBadge}
-                  </span>
-                ) : null}
+                {item.label}
               </a>
             ))}
             <LanguageSwitcher />
@@ -93,7 +84,6 @@ export function Header() {
         </div>
       </Container>
 
-      {/* Mobile Navigation Menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -107,21 +97,15 @@ export function Header() {
               <nav className="py-4 space-y-1">
                 {navItems.map((item, index) => (
                   <motion.a
-                    key={item.href}
-                    href={item.href}
+                    key={item.hash}
+                    href={`/${item.hash}`}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className="flex items-center justify-between gap-3 px-4 py-3 text-indigo-200 hover:text-white hover:bg-white/[0.06] rounded-lg transition-colors"
-                    onClick={(e) => handleNavClick(e, item.href, true)}
+                    className="block px-4 py-3 text-indigo-200 hover:text-white hover:bg-white/[0.06] rounded-lg transition-colors"
+                    onClick={(e) => handleNavClick(e, item.hash, true)}
                   >
-                    <span>{item.label}</span>
-                    {item.hasFreshNews ? (
-                      <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/35 bg-emerald-400/12 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-200">
-                        <BellDot className="h-3 w-3" aria-hidden="true" />
-                        {t.news.freshBadge}
-                      </span>
-                    ) : null}
+                    {item.label}
                   </motion.a>
                 ))}
               </nav>

@@ -78,6 +78,48 @@ export function SEO({
       "availableLanguage": ["English", "Italian", "Spanish", "French"]
     }
   };
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Humanaise",
+    "url": BASE_URL,
+    "logo": OG_IMAGE,
+    "image": OG_IMAGE,
+    "description": "Business process automation for SMEs. Email, document, WhatsApp and workflow automation.",
+    "telephone": "+39-353-493-2019",
+    "email": "info@humanaise.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Calagonone 29",
+      "addressLocality": "Monserrato",
+      "addressRegion": "CA",
+      "postalCode": "09042",
+      "addressCountry": "IT"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.2459,
+      "longitude": 9.1382
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Cagliari" },
+      { "@type": "AdministrativeArea", "name": "Sardegna" },
+      { "@type": "Country", "name": "Italia" }
+    ],
+    "serviceType": [
+      "AI Automation",
+      "Business Process Automation",
+      "Email Automation",
+      "Document Automation",
+      "WhatsApp Automation",
+      "Workflow Automation"
+    ],
+    "priceRange": "$$",
+    "sameAs": [
+      "https://twitter.com/HumanaiseAI",
+      "https://linkedin.com/company/humanaise-ai"
+    ]
+  };
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -87,6 +129,7 @@ export function SEO({
   };
   const structuredDataNodes = [
     organizationSchema,
+    localBusinessSchema,
     websiteSchema,
     ...(structuredData
       ? Array.isArray(structuredData)
@@ -131,6 +174,10 @@ export function SEO({
       <meta name="theme-color" content="#1e40af" />
       <meta name="robots" content="index, follow" />
       <meta name="revisit-after" content="7 days" />
+      <meta name="geo.region" content="IT-CA" />
+      <meta name="geo.placename" content="Cagliari" />
+      <meta name="geo.position" content="39.2459;9.1382" />
+      <meta name="ICBM" content="39.2459, 9.1382" />
 
       {/* Canonical */}
       <link rel="canonical" href={seoCanonical} />

@@ -7,8 +7,6 @@ import { CONTACT_INFO, CONTACT_FORM_FIELDS } from '../../constants/contact';
 import { useTranslation } from '../../hooks/useTranslation';
 import { fadeInUp, scrollViewport } from '../../utils/animations';
 
-type OptionsKey = 'industryOptions' | 'budgetOptions' | 'timelineOptions';
-
 export function Contact() {
   const t = useTranslation();
   const [formData, setFormData] = useState<Record<string, string>>({});
@@ -20,17 +18,11 @@ export function Contact() {
     const email = formData.email?.trim() || '';
     const company = formData.company?.trim() || '';
     const message = formData.message?.trim() || '';
-    const industry = formData.industry?.trim() || '';
-    const budget = formData.budget?.trim() || '';
-    const timeline = formData.timeline?.trim() || '';
 
     if (name.length < 3) return 'Please enter your full name (at least 3 characters).';
     if (!email.includes('@') || email.length < 5) return 'Please enter a valid work email address.';
     if (company.length < 2) return 'Please enter your company name.';
-    if (!industry) return 'Please select your industry.';
-    if (message.length < 40 || message.split(/\s+/).filter(Boolean).length < 8) return 'Please describe your problem in detail (at least 40 characters and 8 words).';
-    if (!budget) return 'Please select your estimated budget.';
-    if (!timeline) return 'Please select your project timeline.';
+    if (message.length < 20 || message.split(/\s+/).filter(Boolean).length < 4) return 'Please describe the process you want to automate (at least 20 characters).';
 
     return null;
   };
@@ -60,7 +52,7 @@ export function Contact() {
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData((prev) => ({
       ...prev,
@@ -71,20 +63,8 @@ export function Contact() {
   const inputClasses =
     'w-full rounded-xl bg-white/[0.06] backdrop-blur-sm border border-white/[0.12] text-white placeholder-indigo-300/40 focus:border-blue-400 focus:ring-blue-400/20 focus:ring-2 transition-all duration-200 px-4 py-3';
 
-  const selectClasses =
-    'w-full rounded-xl bg-white/[0.06] backdrop-blur-sm border border-white/[0.12] text-white focus:border-blue-400 focus:ring-blue-400/20 focus:ring-2 transition-all duration-200 px-4 py-3 appearance-none bg-[url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%239ca3af%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E")] bg-[length:12px] bg-[right_12px_center] bg-no-repeat';
-
-  const getSelectOptions = (optionsKey: OptionsKey) => {
-    const optionsMap = t.contact.form[optionsKey];
-    return Object.entries(optionsMap).map(([key, label]) => ({
-      value: key,
-      label: label as string,
-    }));
-  };
-
   return (
-    <section id="contact" className="pt-32 pb-16 bg-primary-900 relative overflow-hidden">
-      {/* Background glow */}
+    <section id="contact" className="py-12 sm:pt-32 sm:pb-16 bg-primary-900 relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px]" />
 
       <Container className="relative">
@@ -154,7 +134,6 @@ export function Contact() {
               </div>
             </div>
 
-            {/* WhatsApp Disclaimer */}
             {t.contact.whatsappDisclaimer && (
               <div className="mt-8 p-4 bg-white/[0.04] rounded-xl border border-white/[0.08]">
                 <p className="text-sm text-primary-200 leading-relaxed">
@@ -164,7 +143,6 @@ export function Contact() {
             )}
           </div>
 
-          {/* Glass form card */}
           <div className="bg-white/[0.04] backdrop-blur-md border border-white/[0.1] rounded-2xl p-8 glow-indigo">
             {submitted ? (
               <div className="flex items-center justify-center h-full min-h-[300px]">
@@ -172,8 +150,8 @@ export function Contact() {
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-emerald-500/20 flex items-center justify-center">
                     <Send className="w-7 h-7 text-emerald-400" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Message Sent!</h3>
-                  <p className="text-indigo-200">We'll get back to you soon.</p>
+                  <h3 className="text-xl font-semibold text-white mb-2">{t.contact.form.successTitle}</h3>
+                  <p className="text-indigo-200">{t.contact.form.successMessage}</p>
                 </div>
               </div>
             ) : (
@@ -220,32 +198,6 @@ export function Contact() {
                         onChange={handleInputChange}
                         className={inputClasses}
                       />
-                    ) : field.type === 'select' && 'optionsKey' in field ? (
-                      <select
-                        id={field.id}
-                        name={field.id}
-                        required={field.required}
-                        onChange={handleInputChange}
-                        defaultValue=""
-                        className={selectClasses}
-                      >
-                        <option value="" disabled className="bg-primary-900 text-gray-400">
-                          {
-                            t.contact.form.placeholders[
-                              field.id as keyof typeof t.contact.form.placeholders
-                            ]
-                          }
-                        </option>
-                        {getSelectOptions(field.optionsKey as OptionsKey).map((option) => (
-                          <option
-                            key={option.value}
-                            value={option.value}
-                            className="bg-primary-900 text-white"
-                          >
-                            {option.label}
-                          </option>
-                        ))}
-                      </select>
                     ) : (
                       <input
                         type={field.type}
@@ -268,10 +220,6 @@ export function Contact() {
                   <Send className="w-4 h-4" />
                   {t.contact.form.submit}
                 </Button>
-
-                <p className="text-xs text-center text-indigo-300/60 mt-3">
-                  {t.contact.budgetDisclaimer}
-                </p>
               </form>
             )}
           </div>

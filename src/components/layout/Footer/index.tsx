@@ -1,3 +1,4 @@
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Container } from '../../ui/Container';
 import { FooterSection } from './FooterSection';
 import { SocialLinks } from './SocialLinks';
@@ -7,26 +8,33 @@ import { useTranslation } from '../../../hooks/useTranslation';
 
 export function Footer() {
   const t = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleLegalLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    e.preventDefault();
-    window.history.pushState({}, '', path);
-    window.scrollTo(0, 0);
-    window.location.reload();
-  };
+  const isHomePage = location.pathname === '/' || /^\/[a-z]{2}$/.test(location.pathname);
 
   const quickLinks = [
-    { href: '#about', label: t.common.sections.about },
-    { href: '#services', label: t.common.sections.services },
-    { href: '#industries', label: t.common.sections.industries },
-    { href: '#contact', label: t.common.sections.contact }
+    { hash: '#services', label: t.common.sections.services },
+    { hash: '#use-cases', label: t.landing.useCases.title },
+    { hash: '#how-it-works', label: t.landing.howItWorks.title },
+    { hash: '#contact', label: t.common.sections.contact },
   ];
 
   const legalLinks = [
-    { href: '/privacy-policy', label: t.footer.legal?.privacyPolicy ?? 'Privacy Policy' },
-    { href: '/cookies', label: t.footer.legal?.cookiePolicy ?? 'Cookie Policy' },
-    { href: '/terms-of-service', label: t.footer.legal?.termsOfService ?? 'Terms of Service' }
+    { to: '/privacy-policy', label: t.footer.legal?.privacyPolicy ?? 'Privacy Policy' },
+    { to: '/cookies', label: t.footer.legal?.cookiePolicy ?? 'Cookie Policy' },
+    { to: '/terms-of-service', label: t.footer.legal?.termsOfService ?? 'Terms of Service' },
   ];
+
+  const handleQuickLinkClick = (e: React.MouseEvent, hash: string) => {
+    e.preventDefault();
+    if (isHomePage) {
+      const el = document.getElementById(hash.replace('#', ''));
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/' + hash);
+    }
+  };
 
   return (
     <footer className="relative bg-gradient-to-b from-white to-primary-950">
@@ -43,9 +51,10 @@ export function Footer() {
             <nav>
               <ul className="space-y-3">
                 {quickLinks.map(link => (
-                  <li key={link.href}>
-                    <a 
-                      href={link.href}
+                  <li key={link.hash}>
+                    <a
+                      href={link.hash}
+                      onClick={(e) => handleQuickLinkClick(e, link.hash)}
                       className="text-primary-900 hover:text-white transition-colors duration-200"
                     >
                       {link.label}
@@ -53,17 +62,15 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
-              {/* Legal Links */}
               <ul className="space-y-3 mt-6 pt-6 border-t border-primary-800/30">
                 {legalLinks.map(link => (
-                  <li key={link.href}>
-                    <a 
-                      href={link.href}
-                      onClick={(e) => handleLegalLinkClick(e, link.href)}
-                      className="text-primary-900 hover:text-white transition-colors duration-200 text-sm cursor-pointer"
+                  <li key={link.to}>
+                    <Link
+                      to={link.to}
+                      className="text-primary-900 hover:text-white transition-colors duration-200 text-sm"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -79,7 +86,6 @@ export function Footer() {
           </FooterSection>
         </div>
 
-        {/* Brand Clarification */}
         {t.footer.brandClarification && (
           <div className="mt-12 pt-8 border-t border-primary-800/30">
             <p className="text-sm text-primary-900 text-center max-w-3xl mx-auto leading-relaxed">
@@ -88,7 +94,6 @@ export function Footer() {
           </div>
         )}
 
-        {/* WhatsApp Disclaimer */}
         {t.footer.whatsappDisclaimer && (
           <div className="mt-6">
             <p className="text-sm text-primary-900 text-center max-w-3xl mx-auto leading-relaxed">

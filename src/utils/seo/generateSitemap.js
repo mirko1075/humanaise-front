@@ -2,7 +2,7 @@ import fs from "fs";
 
 const baseUrl = "https://humanaise.com";
 const languages = ["en", "it", "es", "fr"];
-const staticRoutes = ["", "/privacy-policy", "/terms-of-service"];
+const staticRoutes = ["", "/privacy-policy", "/terms-of-service", "/cookies", "/email-automation"];
 
 function localizedUrl(language, route) {
   return `${baseUrl}/${language}${route}`;
@@ -29,11 +29,12 @@ function languageAlternates(route) {
 
 function getRoutePriority(route) {
   if (route === "") return "1.0";
+  if (route === "/email-automation") return "0.8";
   return "0.3";
 }
 
 function getRouteChangefreq(route) {
-  if (route === "") return "weekly";
+  if (route === "" || route === "/email-automation") return "weekly";
   return "yearly";
 }
 

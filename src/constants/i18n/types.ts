@@ -181,7 +181,7 @@ export interface Translation {
     title: string;
     subtitle: string;
     whatsappDisclaimer?: string;
-    budgetDisclaimer: string;
+    budgetDisclaimer?: string;
     form: {
       name: string;
       email: string;
@@ -201,8 +201,11 @@ export interface Translation {
         message: string;
         budget: string;
         timeline: string;
+        phone: string;
       };
       submit: string;
+      successTitle: string;
+      successMessage: string;
       industryOptions: {
         construction: string;
         hospitality: string;
@@ -252,6 +255,109 @@ export interface Translation {
       title: string;
       lastUpdated: string;
       sections?: unknown;
+    };
+  };
+  landing: {
+    hero: {
+      title: string;
+      subtitle: string;
+      ctaPrimary: string;
+      ctaSecondary: string;
+    };
+    problem: {
+      title: string;
+      subtitle: string;
+      painPoints: string[];
+      closing: string;
+    };
+    vision: {
+      title: string;
+      subtitle: string;
+      message: string;
+    };
+    services: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    useCases: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    howItWorks: {
+      title: string;
+      subtitle: string;
+      steps: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    differentiation: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    cta: {
+      title: string;
+      subtitle: string;
+      buttonText: string;
+      microcopy: string;
+    };
+    verticals: {
+      emailAutomation: {
+        seo: {
+          title: string;
+          description: string;
+        };
+        hero: {
+          title: string;
+          subtitle: string;
+          cta: string;
+          microcopy: string;
+        };
+        pain: {
+          title: string;
+          points: string[];
+          closing: string;
+        };
+        solution: {
+          title: string;
+          steps: string[];
+          closing: string;
+        };
+        results: {
+          title: string;
+          items: string[];
+        };
+        useCase: {
+          title: string;
+          steps: string[];
+        };
+        tailored: {
+          title: string;
+          description: string;
+          subcopy: string;
+        };
+        trust: {
+          title: string;
+          items: string[];
+        };
+        cta: {
+          title: string;
+          buttonText: string;
+          microcopy: string;
+        };
+      };
     };
   };
 }

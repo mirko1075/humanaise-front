@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '../../hooks/useLanguage';
 import { LANGUAGES } from '../../constants/languages';
 import { Globe } from 'lucide-react';
+import type { Language } from '../../types/language';
 
 export function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,16 +23,11 @@ export function LanguageSwitcher() {
   const handleLanguageSelect = (lang: Language) => {
     setLanguage(lang);
     setIsOpen(false);
-
-    // Update URL with new language while preserving section
-    const currentHash = window.location.hash || '#home';
-    const newUrl = `/${lang}${currentHash}`;
-    window.history.pushState(null, '', newUrl);
   };
 
   return (
     <div className="relative" ref={dropdownRef}>
-      <button 
+      <button
         className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-indigo-800/50 transition-colors text-indigo-200 hover:text-white"
         onClick={() => setIsOpen(!isOpen)}
         aria-label={`Current language: ${LANGUAGES[language].name}`}

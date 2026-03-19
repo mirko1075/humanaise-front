@@ -35,26 +35,13 @@ export const CONTACT_FORM_FIELDS = [
     required: true,
   },
   {
-    id: "industry",
-    type: "select",
-    required: true,
-    optionsKey: "industryOptions" as const,
+    id: "phone",
+    type: "tel",
+    required: false,
   },
   {
     id: "message",
     type: "textarea",
     required: true,
-  },
-  {
-    id: "budget",
-    type: "select",
-    required: true,
-    optionsKey: "budgetOptions" as const,
-  },
-  {
-    id: "timeline",
-    type: "select",
-    required: true,
-    optionsKey: "timelineOptions" as const,
   },
 ] as const;
