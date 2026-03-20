@@ -3,6 +3,7 @@ import { Hero } from '../components/sections/Hero';
 import { ProblemSection } from '../components/sections/ProblemSection';
 import { VisionSection } from '../components/sections/VisionSection';
 import { Services } from '../components/sections/Services';
+import { WhatWeAutomate } from '../components/sections/WhatWeAutomate';
 import { UseCasesSection } from '../components/sections/UseCasesSection';
 import { HowItWorksSection } from '../components/sections/HowItWorksSection';
 import { DifferentiationSection } from '../components/sections/DifferentiationSection';
@@ -24,6 +25,7 @@ export function HomePage() {
       <ProblemSection />
       <VisionSection />
       <Services />
+      <WhatWeAutomate />
       <UseCasesSection />
       <HowItWorksSection />
       <DifferentiationSection />
