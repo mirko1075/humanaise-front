@@ -53,7 +53,7 @@ export function SEO({
   const routeSuffix = getRouteSuffix(window.location.pathname);
   const currentPath = `/${language}${routeSuffix}`;
 
-  const seoTitle = title ? `${title} | ${defaultTitle}` : defaultTitle;
+  const seoTitle = title || defaultTitle;
   const seoDescription = description || defaultDescription;
   const seoCanonical = canonical || `${BASE_URL}${currentPath}`;
   const ogLocale = LOCALE_MAP[language] || 'en_US';
