@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Newspaper } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Container } from '../ui/Container';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -18,6 +18,7 @@ export function Header() {
     { hash: '#services', label: t.common.nav.services },
     { hash: '#use-cases', label: t.landing.useCases.title },
     { hash: '#how-it-works', label: t.landing.howItWorks.title },
+    { hash: '#news', label: t.common.nav.news, highlight: true },
     { hash: '#contact', label: t.common.nav.contact },
   ];
 
@@ -63,8 +64,18 @@ export function Header() {
                 key={item.hash}
                 href={`/${item.hash}`}
                 onClick={(e) => handleNavClick(e, item.hash)}
-                className="text-indigo-200/80 hover:text-white transition-colors duration-200 text-sm"
+                className={`transition-colors duration-200 text-sm ${
+                  item.highlight
+                    ? 'text-primary-300 hover:text-white flex items-center gap-1.5'
+                    : 'text-indigo-200/80 hover:text-white'
+                }`}
               >
+                {item.highlight && (
+                  <span className="relative">
+                    <Newspaper className="h-4 w-4" />
+                    <span className="absolute -top-0.5 -right-0.5 h-2 w-2 rounded-full bg-green-400 animate-pulse" />
+                  </span>
+                )}
                 {item.label}
               </a>
             ))}
@@ -102,9 +113,17 @@ export function Header() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className="block px-4 py-3 text-indigo-200 hover:text-white hover:bg-white/[0.06] rounded-lg transition-colors"
+                    className={`block px-4 py-3 hover:text-white hover:bg-white/[0.06] rounded-lg transition-colors ${
+                      item.highlight ? 'text-primary-300 flex items-center gap-2' : 'text-indigo-200'
+                    }`}
                     onClick={(e) => handleNavClick(e, item.hash, true)}
                   >
+                    {item.highlight && (
+                      <span className="relative">
+                        <Newspaper className="h-4 w-4" />
+                        <span className="absolute -top-0.5 -right-0.5 h-2 w-2 rounded-full bg-green-400 animate-pulse" />
+                      </span>
+                    )}
                     {item.label}
                   </motion.a>
                 ))}
