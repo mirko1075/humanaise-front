@@ -263,7 +263,7 @@ export const it: Translation = {
         email: "tua.email@azienda.com",
         company: "Nome della tua azienda",
         industry: "Seleziona il tuo settore",
-        message: "Descrivi il processo — cosa fai manualmente oggi e dove perdi tempo.",
+        message: "Descrivi il processo: cosa fai manualmente oggi e dove perdi tempo.",
         budget: "Seleziona il tuo range di budget",
         timeline: "Seleziona le tue tempistiche",
         phone: "Il tuo numero di telefono o WhatsApp",
@@ -422,7 +422,7 @@ export const it: Translation = {
       items: [
         {
           title: "Automazione Email",
-          description: "Estrai automaticamente i dati dalle email in arrivo, categorizza le richieste e attiva le azioni giuste — senza leggere manualmente.",
+          description: "Estrai automaticamente i dati dalle email in arrivo, categorizza le richieste e attiva le azioni giuste, senza leggere manualmente.",
         },
         {
           title: "Automazione Documenti",
@@ -430,7 +430,7 @@ export const it: Translation = {
         },
         {
           title: "Automazione WhatsApp",
-          description: "Gestisci messaggi clienti, raccogli richieste e invia aggiornamenti tramite WhatsApp — automaticamente e su larga scala.",
+          description: "Gestisci messaggi clienti, raccogli richieste e invia aggiornamenti tramite WhatsApp, automaticamente e su larga scala.",
         },
         {
           title: "Automazione Workflow",
@@ -439,20 +439,24 @@ export const it: Translation = {
       ],
     },
     useCases: {
-      title: "Casi d'Uso Reali",
-      subtitle: "Scopri come funziona l'automazione nella pratica.",
+      title: "Progetti Reali",
+      subtitle: "Questi sono sistemi reali che abbiamo costruito, insieme a implementazioni rappresentative che mostrano come il nostro approccio all'automazione può essere applicato in diversi contesti.",
+      representativeBadge: "Implementazione Rappresentativa",
       items: [
         {
-          title: "Gestione Automatica Richieste",
-          description: "Un cliente invia un'email o un messaggio WhatsApp. Il sistema legge la richiesta, estrae i dati chiave e la indirizza alla persona o al processo giusto — istantaneamente.",
+          title: "Automazione Processi di Ricerca",
+          subtitle: "Agenzia di Ricerche di Mercato (Settore Medico)",
+          description: "Abbiamo automatizzato i processi manuali legati a trascrizione, traduzione e generazione documenti per un'agenzia di ricerche di mercato. Il sistema elabora automaticamente le interviste audio utilizzando modelli adattati alla ricerca medica, garantendo alta precisione anche con terminologia complessa e lingue asiatiche. In precedenza, il flusso di lavoro era inaffidabile: documenti persi, lavoro non tracciato correttamente e clienti insoddisfatti della qualità delle consegne. L'automazione ha introdotto una pipeline strutturata, migliorando precisione, tracciabilità e coerenza in tutti i progetti.",
         },
         {
-          title: "Generazione Automatica Documenti",
-          description: "Da un singolo inserimento dati, il sistema genera preventivi, contratti o report nel formato corretto e li invia automaticamente.",
+          title: "Automazione Preventivi e Documenti",
+          subtitle: "Impresa Edile",
+          description: "Abbiamo implementato un sistema di automazione che gestisce l'intero ciclo dalla richiesta del cliente alla generazione del preventivo e alla gestione documentale. Le richieste da WhatsApp ed email vengono elaborate automaticamente, i dati vengono estratti e utilizzati per generare preventivi e organizzare documenti. Il sistema si integra con gli strumenti interni per notificare i team e monitorare l'avanzamento, sostituendo processi manuali frammentati e migliorando la visibilità operativa.",
         },
         {
-          title: "Automazione Processi Interni",
-          description: "Catene di approvazione, aggiornamenti di stato e assegnazioni che richiedevano giorni ora avvengono in minuti — con tracciabilità completa.",
+          title: "Assistente AI & Appointment Setter",
+          subtitle: "Agenzia di Automazione AI",
+          description: "Abbiamo costruito un assistente chat basato su AI che risponde a domande sull'azienda utilizzando documenti interni tramite un approccio basato su retrieval (RAG), e può anche prenotare, riprogrammare e cancellare Discovery Call direttamente nella conversazione. L'assistente si integra con sistemi di scheduling, gestisce conversazioni multilingue e cattura lead qualificati. Tutto senza intervento umano. Puoi provarlo adesso su questo sito.",
         },
       ],
     },
@@ -470,7 +474,7 @@ export const it: Translation = {
         },
         {
           title: "Integrazione",
-          description: "Colleghiamo l'automazione ai tuoi sistemi esistenti — email, CRM, documenti, WhatsApp.",
+          description: "Colleghiamo l'automazione ai tuoi sistemi esistenti: email, CRM, documenti, WhatsApp.",
         },
         {
           title: "Go Live",
@@ -488,7 +492,7 @@ export const it: Translation = {
         },
         {
           title: "Funziona con i Tuoi Strumenti",
-          description: "Ci integriamo con gli strumenti che usi già — Gmail, Outlook, WhatsApp, Google Sheets, Microsoft 365, OneDrive, il tuo CRM e altro.",
+          description: "Ci integriamo con gli strumenti che usi già: Gmail, Outlook, WhatsApp, Google Sheets, Microsoft 365, OneDrive, il tuo CRM e altro.",
         },
         {
           title: "Implementazione Rapida",

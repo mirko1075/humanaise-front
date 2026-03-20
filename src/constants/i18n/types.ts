@@ -286,9 +286,12 @@ export interface Translation {
     useCases: {
       title: string;
       subtitle: string;
+      representativeBadge: string;
       items: Array<{
         title: string;
+        subtitle: string;
         description: string;
+        representative?: boolean;
       }>;
     };
     howItWorks: {

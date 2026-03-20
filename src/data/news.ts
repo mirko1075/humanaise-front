@@ -679,6 +679,200 @@ Il représente le premier workflow IA entièrement intégré et multicanal dépl
       },
     },
   },
+  {
+    id: 'humanaise-rag-appointment-setter',
+    date: '2026-03-18',
+    client: {
+      name: 'Humanaise',
+      website: 'https://humanaise.com',
+    },
+    translations: {
+      en: {
+        title: 'AI Assistant with RAG & Appointment Setter launched on humanaise.com',
+        metrics: [
+          {
+            label: 'Languages supported',
+            value: '5',
+            detail: 'Italian, English, Spanish, French, German',
+          },
+          {
+            label: 'Integrated tools',
+            value: '3',
+            detail: 'Knowledge base (RAG), Cal.com scheduling, lead capture',
+          },
+          {
+            label: 'Booking actions',
+            value: '4',
+            detail: 'Book, reschedule, cancel, and look up appointments',
+          },
+        ],
+        content: `In March 2026, Humanaise launched its own AI-powered chat assistant directly on humanaise.com.
+
+The assistant combines two capabilities in a single conversational interface:
+
+• A retrieval-augmented generation (RAG) system that answers questions about the company using internal documents
+• An appointment setter that can book, reschedule, and cancel Discovery Calls via Cal.com integration
+
+How it works:
+
+• The user asks a question or requests a call
+• The assistant searches the knowledge base using vector similarity (Pinecone)
+• If the user wants to book, available slots are shown as interactive buttons
+• The booking is created, rescheduled, or cancelled directly in the chat
+• Lead data is captured and stored for follow-up
+
+Technical highlights:
+
+• OpenAI GPT-4o with function calling for tool orchestration
+• Pinecone vector database for document retrieval
+• Cal.com API v2 for real-time scheduling
+• Server-Sent Events (SSE) for streaming responses
+• Multi-tenant architecture, ready to be deployed for other companies
+• Session management with conversation history
+
+This is not a demo. It is live on this website. You can try it right now.`,
+        tags: ['AI', 'RAG', 'Appointment Setter'],
+      },
+      it: {
+        title: 'Assistente AI con RAG & Appointment Setter live su humanaise.com',
+        metrics: [
+          {
+            label: 'Lingue supportate',
+            value: '5',
+            detail: 'Italiano, inglese, spagnolo, francese, tedesco',
+          },
+          {
+            label: 'Strumenti integrati',
+            value: '3',
+            detail: 'Knowledge base (RAG), scheduling Cal.com, cattura lead',
+          },
+          {
+            label: 'Azioni di prenotazione',
+            value: '4',
+            detail: 'Prenota, riprogramma, cancella e cerca appuntamenti',
+          },
+        ],
+        content: `A marzo 2026, Humanaise ha lanciato il proprio assistente chat basato su AI direttamente su humanaise.com.
+
+L'assistente combina due capacità in un'unica interfaccia conversazionale:
+
+• Un sistema di retrieval-augmented generation (RAG) che risponde a domande sull'azienda utilizzando documenti interni
+• Un appointment setter che può prenotare, riprogrammare e cancellare Discovery Call tramite integrazione con Cal.com
+
+Come funziona:
+
+• L'utente fa una domanda o richiede una call
+• L'assistente cerca nella knowledge base usando similarità vettoriale (Pinecone)
+• Se l'utente vuole prenotare, gli slot disponibili vengono mostrati come bottoni interattivi
+• La prenotazione viene creata, riprogrammata o cancellata direttamente in chat
+• I dati del lead vengono catturati e salvati per il follow-up
+
+Punti tecnici principali:
+
+• OpenAI GPT-4o con function calling per l'orchestrazione degli strumenti
+• Database vettoriale Pinecone per il retrieval dei documenti
+• Cal.com API v2 per lo scheduling in tempo reale
+• Server-Sent Events (SSE) per le risposte in streaming
+• Architettura multi-tenant, pronta per essere distribuita ad altre aziende
+• Gestione delle sessioni con storico conversazione
+
+Questo non è un demo. È live su questo sito. Puoi provarlo adesso.`,
+        tags: ['AI', 'RAG', 'Appointment Setter'],
+      },
+      es: {
+        title: 'Asistente IA con RAG & Appointment Setter en vivo en humanaise.com',
+        metrics: [
+          {
+            label: 'Idiomas soportados',
+            value: '5',
+            detail: 'Italiano, inglés, español, francés, alemán',
+          },
+          {
+            label: 'Herramientas integradas',
+            value: '3',
+            detail: 'Base de conocimiento (RAG), scheduling Cal.com, captura de leads',
+          },
+          {
+            label: 'Acciones de reserva',
+            value: '4',
+            detail: 'Reservar, reprogramar, cancelar y buscar citas',
+          },
+        ],
+        content: `En marzo de 2026, Humanaise lanzó su propio asistente de chat basado en IA directamente en humanaise.com.
+
+El asistente combina dos capacidades en una sola interfaz conversacional:
+
+• Un sistema de generación aumentada por recuperación (RAG) que responde preguntas sobre la empresa usando documentos internos
+• Un programador de citas que puede reservar, reprogramar y cancelar Discovery Calls a través de la integración con Cal.com
+
+Cómo funciona:
+
+• El usuario hace una pregunta o solicita una llamada
+• El asistente busca en la base de conocimiento usando similaridad vectorial (Pinecone)
+• Si el usuario quiere reservar, los slots disponibles se muestran como botones interactivos
+• La reserva se crea, reprograma o cancela directamente en el chat
+• Los datos del lead se capturan y almacenan para seguimiento
+
+Aspectos técnicos destacados:
+
+• OpenAI GPT-4o con function calling para la orquestación de herramientas
+• Base de datos vectorial Pinecone para recuperación de documentos
+• Cal.com API v2 para scheduling en tiempo real
+• Server-Sent Events (SSE) para respuestas en streaming
+• Arquitectura multi-tenant, lista para desplegarse en otras empresas
+• Gestión de sesiones con historial de conversación
+
+Esto no es una demo. Está en vivo en este sitio web. Puedes probarlo ahora mismo.`,
+        tags: ['IA', 'RAG', 'Appointment Setter'],
+      },
+      fr: {
+        title: 'Assistant IA avec RAG & Planificateur de RDV en ligne sur humanaise.com',
+        metrics: [
+          {
+            label: 'Langues supportées',
+            value: '5',
+            detail: 'Italien, anglais, espagnol, français, allemand',
+          },
+          {
+            label: 'Outils intégrés',
+            value: '3',
+            detail: 'Base de connaissances (RAG), planning Cal.com, capture de leads',
+          },
+          {
+            label: 'Actions de réservation',
+            value: '4',
+            detail: 'Réserver, reprogrammer, annuler et rechercher des rendez-vous',
+          },
+        ],
+        content: `En mars 2026, Humanaise a lancé son propre assistant de chat alimenté par l'IA directement sur humanaise.com.
+
+L'assistant combine deux capacités dans une seule interface conversationnelle :
+
+• Un système de génération augmentée par récupération (RAG) qui répond aux questions sur l'entreprise en utilisant des documents internes
+• Un planificateur de rendez-vous qui peut réserver, reprogrammer et annuler des Discovery Calls via l'intégration Cal.com
+
+Comment ça fonctionne :
+
+• L'utilisateur pose une question ou demande un appel
+• L'assistant recherche dans la base de connaissances par similarité vectorielle (Pinecone)
+• Si l'utilisateur souhaite réserver, les créneaux disponibles s'affichent sous forme de boutons interactifs
+• La réservation est créée, reprogrammée ou annulée directement dans le chat
+• Les données du lead sont capturées et enregistrées pour le suivi
+
+Points techniques clés :
+
+• OpenAI GPT-4o avec function calling pour l'orchestration des outils
+• Base de données vectorielle Pinecone pour la récupération de documents
+• Cal.com API v2 pour le planning en temps réel
+• Server-Sent Events (SSE) pour les réponses en streaming
+• Architecture multi-tenant, prête à être déployée pour d'autres entreprises
+• Gestion des sessions avec historique de conversation
+
+Ce n'est pas une démo. C'est en ligne sur ce site. Vous pouvez l'essayer maintenant.`,
+        tags: ['IA', 'RAG', 'Planificateur de RDV'],
+      },
+    },
+  },
 ];
 
 export default newsData;

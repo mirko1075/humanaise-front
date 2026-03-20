@@ -258,7 +258,7 @@ export const en: Translation = {
         email: "your.email@company.com",
         company: "Your company name",
         industry: "Select your industry",
-        message: "Describe the process — what you do manually today and where you lose time.",
+        message: "Describe the process: what you do manually today and where you lose time.",
         budget: "Select your budget range",
         timeline: "Select your timeline",
         phone: "Your phone or WhatsApp number",
@@ -414,7 +414,7 @@ export const en: Translation = {
       items: [
         {
           title: "Email Automation",
-          description: "Automatically extract data from incoming emails, categorize requests, and trigger the right actions — no manual reading required.",
+          description: "Automatically extract data from incoming emails, categorize requests, and trigger the right actions, without manual reading.",
         },
         {
           title: "Document Automation",
@@ -422,7 +422,7 @@ export const en: Translation = {
         },
         {
           title: "WhatsApp Automation",
-          description: "Handle client messages, collect requests, and send updates through WhatsApp — automatically and at scale.",
+          description: "Handle client messages, collect requests, and send updates through WhatsApp, automatically and at scale.",
         },
         {
           title: "Workflow Automation",
@@ -431,20 +431,24 @@ export const en: Translation = {
       ],
     },
     useCases: {
-      title: "Real-World Use Cases",
-      subtitle: "See how automation works in practice.",
+      title: "Real Projects",
+      subtitle: "These are real systems we have built, along with representative implementations that show how our automation approach can be applied in different contexts.",
+      representativeBadge: "Representative Implementation",
       items: [
         {
-          title: "Automated Request Handling",
-          description: "A client sends an email or WhatsApp message. The system reads the request, extracts key data, and routes it to the right person or process — instantly.",
+          title: "Research Process Automation",
+          subtitle: "Market Research Agency (Medical Domain)",
+          description: "We automated manual processes related to transcription, translation and document generation for a market research agency. The system processes audio interviews automatically using models adapted to medical research, ensuring high accuracy even with complex terminology and Asian languages. Previously, the workflow was unreliable: documents were lost, work was not tracked properly, and clients were dissatisfied with delivery quality. The automation introduced a structured pipeline, improving accuracy, traceability and consistency across all projects.",
         },
         {
-          title: "Document Generation Workflows",
-          description: "From a single form submission or data entry, the system generates quotes, contracts, or reports in the right format and sends them automatically.",
+          title: "Quote & Document Workflow Automation",
+          subtitle: "Construction Company",
+          description: "We implemented an automation system that manages the full lifecycle from client request to quote generation and document handling. Requests from WhatsApp and email are processed automatically, data is extracted and used to generate quotes and organize documents. The system integrates with internal tools to notify teams and track progress, replacing fragmented manual processes and improving operational visibility.",
         },
         {
-          title: "Internal Process Automation",
-          description: "Approval chains, status updates, and task assignments that used to take days now happen in minutes — with full traceability.",
+          title: "AI Assistant & Appointment Setter",
+          subtitle: "AI Automation Agency",
+          description: "We built an AI-powered chat assistant that answers questions about the company using internal documents via a retrieval-based approach (RAG), and can also book, reschedule and cancel Discovery Calls directly in the conversation. The assistant integrates with scheduling systems, handles multilingual conversations, and captures qualified leads. All without human intervention. You can try it right now on this website.",
         },
       ],
     },
@@ -462,7 +466,7 @@ export const en: Translation = {
         },
         {
           title: "Integrate",
-          description: "We connect the automation to your existing systems — email, CRM, documents, WhatsApp.",
+          description: "We connect the automation to your existing systems: email, CRM, documents, WhatsApp.",
         },
         {
           title: "Go Live",
@@ -480,7 +484,7 @@ export const en: Translation = {
         },
         {
           title: "Works With Your Tools",
-          description: "We integrate with the tools you already use — Gmail, Outlook, WhatsApp, Google Sheets, Microsoft 365, OneDrive, your CRM, and more.",
+          description: "We integrate with the tools you already use: Gmail, Outlook, WhatsApp, Google Sheets, Microsoft 365, OneDrive, your CRM, and more.",
         },
         {
           title: "Fast Implementation",

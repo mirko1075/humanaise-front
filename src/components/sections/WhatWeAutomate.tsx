@@ -38,7 +38,7 @@ export function WhatWeAutomate() {
       <Container>
         <SectionHeading
           title="AI-Powered Capabilities"
-          subtitle="Extend your automation with AI — from assistants to voice agents."
+          subtitle="Extend your automation with AI, from assistants to voice agents."
           theme="dark"
         />
 

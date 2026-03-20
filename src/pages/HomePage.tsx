@@ -7,6 +7,7 @@ import { WhatWeAutomate } from '../components/sections/WhatWeAutomate';
 import { UseCasesSection } from '../components/sections/UseCasesSection';
 import { HowItWorksSection } from '../components/sections/HowItWorksSection';
 import { DifferentiationSection } from '../components/sections/DifferentiationSection';
+import { NewsSection } from '../components/home/NewsSection';
 import { CallToAction } from '../components/sections/CallToAction';
 import { Contact } from '../components/sections/Contact';
 import { useHashScroll } from '../hooks/useHashScroll';
@@ -29,6 +30,7 @@ export function HomePage() {
       <UseCasesSection />
       <HowItWorksSection />
       <DifferentiationSection />
+      <NewsSection />
       <CallToAction />
       <Contact />
     </>
