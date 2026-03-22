@@ -405,6 +405,9 @@ export const es: Translation = {
         "Copiar datos entre herramientas, hojas de cálculo y documentos",
         "Crear los mismos informes y documentos una y otra vez",
         "Perseguir aprobaciones y seguimientos a través de diferentes canales",
+        "Responder las mismas preguntas de clientes una y otra vez, por chat o teléfono",
+        "Programar citas manualmente con interminables intercambios de mensajes",
+        "Perder leads y consultas porque nadie está disponible para responder al instante",
         "Perder tiempo en administración repetitiva en lugar de trabajo real",
       ],
       closing: "Este trabajo es repetitivo, lento y propenso a errores. Hay una forma mejor.",
@@ -436,6 +439,28 @@ export const es: Translation = {
         },
       ],
     },
+    aiCapabilities: {
+      title: "Capacidades con IA",
+      subtitle: "Extiende tu automatización con IA: desde asistentes hasta agentes de voz.",
+      items: [
+        {
+          title: "Asistentes IA (basados en RAG)",
+          description: "Crea asistentes IA que responden preguntas usando tus documentos internos, bases de conocimiento y datos. Las respuestas se basan en tu información real, no en salidas genéricas de IA.",
+        },
+        {
+          title: "Programadores de Citas IA",
+          description: "Gestiona automáticamente solicitudes entrantes, califica leads y agenda llamadas o reuniones por chat (WhatsApp, email o web), reduciendo el intercambio manual de mensajes.",
+        },
+        {
+          title: "Agentes de Voz",
+          description: "Agentes de voz IA que gestionan llamadas, recopilan información y guían a los usuarios a través de procesos predefinidos, integrados con tus sistemas y flujos de trabajo.",
+        },
+        {
+          title: "Extracción y Clasificación de Datos IA",
+          description: "Extrae datos estructurados de entradas no estructuradas (emails, documentos, mensajes) y clasifícalos para activar flujos de trabajo y decisiones automatizadas.",
+        },
+      ],
+    },
     useCases: {
       title: "Proyectos Reales",
       subtitle: "Estos son sistemas reales que hemos construido, junto con implementaciones representativas que muestran cómo nuestro enfoque de automatización puede aplicarse en diferentes contextos.",
@@ -455,6 +480,18 @@ export const es: Translation = {
           title: "Asistente IA & Programador de Citas",
           subtitle: "Agencia de Automatización IA",
           description: "Construimos un asistente de chat basado en IA que responde preguntas sobre la empresa utilizando documentos internos mediante un enfoque basado en recuperación (RAG), y también puede reservar, reprogramar y cancelar Discovery Calls directamente en la conversación. El asistente se integra con sistemas de programación, gestiona conversaciones multilingües y captura leads cualificados. Todo sin intervención humana. Puedes probarlo ahora mismo en este sitio web.",
+        },
+        {
+          title: "Chatbot IA para Atención al Cliente",
+          subtitle: "Estudio Profesional",
+          description: "Un chatbot IA entrenado con la base de conocimientos del estudio (servicios ofrecidos, documentos necesarios, plazos fiscales, procedimientos) que responde a las preguntas de los clientes al instante por web o WhatsApp. Gestiona consultas recurrentes, guía a los clientes en la preparación de documentos y escala los casos complejos al profesional. Disponible 24/7, redujo las llamadas repetitivas en más del 60% liberando tiempo para trabajo de alto valor.",
+          representative: true,
+        },
+        {
+          title: "Agente de Voz para Reserva de Citas",
+          subtitle: "Clínica Médica",
+          description: "Un agente de voz IA que gestiona llamadas entrantes, califica las solicitudes de los pacientes y reserva o reprograma citas directamente en el sistema de calendario de la clínica. Habla de forma natural, comprende la intención incluso en llamadas ruidosas y envía confirmaciones por SMS automáticamente. La clínica recuperó horas de trabajo diario de recepción y dejó de perder llamadas fuera del horario laboral.",
+          representative: true,
         },
       ],
     },

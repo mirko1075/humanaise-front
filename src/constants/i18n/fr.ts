@@ -407,6 +407,9 @@ export const fr: Translation = {
         "Copier des données entre outils, tableurs et documents",
         "Créer les mêmes rapports et documents encore et encore",
         "Relancer les validations et suivis à travers différents canaux",
+        "Répondre aux mêmes questions clients encore et encore, par chat ou téléphone",
+        "Planifier des rendez-vous manuellement avec d'interminables échanges de messages",
+        "Perdre des leads et demandes parce que personne n'est disponible pour répondre instantanément",
         "Perdre du temps sur de l'administratif répétitif au lieu du vrai travail",
       ],
       closing: "Ce travail est répétitif, lent et sujet aux erreurs. Il existe une meilleure façon de faire.",
@@ -438,6 +441,28 @@ export const fr: Translation = {
         },
       ],
     },
+    aiCapabilities: {
+      title: "Capacités IA",
+      subtitle: "Étendez votre automatisation avec l'IA : des assistants aux agents vocaux.",
+      items: [
+        {
+          title: "Assistants IA (basés sur RAG)",
+          description: "Créez des assistants IA qui répondent aux questions en utilisant vos documents internes, bases de connaissances et données. Les réponses sont fondées sur vos informations réelles, pas sur des sorties IA génériques.",
+        },
+        {
+          title: "Planificateurs de Rendez-vous IA",
+          description: "Gérez automatiquement les demandes entrantes, qualifiez les leads et planifiez des appels ou réunions par chat (WhatsApp, email ou web), réduisant les échanges manuels.",
+        },
+        {
+          title: "Agents Vocaux",
+          description: "Des agents vocaux IA qui gèrent les appels, collectent des informations et guident les utilisateurs à travers des processus prédéfinis, intégrés à vos systèmes et flux de travail.",
+        },
+        {
+          title: "Extraction et Classification de Données IA",
+          description: "Extrayez des données structurées à partir d'entrées non structurées (emails, documents, messages) et classifiez-les pour déclencher des flux de travail et décisions automatisés.",
+        },
+      ],
+    },
     useCases: {
       title: "Projets Réels",
       subtitle: "Ce sont des systèmes réels que nous avons construits, accompagnés d'implémentations représentatives qui montrent comment notre approche d'automatisation peut être appliquée dans différents contextes.",
@@ -457,6 +482,18 @@ export const fr: Translation = {
           title: "Assistant IA & Planificateur de Rendez-vous",
           subtitle: "Agence d'Automatisation IA",
           description: "Nous avons construit un assistant de chat alimenté par l'IA qui répond aux questions sur l'entreprise en utilisant des documents internes via une approche basée sur la récupération (RAG), et peut également réserver, reprogrammer et annuler des Discovery Calls directement dans la conversation. L'assistant s'intègre aux systèmes de planification, gère les conversations multilingues et capture des leads qualifiés. Le tout sans intervention humaine. Vous pouvez l'essayer maintenant sur ce site.",
+        },
+        {
+          title: "Chatbot IA pour le Support Client",
+          subtitle: "Cabinet Professionnel",
+          description: "Un chatbot IA formé sur la base de connaissances du cabinet (services proposés, documents requis, échéances fiscales, procédures) qui répond aux questions des clients instantanément via le site web ou WhatsApp. Il gère les demandes récurrentes, guide les clients dans la préparation des documents et escalade les cas complexes au professionnel. Disponible 24h/24, il a réduit les appels répétitifs de plus de 60%, libérant du temps pour le travail à haute valeur.",
+          representative: true,
+        },
+        {
+          title: "Agent Vocal pour Prise de Rendez-vous",
+          subtitle: "Clinique Médicale",
+          description: "Un agent vocal IA qui gère les appels entrants, qualifie les demandes des patients et réserve ou reprogramme des rendez-vous directement dans le système de calendrier de la clinique. Il parle naturellement, comprend l'intention même lors d'appels bruyants et envoie des confirmations SMS automatiquement. La clinique a récupéré des heures de travail quotidien de réception et a cessé de manquer des appels en dehors des heures d'ouverture.",
+          representative: true,
         },
       ],
     },

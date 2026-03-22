@@ -283,6 +283,14 @@ export interface Translation {
         description: string;
       }>;
     };
+    aiCapabilities: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
     useCases: {
       title: string;
       subtitle: string;

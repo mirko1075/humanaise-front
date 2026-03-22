@@ -2,11 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '../ui/Container';
 import { SectionHeading } from '../ui/SectionHeading';
-import { Building2, Microscope, Bot } from 'lucide-react';
+import { Building2, Microscope, Bot, MessageCircle, PhoneCall } from 'lucide-react';
 import { useTranslation } from '../../hooks/useTranslation';
 import { staggerContainer, staggerItem, scrollViewport } from '../../utils/animations';
 
-const icons = [Microscope, Building2, Bot];
+const icons = [Microscope, Building2, Bot, MessageCircle, PhoneCall];
 
 export function UseCasesSection() {
   const t = useTranslation();

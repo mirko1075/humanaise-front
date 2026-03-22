@@ -3,42 +3,19 @@ import { motion } from 'framer-motion';
 import { BookOpen, CalendarCheck, Phone, ScanText } from 'lucide-react';
 import { Container } from '../ui/Container';
 import { SectionHeading } from '../ui/SectionHeading';
+import { useTranslation } from '../../hooks/useTranslation';
 import { staggerContainer, staggerItem, scrollViewport } from '../../utils/animations';
 
-const capabilities = [
-  {
-    icon: BookOpen,
-    title: 'AI Assistants (RAG-based)',
-    description:
-      'Build AI assistants that answer questions using your internal documents, knowledge bases and data. Responses are grounded in your actual information, not generic AI outputs.',
-  },
-  {
-    icon: CalendarCheck,
-    title: 'AI Appointment Setters',
-    description:
-      'Automatically handle incoming requests, qualify leads and schedule calls or meetings through chat (WhatsApp, email or web), reducing manual back-and-forth.',
-  },
-  {
-    icon: Phone,
-    title: 'Voice Agents',
-    description:
-      'AI voice agents that handle calls, collect information and guide users through predefined processes, integrated with your systems and workflows.',
-  },
-  {
-    icon: ScanText,
-    title: 'AI Data Extraction & Classification',
-    description:
-      'Extract structured data from unstructured inputs (emails, documents, messages) and classify them to trigger automated workflows and decisions.',
-  },
-];
+const icons = [BookOpen, CalendarCheck, Phone, ScanText];
 
 export function WhatWeAutomate() {
+  const t = useTranslation();
   return (
     <section id="what-we-automate" className="py-12 sm:py-20 bg-primary-950">
       <Container>
         <SectionHeading
-          title="AI-Powered Capabilities"
-          subtitle="Extend your automation with AI, from assistants to voice agents."
+          title={t.landing.aiCapabilities.title}
+          subtitle={t.landing.aiCapabilities.subtitle}
           theme="dark"
         />
 
@@ -49,8 +26,8 @@ export function WhatWeAutomate() {
           whileInView="visible"
           viewport={scrollViewport}
         >
-          {capabilities.map((cap, index) => {
-            const Icon = cap.icon;
+          {t.landing.aiCapabilities.items.map((cap, index) => {
+            const Icon = icons[index];
             return (
               <motion.div
                 key={index}

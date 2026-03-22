@@ -24,6 +24,7 @@ export const en: Translation = {
       reasons: "Why Choose Us",
       contact: "Contact",
       success: "Success Stories",
+      social: "Social",
     },
   },
   home: {
@@ -399,6 +400,9 @@ export const en: Translation = {
         "Copying data between tools, spreadsheets, and documents",
         "Creating the same reports and documents over and over",
         "Chasing approvals and follow-ups across channels",
+        "Answering the same customer questions over and over, by chat or phone",
+        "Scheduling appointments manually through endless back-and-forth messages",
+        "Missing leads and inquiries because no one is available to respond instantly",
         "Losing time on repetitive admin instead of real work",
       ],
       closing: "This work is repetitive, slow, and prone to errors. There's a better way.",
@@ -430,6 +434,28 @@ export const en: Translation = {
         },
       ],
     },
+    aiCapabilities: {
+      title: "AI-Powered Capabilities",
+      subtitle: "Extend your automation with AI, from assistants to voice agents.",
+      items: [
+        {
+          title: "AI Assistants (RAG-based)",
+          description: "Build AI assistants that answer questions using your internal documents, knowledge bases and data. Responses are grounded in your actual information, not generic AI outputs.",
+        },
+        {
+          title: "AI Appointment Setters",
+          description: "Automatically handle incoming requests, qualify leads and schedule calls or meetings through chat (WhatsApp, email or web), reducing manual back-and-forth.",
+        },
+        {
+          title: "Voice Agents",
+          description: "AI voice agents that handle calls, collect information and guide users through predefined processes, integrated with your systems and workflows.",
+        },
+        {
+          title: "AI Data Extraction & Classification",
+          description: "Extract structured data from unstructured inputs (emails, documents, messages) and classify them to trigger automated workflows and decisions.",
+        },
+      ],
+    },
     useCases: {
       title: "Real Projects",
       subtitle: "These are real systems we have built, along with representative implementations that show how our automation approach can be applied in different contexts.",
@@ -449,6 +475,18 @@ export const en: Translation = {
           title: "AI Assistant & Appointment Setter",
           subtitle: "AI Automation Agency",
           description: "We built an AI-powered chat assistant that answers questions about the company using internal documents via a retrieval-based approach (RAG), and can also book, reschedule and cancel Discovery Calls directly in the conversation. The assistant integrates with scheduling systems, handles multilingual conversations, and captures qualified leads. All without human intervention. You can try it right now on this website.",
+        },
+        {
+          title: "AI Chatbot for Customer Support",
+          subtitle: "Professional Services Firm",
+          description: "An AI chatbot trained on the firm's knowledge base (services offered, required documents, tax deadlines, procedures) that answers client questions instantly via the website or WhatsApp. It handles recurring inquiries, guides clients through document preparation, and escalates complex cases to the professional. Available 24/7, it reduced repetitive calls by over 60%, freeing up time for high-value work.",
+          representative: true,
+        },
+        {
+          title: "Voice Agent for Appointment Booking",
+          subtitle: "Medical Clinic",
+          description: "An AI voice agent that handles inbound phone calls, qualifies patient requests, and books or reschedules appointments directly in the clinic's calendar system. It speaks naturally, understands intent even in noisy calls, and sends SMS confirmations automatically. The clinic recovered hours of daily receptionist time and stopped missing calls outside business hours.",
+          representative: true,
         },
       ],
     },

@@ -407,6 +407,9 @@ export const it: Translation = {
         "Copiare dati tra strumenti, fogli di calcolo e documenti",
         "Creare gli stessi report e documenti più e più volte",
         "Rincorrere approvazioni e follow-up su canali diversi",
+        "Rispondere alle stesse domande dei clienti, via chat o telefono, ogni giorno",
+        "Fissare appuntamenti manualmente con infiniti scambi di messaggi",
+        "Perdere lead e richieste perché nessuno è disponibile a rispondere subito",
         "Perdere tempo in amministrazione ripetitiva invece che nel lavoro vero",
       ],
       closing: "Questo lavoro è ripetitivo, lento e soggetto a errori. C'è un modo migliore.",
@@ -438,6 +441,28 @@ export const it: Translation = {
         },
       ],
     },
+    aiCapabilities: {
+      title: "Capacità AI",
+      subtitle: "Estendi la tua automazione con l'AI: dagli assistenti ai voice agent.",
+      items: [
+        {
+          title: "Assistenti AI (basati su RAG)",
+          description: "Crea assistenti AI che rispondono alle domande usando i tuoi documenti interni, knowledge base e dati. Le risposte sono basate sulle tue informazioni reali, non su output AI generici.",
+        },
+        {
+          title: "AI Appointment Setter",
+          description: "Gestisci automaticamente le richieste in arrivo, qualifica i lead e prenota chiamate o meeting via chat (WhatsApp, email o web), riducendo lo scambio manuale di messaggi.",
+        },
+        {
+          title: "Voice Agent",
+          description: "Voice agent AI che gestiscono chiamate, raccolgono informazioni e guidano gli utenti attraverso processi predefiniti, integrati con i tuoi sistemi e workflow.",
+        },
+        {
+          title: "Estrazione e Classificazione Dati AI",
+          description: "Estrai dati strutturati da input non strutturati (email, documenti, messaggi) e classificali per attivare workflow e decisioni automatiche.",
+        },
+      ],
+    },
     useCases: {
       title: "Progetti Reali",
       subtitle: "Questi sono sistemi reali che abbiamo costruito, insieme a implementazioni rappresentative che mostrano come il nostro approccio all'automazione può essere applicato in diversi contesti.",
@@ -457,6 +482,18 @@ export const it: Translation = {
           title: "Assistente AI & Appointment Setter",
           subtitle: "Agenzia di Automazione AI",
           description: "Abbiamo costruito un assistente chat basato su AI che risponde a domande sull'azienda utilizzando documenti interni tramite un approccio basato su retrieval (RAG), e può anche prenotare, riprogrammare e cancellare Discovery Call direttamente nella conversazione. L'assistente si integra con sistemi di scheduling, gestisce conversazioni multilingue e cattura lead qualificati. Tutto senza intervento umano. Puoi provarlo adesso su questo sito.",
+        },
+        {
+          title: "Chatbot AI per Assistenza Clienti",
+          subtitle: "Studio Professionale",
+          description: "Un chatbot AI addestrato sulla knowledge base dello studio (servizi offerti, documenti necessari, scadenze fiscali, procedure) che risponde alle domande dei clienti istantaneamente via sito web o WhatsApp. Gestisce le richieste ricorrenti, guida i clienti nella preparazione dei documenti e inoltra i casi complessi al professionista. Disponibile 24/7, ha ridotto le chiamate ripetitive di oltre il 60% liberando tempo per attività ad alto valore.",
+          representative: true,
+        },
+        {
+          title: "Voice Agent per Prenotazione Appuntamenti",
+          subtitle: "Clinica Medica",
+          description: "Un voice agent AI che gestisce le chiamate in entrata, qualifica le richieste dei pazienti e prenota o riprogramma appuntamenti direttamente nel sistema calendario della clinica. Parla in modo naturale, comprende l'intento anche in chiamate rumorose e invia conferme SMS automaticamente. La clinica ha recuperato ore di lavoro giornaliero della receptionist e ha smesso di perdere chiamate fuori orario.",
+          representative: true,
         },
       ],
     },
