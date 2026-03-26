@@ -581,7 +581,7 @@ export const fr: Translation = {
             "Vous ne répondez pas aux appels à temps et le client se tourne vers la concurrence",
             "Demandes oubliées entre WhatsApp et email sans flux unique",
             "Devis assignés sans visibilité sur qui fait quoi",
-            "Chaque demande gérée différemment — personne ne sait où trouver les informations",
+            "Chaque demande gérée différemment, personne ne sait où trouver les informations",
           ],
         },
         solution: {
@@ -598,17 +598,17 @@ export const fr: Translation = {
         howItWorks: {
           title: "Comment le processus change avec l'automatisation",
           steps: [
-            "Le client contacte l'entreprise via WhatsApp, téléphone ou email — le système collecte la demande même si vous n'êtes pas disponible",
+            "Le client contacte l'entreprise via WhatsApp, téléphone ou email: le système collecte la demande même si vous n'êtes pas disponible",
             "Les informations sont organisées automatiquement et introduites dans le flux devis",
-            "Le devis est attribué en interne — celui qui doit agir le sait immédiatement",
+            "Le devis est attribué en interne: celui qui doit agir le sait immédiatement",
             "L'équipe répond plus vite, sans demandes tombées dans l'oubli",
             "Tout est traçable : vous savez combien de demandes vous avez, qui les gère et dans quel état",
           ],
         },
         channels: {
           title: "WhatsApp, téléphone et email dans le même processus",
-          description: "Vous n'avez pas besoin de changer la façon dont les clients vous contactent. Le système collecte les demandes de tous les canaux et les rassemble dans un flux unique — rien n'est perdu, quel que soit le canal choisi.",
-          note: "Vous pouvez activer un seul, deux ou les trois canaux. Vous n'avez pas besoin de tous les avoir — le système s'adapte à votre façon de travailler.",
+          description: "Vous n'avez pas besoin de changer la façon dont les clients vous contactent. Le système collecte les demandes de tous les canaux et les rassemble dans un flux unique, rien n'est perdu, quel que soit le canal choisi.",
+          note: "Vous pouvez activer un seul, deux ou les trois canaux. Vous n'avez pas besoin de tous les avoir: le système s'adapte à votre façon de travailler.",
         },
         useCase: {
           title: "Conçu pour les entreprises de construction et les activités à fort volume de demandes",
@@ -667,13 +667,13 @@ export const fr: Translation = {
       voiceAgent: {
         seo: {
           title: "Voice Agent pour Entreprises à Cagliari | Répondre aux appels automatiquement | Humanaise",
-          description: "Ne manquez plus d'appels clients. Activez un voice agent qui répond, collecte des informations et les intègre dans vos processus — même hors horaires.",
+          description: "Ne manquez plus d'appels clients. Activez un voice agent qui répond, collecte des informations et les intègre dans vos processus, même hors horaires.",
           keywords: "voice agent cagliari, répondre appels automatique, ia téléphone entreprises cagliari, gestion appels clients, répondeur automatique entreprises",
         },
         hero: {
           title: "Ne perdez plus de clients parce que vous n'avez pas répondu au téléphone",
           subtitle: "Activez un voice agent qui répond aux appels, collecte les demandes et les organise automatiquement dans votre flux de travail.",
-          highlight: "Fonctionne 24h/7j — même hors horaires, week-ends et sur chantier.",
+          highlight: "Fonctionne 24h/7j, même hors horaires, week-ends et sur chantier.",
           cta: "Je vous montre comment ça marche en 10 minutes",
           points: [
             "Aucun appel manqué",
@@ -702,13 +702,34 @@ export const fr: Translation = {
             "Personnalisation du ton et du message pour votre entreprise",
           ],
         },
+        appointments: {
+          title: "Réservez, modifiez et annulez des rendez-vous par téléphone",
+          description: "Le voice agent ne collecte pas seulement des demandes génériques. Il peut gérer le cycle complet des rendez-vous directement en appel, sans qu'aucun opérateur n'intervienne.",
+          actions: [
+            "Prise d'un nouveau rendez-vous",
+            "Modification d'un rendez-vous existant",
+            "Annulation avec confirmation au client",
+            "Vérification des disponibilités en temps réel",
+          ],
+        },
+        leadCapture: {
+          title: "Capture les leads et les envoie directement dans votre CRM",
+          description: "Chaque appel devient une opportunité enregistrée. Le voice agent collecte les informations du client et les synchronise automatiquement avec votre CRM, sans aucune saisie manuelle.",
+          items: [
+            "Collecte automatique du nom, contact et type de demande",
+            "Création du lead dans le CRM en temps réel",
+            "Étiquetage et catégorisation de la demande",
+            "Notification immédiate à l'équipe commerciale",
+            "Compatible avec les principaux CRMs (HubSpot, Salesforce, Pipedrive et autres)",
+          ],
+        },
         integration: {
-          title: "Pas un canal séparé — partie du même flux",
+          title: "Pas un canal séparé: partie du même flux",
           description: "Le voice agent travaille avec WhatsApp et email dans le même système. Quand un client appelle, sa demande entre dans le flux exactement comme s'il avait écrit sur WhatsApp.",
         },
         realCase: {
           title: "Déjà appliqué dans des contextes réels",
-          description: "Le système est déjà actif dans des scénarios opérationnels réels — de la gestion des appels entrants d'entreprises de construction à la qualification des demandes de cliniques.",
+          description: "Le système est déjà actif dans des scénarios opérationnels réels: de la gestion des appels entrants d'entreprises de construction à la qualification des demandes de cliniques.",
         },
         faq: {
           title: "Questions fréquentes",
@@ -727,7 +748,7 @@ export const fr: Translation = {
             },
             {
               question: "S'intègre-t-il avec WhatsApp et email ?",
-              answer: "Oui. Toutes les demandes — de téléphone, WhatsApp ou email — entrent dans le même flux unifié.",
+              answer: "Oui. Toutes les demandes, de téléphone, WhatsApp ou email, entrent dans le même flux unifié.",
             },
             {
               question: "Puis-je l'essayer pour mon cas spécifique ?",
@@ -737,7 +758,7 @@ export const fr: Translation = {
         },
         cta: {
           title: "Arrêtez de perdre des appels clients",
-          description: "Je vous montre comment fonctionne le voice agent dans votre contexte spécifique — en 10 minutes.",
+          description: "Je vous montre comment fonctionne le voice agent dans votre contexte spécifique, en 10 minutes.",
           buttonText: "Je vous montre comment ça marche",
           microcopy: "Sans engagement · Démo sur votre cas réel",
         },
@@ -758,7 +779,7 @@ export const fr: Translation = {
         hero: {
           title: "Répondez automatiquement à vos clients sur WhatsApp",
           subtitle: "Gérez demandes, rendez-vous et devis sans perdre de messages. Le système répond, collecte les informations et les organise dans votre flux de travail.",
-          highlight: "Aucun message oublié — même quand vous êtes occupé ou hors horaires.",
+          highlight: "Aucun message oublié, même quand vous êtes occupé ou hors horaires.",
           cta: "Voir une démo en 10 minutes",
           points: [
             "Aucun message perdu",
@@ -789,7 +810,7 @@ export const fr: Translation = {
         },
         useCase: {
           title: "Idéal pour les entreprises qui reçoivent de nombreuses demandes chaque jour",
-          description: "Si la plupart de vos clients vous contactent par WhatsApp, ce système transforme ce canal en processus professionnel : chaque demande collectée, organisée et attribuée — rien de perdu.",
+          description: "Si la plupart de vos clients vous contactent par WhatsApp, ce système transforme ce canal en processus professionnel : chaque demande collectée, organisée et attribuée, rien de perdu.",
         },
         realCase: {
           title: "Déjà appliqué dans des scénarios réels",

@@ -450,6 +450,16 @@ export interface Translation {
           title: string;
           features: string[];
         };
+        appointments: {
+          title: string;
+          description: string;
+          actions: string[];
+        };
+        leadCapture: {
+          title: string;
+          description: string;
+          items: string[];
+        };
         integration: {
           title: string;
           description: string;

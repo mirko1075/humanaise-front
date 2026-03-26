@@ -13,6 +13,8 @@ import {
   MessageCircle,
   Mail,
   Mic,
+  CalendarCheck,
+  Database,
 } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { fadeInUp, staggerContainer, staggerItem, scrollViewport } from '../utils/animations';
@@ -27,7 +29,7 @@ export function VoiceAgent() {
   };
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* Hero */}
       <section className="relative min-h-[80vh] pt-24 pb-16 flex items-center bg-gradient-to-br from-primary-950 via-primary-900 to-indigo-900">
         <div className="absolute top-1/3 -left-32 w-80 h-80 bg-blue-500/10 rounded-full blur-[100px]" />
@@ -122,6 +124,68 @@ export function VoiceAgent() {
                 <span className="text-primary-200">{feature}</span>
               </motion.div>
             ))}
+          </motion.div>
+        </Container>
+      </section>
+
+      {/* Appointments */}
+      <section className="py-20 bg-primary-950">
+        <Container>
+          <motion.div
+            className="max-w-3xl mx-auto"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={scrollViewport}
+          >
+            <div className="flex flex-col md:flex-row items-start gap-6 p-8 rounded-2xl bg-white/[0.04] border border-secondary-400/20">
+              <div className="w-12 h-12 rounded-xl bg-secondary-400/10 border border-secondary-400/20 flex items-center justify-center shrink-0">
+                <CalendarCheck className="w-6 h-6 text-secondary-400" />
+              </div>
+              <div className="flex-1">
+                <h2 className="text-xl font-bold text-white mb-2">{v.appointments.title}</h2>
+                <p className="text-primary-300 mb-5">{v.appointments.description}</p>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {v.appointments.actions.map((action, i) => (
+                    <li key={i} className="flex items-center gap-2 text-primary-200 text-sm">
+                      <CheckCircle className="w-4 h-4 text-secondary-400 shrink-0" />
+                      {action}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+        </Container>
+      </section>
+
+      {/* Lead Capture & CRM */}
+      <section className="py-20 bg-primary-900">
+        <Container>
+          <motion.div
+            className="max-w-3xl mx-auto"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={scrollViewport}
+          >
+            <div className="flex flex-col md:flex-row items-start gap-6 p-8 rounded-2xl bg-white/[0.04] border border-indigo-500/20">
+              <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center shrink-0">
+                <Database className="w-6 h-6 text-indigo-400" />
+              </div>
+              <div className="flex-1">
+                <h2 className="text-xl font-bold text-white mb-2">{v.leadCapture.title}</h2>
+                <p className="text-primary-300 mb-5">{v.leadCapture.description}</p>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {v.leadCapture.items.map((item, i) => (
+                    <li key={i} className="flex items-center gap-2 text-primary-200 text-sm">
+                      <CheckCircle className="w-4 h-4 text-indigo-400 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </motion.div>
         </Container>
       </section>

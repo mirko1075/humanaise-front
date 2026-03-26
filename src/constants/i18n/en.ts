@@ -574,7 +574,7 @@ export const en: Translation = {
             "You don't answer calls in time and the customer goes elsewhere",
             "Requests forgotten between WhatsApp and email with no unified flow",
             "Quotes assigned with no visibility on who does what and what state they're in",
-            "Every request handled differently — nobody knows where to find the information",
+            "Every request handled differently, nobody knows where to find the information",
           ],
         },
         solution: {
@@ -591,17 +591,17 @@ export const en: Translation = {
         howItWorks: {
           title: "How the process changes with automation",
           steps: [
-            "The customer contacts the company via WhatsApp, phone or email — the system captures the request even when you're unavailable",
+            "The customer contacts the company via WhatsApp, phone or email: the system captures the request even when you're unavailable",
             "Information is automatically organized and entered into the quote flow",
-            "The quote is assigned internally — whoever needs to act knows immediately",
+            "The quote is assigned internally: whoever needs to act knows immediately",
             "The team responds faster, with no requests falling through the cracks",
             "Everything is trackable: you always know how many requests you have, who's handling them and what state they're in",
           ],
         },
         channels: {
           title: "WhatsApp, phone and email in the same process",
-          description: "You don't need to change how customers contact you. The system collects requests from all channels and brings them into a single flow — so nothing is lost, whatever channel the customer chooses.",
-          note: "You can activate just one, two, or all three channels. You don't need all of them — the system adapts to how you already work.",
+          description: "You don't need to change how customers contact you. The system collects requests from all channels and brings them into a single flow, so nothing is lost, whatever channel the customer chooses.",
+          note: "You can activate just one, two, or all three channels. You don't need all of them: the system adapts to how you already work.",
         },
         useCase: {
           title: "Built for construction companies and businesses managing high request volumes",
@@ -660,13 +660,13 @@ export const en: Translation = {
       voiceAgent: {
         seo: {
           title: "Voice Agent for Businesses in Cagliari | Answer Calls Automatically | Humanaise",
-          description: "Never miss customer calls again. Activate a voice agent that answers, collects information and integrates it into your business processes — even out of hours.",
+          description: "Never miss customer calls again. Activate a voice agent that answers, collects information and integrates it into your business processes, even out of hours.",
           keywords: "voice agent cagliari, automatic call answering, ai phone businesses cagliari, customer call management, automatic answering service businesses",
         },
         hero: {
           title: "Never lose customers because you didn't answer the phone",
           subtitle: "Activate a voice agent that answers calls, collects requests and automatically organizes them into your workflow.",
-          highlight: "Works 24/7 — even out of hours, weekends and on site.",
+          highlight: "Works 24/7, even out of hours, weekends and on site.",
           cta: "Show me how it works in 10 minutes",
           points: [
             "No missed calls",
@@ -695,13 +695,34 @@ export const en: Translation = {
             "Customization of tone and message for your company",
           ],
         },
+        appointments: {
+          title: "Book, modify and cancel appointments by phone",
+          description: "The voice agent doesn't just collect generic requests. It can manage the full appointment cycle directly in a call, without any operator needing to intervene.",
+          actions: [
+            "Booking a new appointment",
+            "Modifying an existing appointment",
+            "Cancellation with customer confirmation",
+            "Real-time availability check",
+          ],
+        },
+        leadCapture: {
+          title: "Captures leads and sends them directly to your CRM",
+          description: "Every call becomes a registered opportunity. The voice agent collects customer information and syncs it automatically with your CRM, no manual data entry needed.",
+          items: [
+            "Automatic collection of name, contact and request type",
+            "Real-time lead creation in the CRM",
+            "Request tagging and categorisation",
+            "Instant notification to the sales team",
+            "Compatible with major CRMs (HubSpot, Salesforce, Pipedrive and others)",
+          ],
+        },
         integration: {
-          title: "Not a separate channel — part of the same flow",
+          title: "Not a separate channel: part of the same flow",
           description: "The voice agent works alongside WhatsApp and email in the same system. When a customer calls, their request enters the flow exactly as if they had written on WhatsApp. No silos, no lost information.",
         },
         realCase: {
           title: "Already applied in real contexts",
-          description: "The system has already been activated in real operational scenarios — from handling inbound calls for construction companies to qualifying requests for clinics. In all cases, the result is the same: fewer missed calls, more organized requests.",
+          description: "The system has already been activated in real operational scenarios: from handling inbound calls for construction companies to qualifying requests for clinics. In all cases, the result is the same: fewer missed calls, more organized requests.",
         },
         faq: {
           title: "Frequently asked questions",
@@ -720,7 +741,7 @@ export const en: Translation = {
             },
             {
               question: "Does it integrate with WhatsApp and email?",
-              answer: "Yes. All requests — whether from phone, WhatsApp or email — enter the same unified flow.",
+              answer: "Yes. All requests, whether from phone, WhatsApp or email, enter the same unified flow.",
             },
             {
               question: "Can I try it for my specific case?",
@@ -730,7 +751,7 @@ export const en: Translation = {
         },
         cta: {
           title: "Stop losing customer calls",
-          description: "I'll show you how the voice agent works in your specific context — in 10 minutes.",
+          description: "I'll show you how the voice agent works in your specific context, in 10 minutes.",
           buttonText: "Show me how it works",
           microcopy: "No commitment · Demo on your real use case",
         },
@@ -751,7 +772,7 @@ export const en: Translation = {
         hero: {
           title: "Respond to customers on WhatsApp automatically",
           subtitle: "Manage requests, appointments and quotes without losing messages. The system responds, collects information and organizes it in your workflow.",
-          highlight: "No forgotten messages — even when you're busy or out of hours.",
+          highlight: "No forgotten messages, even when you're busy or out of hours.",
           cta: "Watch a demo in 10 minutes",
           points: [
             "No lost messages",
@@ -782,11 +803,11 @@ export const en: Translation = {
         },
         useCase: {
           title: "Ideal for companies receiving many requests every day",
-          description: "If most of your customers contact you via WhatsApp, this system turns that channel into a professional process: every request collected, organized and assigned — nothing lost. Works for construction companies, installers, professional offices, clinics and any business with high message volumes.",
+          description: "If most of your customers contact you via WhatsApp, this system turns that channel into a professional process: every request collected, organized and assigned, nothing lost. Works for construction companies, installers, professional offices, clinics and any business with high message volumes.",
         },
         realCase: {
           title: "Already applied in real scenarios",
-          description: "The system is already active in real operational contexts: from managing quote requests in the construction sector to qualifying contacts for professional offices. The principle is the same — every WhatsApp message becomes a trackable request.",
+          description: "The system is already active in real operational contexts: from managing quote requests in the construction sector to qualifying contacts for professional offices. The principle is the same: every WhatsApp message becomes a trackable request.",
         },
         faq: {
           title: "Frequently asked questions",

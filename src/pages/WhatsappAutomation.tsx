@@ -24,7 +24,7 @@ export function WhatsappAutomation() {
   };
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* Hero */}
       <section className="relative min-h-[80vh] pt-24 pb-16 flex items-center bg-gradient-to-br from-primary-950 via-primary-900 to-indigo-900">
         <div className="absolute top-1/3 -left-32 w-80 h-80 bg-green-500/10 rounded-full blur-[100px]" />

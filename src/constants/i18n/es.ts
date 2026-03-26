@@ -596,17 +596,17 @@ export const es: Translation = {
         howItWorks: {
           title: "Cómo cambia el proceso con la automatización",
           steps: [
-            "El cliente contacta la empresa vía WhatsApp, teléfono o email — el sistema recoge la solicitud aunque no estés disponible",
+            "El cliente contacta la empresa vía WhatsApp, teléfono o email: el sistema recoge la solicitud aunque no estés disponible",
             "La información se organiza automáticamente y se introduce en el flujo de presupuestos",
-            "El presupuesto se asigna internamente — quien debe actuar lo sabe de inmediato",
+            "El presupuesto se asigna internamente: quien debe actuar lo sabe de inmediato",
             "El equipo responde más rápido, sin solicitudes perdidas",
             "Todo es rastreable: sabes cuántas solicitudes tienes, quién las gestiona y en qué estado están",
           ],
         },
         channels: {
           title: "WhatsApp, teléfono y email en el mismo proceso",
-          description: "No necesitas cambiar cómo te contactan los clientes. El sistema recoge solicitudes de todos los canales y las lleva a un único flujo — para no perder nada, sea cual sea el canal elegido.",
-          note: "Puedes activar uno, dos o los tres canales. No es necesario tenerlos todos — el sistema se adapta a cómo trabajas ya.",
+          description: "No necesitas cambiar cómo te contactan los clientes. El sistema recoge solicitudes de todos los canales y las lleva a un único flujo, para no perder nada, sea cual sea el canal elegido.",
+          note: "Puedes activar uno, dos o los tres canales. No es necesario tenerlos todos: el sistema se adapta a cómo trabajas ya.",
         },
         useCase: {
           title: "Diseñado para empresas de construcción y negocios con alto volumen de solicitudes",
@@ -665,13 +665,13 @@ export const es: Translation = {
       voiceAgent: {
         seo: {
           title: "Voice Agent para Empresas en Cagliari | Responde llamadas automáticamente | Humanaise",
-          description: "No pierdas más llamadas de clientes. Activa un voice agent que responde, recoge información y la integra en tus procesos empresariales — incluso fuera de horario.",
+          description: "No pierdas más llamadas de clientes. Activa un voice agent que responde, recoge información y la integra en tus procesos empresariales, incluso fuera de horario.",
           keywords: "voice agent cagliari, responder llamadas automático, ia teléfono empresas cagliari, gestión llamadas clientes, contestador automático empresas",
         },
         hero: {
           title: "No pierdas más clientes cuando no respondes al teléfono",
           subtitle: "Activa un voice agent que responde a las llamadas, recoge las solicitudes y las organiza automáticamente en tu flujo de trabajo.",
-          highlight: "Funciona 24/7 — incluso fuera de horario, fines de semana y en obra.",
+          highlight: "Funciona 24/7, incluso fuera de horario, fines de semana y en obra.",
           cta: "Te muestro cómo funciona en 10 minutos",
           points: [
             "Ninguna llamada perdida",
@@ -700,13 +700,34 @@ export const es: Translation = {
             "Personalización del tono y mensaje para tu empresa",
           ],
         },
+        appointments: {
+          title: "Reserva, modifica y cancela citas por teléfono",
+          description: "El voice agent no solo recoge solicitudes genéricas. Puede gestionar el ciclo completo de citas directamente en la llamada, sin que ningún operador tenga que intervenir.",
+          actions: [
+            "Reserva de una nueva cita",
+            "Modificación de una cita existente",
+            "Cancelación con confirmación al cliente",
+            "Verificación de disponibilidad en tiempo real",
+          ],
+        },
+        leadCapture: {
+          title: "Captura leads y los envía directamente a tu CRM",
+          description: "Cada llamada se convierte en una oportunidad registrada. El voice agent recoge la información del cliente y la sincroniza automáticamente con tu CRM, sin ninguna entrada manual.",
+          items: [
+            "Recogida automática de nombre, contacto y tipo de solicitud",
+            "Creación del lead en el CRM en tiempo real",
+            "Etiquetado y categorización de la solicitud",
+            "Notificación inmediata al equipo comercial",
+            "Compatible con los principales CRMs (HubSpot, Salesforce, Pipedrive y otros)",
+          ],
+        },
         integration: {
-          title: "No es un canal separado — es parte del mismo flujo",
+          title: "No es un canal separado: es parte del mismo flujo",
           description: "El voice agent trabaja junto a WhatsApp y email en el mismo sistema. Cuando un cliente llama, su solicitud entra en el flujo exactamente igual que si hubiera escrito por WhatsApp.",
         },
         realCase: {
           title: "Ya aplicado en contextos reales",
-          description: "El sistema ya está activo en escenarios operativos reales — desde la gestión de llamadas entrantes de empresas de construcción hasta la cualificación de solicitudes de clínicas.",
+          description: "El sistema ya está activo en escenarios operativos reales: desde la gestión de llamadas entrantes de empresas de construcción hasta la cualificación de solicitudes de clínicas.",
         },
         faq: {
           title: "Preguntas frecuentes",
@@ -725,7 +746,7 @@ export const es: Translation = {
             },
             {
               question: "¿Se integra con WhatsApp y email?",
-              answer: "Sí. Todas las solicitudes — de teléfono, WhatsApp o email — entran en el mismo flujo unificado.",
+              answer: "Sí. Todas las solicitudes, de teléfono, WhatsApp o email, entran en el mismo flujo unificado.",
             },
             {
               question: "¿Puedo probarlo para mi caso específico?",
@@ -735,7 +756,7 @@ export const es: Translation = {
         },
         cta: {
           title: "Deja de perder llamadas de clientes",
-          description: "Te muestro cómo funciona el voice agent en tu contexto específico — en 10 minutos.",
+          description: "Te muestro cómo funciona el voice agent en tu contexto específico, en 10 minutos.",
           buttonText: "Te muestro cómo funciona",
           microcopy: "Sin compromiso · Demo en tu caso real",
         },
@@ -756,7 +777,7 @@ export const es: Translation = {
         hero: {
           title: "Responde automáticamente a los clientes en WhatsApp",
           subtitle: "Gestiona solicitudes, citas y presupuestos sin perder mensajes. El sistema responde, recoge la información y la organiza en tu flujo de trabajo.",
-          highlight: "Ningún mensaje olvidado — incluso cuando estás ocupado o fuera de horario.",
+          highlight: "Ningún mensaje olvidado, incluso cuando estás ocupado o fuera de horario.",
           cta: "Ver una demo en 10 minutos",
           points: [
             "Ningún mensaje perdido",
@@ -787,7 +808,7 @@ export const es: Translation = {
         },
         useCase: {
           title: "Ideal para empresas que reciben muchas solicitudes cada día",
-          description: "Si la mayoría de tus clientes te contactan por WhatsApp, este sistema transforma ese canal en un proceso profesional: cada solicitud recogida, organizada y asignada — sin que nada se pierda.",
+          description: "Si la mayoría de tus clientes te contactan por WhatsApp, este sistema transforma ese canal en un proceso profesional: cada solicitud recogida, organizada y asignada, sin que nada se pierda.",
         },
         realCase: {
           title: "Ya aplicado en escenarios reales",

@@ -705,6 +705,27 @@ export const it: Translation = {
             "Personalizzazione del tono e del messaggio per la tua azienda",
           ],
         },
+        appointments: {
+          title: "Prenota, modifica e cancella appuntamenti al telefono",
+          description: "Il voice agent non raccoglie solo richieste generiche. Può gestire l'intero ciclo degli appuntamenti direttamente in chiamata, senza che nessun operatore debba intervenire.",
+          actions: [
+            "Prenotazione di un nuovo appuntamento",
+            "Modifica di un appuntamento esistente",
+            "Cancellazione con conferma al cliente",
+            "Verifica disponibilità in tempo reale",
+          ],
+        },
+        leadCapture: {
+          title: "Acquisisce i lead e li porta direttamente nel tuo CRM",
+          description: "Ogni chiamata diventa un'opportunità registrata. Il voice agent raccoglie le informazioni del cliente e le sincronizza automaticamente con il tuo CRM, senza nessun inserimento manuale.",
+          items: [
+            "Raccolta automatica di nome, contatto e tipo di richiesta",
+            "Creazione del lead nel CRM in tempo reale",
+            "Tagging e categorizzazione della richiesta",
+            "Notifica immediata al team commerciale",
+            "Compatibile con i principali CRM (HubSpot, Salesforce, Pipedrive e altri)",
+          ],
+        },
         integration: {
           title: "Non è un canale separato: è parte dello stesso flusso",
           description: "Il voice agent lavora insieme a WhatsApp ed email nello stesso sistema. Quando un cliente chiama, la sua richiesta entra nel flusso esattamente come se avesse scritto su WhatsApp. Niente silos, niente informazioni perse.",
