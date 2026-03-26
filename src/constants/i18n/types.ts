@@ -389,6 +389,9 @@ export interface Translation {
           title: string;
           bullets: string[];
         };
+        realityCheck: {
+          text: string;
+        };
         problem: {
           title: string;
           painPoints: string[];
@@ -437,10 +440,19 @@ export interface Translation {
         };
         hero: {
           title: string;
+          killerLine: string;
           subtitle: string;
           highlight: string;
-          cta: string;
+          ctaPrimary: string;
+          ctaSecondary: string;
           points: string[];
+        };
+        impactBlock: {
+          lines: string[];
+          tracklist: string[];
+        };
+        positioning: {
+          lines: string[];
         };
         problem: {
           title: string;
@@ -491,10 +503,15 @@ export interface Translation {
         };
         hero: {
           title: string;
+          killerLine: string;
           subtitle: string;
           highlight: string;
-          cta: string;
+          ctaPrimary: string;
+          ctaSecondary: string;
           points: string[];
+        };
+        impactBlock: {
+          lines: string[];
         };
         problem: {
           title: string;

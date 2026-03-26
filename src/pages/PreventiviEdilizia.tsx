@@ -13,7 +13,6 @@ import {
   MessageCircle,
   Phone,
   Mail,
-  ChevronDown,
   Mic,
 } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
@@ -54,20 +53,13 @@ export function PreventiviEdilizia() {
             <p className="text-base text-secondary-400 font-medium mb-8">
               {v.hero.highlight}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+            <div className="flex justify-center mb-6">
               <Button size="lg" onClick={scrollToContact}>
                 {v.hero.ctaPrimary}
               </Button>
-              <button
-                onClick={scrollToHowItWorks}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-primary-200 border border-primary-700 rounded-lg hover:bg-primary-800 transition-colors"
-              >
-                {v.hero.ctaSecondary}
-                <ChevronDown className="w-4 h-4" />
-              </button>
             </div>
             <motion.ul
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-6"
               variants={staggerContainer}
               initial="hidden"
               animate="visible"
@@ -83,7 +75,28 @@ export function PreventiviEdilizia() {
                 </motion.li>
               ))}
             </motion.ul>
+            <button
+              onClick={scrollToHowItWorks}
+              className="text-sm text-primary-400 hover:text-primary-200 underline underline-offset-4 transition-colors"
+            >
+              {v.hero.ctaSecondary} ↓
+            </button>
           </motion.div>
+        </Container>
+      </section>
+
+      {/* Reality Check */}
+      <section className="py-10 bg-red-950/30 border-y border-red-900/40">
+        <Container>
+          <motion.p
+            className="text-center text-lg md:text-xl font-semibold text-red-300 max-w-2xl mx-auto"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={scrollViewport}
+          >
+            {v.realityCheck.text}
+          </motion.p>
         </Container>
       </section>
 

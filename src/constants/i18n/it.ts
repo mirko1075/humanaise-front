@@ -558,16 +558,19 @@ export const it: Translation = {
           keywords: "preventivi edilizia cagliari, gestione preventivi edilizia, automatizzare preventivi cagliari, software preventivi imprese edili, whatsapp preventivi edilizia, voice agent preventivi",
         },
         hero: {
-          title: "Non perdere più richieste clienti da WhatsApp e telefono",
-          subtitle: "Automatizza la gestione dei preventivi per la tua impresa a Cagliari. Ricevi richieste da WhatsApp, telefono ed email e trasformale in un flusso organizzato.",
-          highlight: "Risponde automaticamente anche alle chiamate quando non sei disponibile.",
-          ctaPrimary: "Ti faccio vedere come funziona in 10 minuti",
-          ctaSecondary: "Guarda come funziona",
+          title: "Quante richieste clienti stai perdendo ogni settimana senza accorgertene?",
+          subtitle: "Automatizza la gestione dei preventivi da WhatsApp, telefono ed email. Ogni richiesta viene raccolta, organizzata e assegnata automaticamente.",
+          highlight: "Anche quando non rispondi al telefono, il sistema risponde al posto tuo.",
+          ctaPrimary: "Scopri quante richieste stai perdendo",
+          ctaSecondary: "Ti faccio vedere come recuperarle in 10 minuti",
           points: [
             "Zero richieste perse",
             "Flusso preventivi tracciabile",
             "WhatsApp + telefono + email unificati",
           ],
+        },
+        realityCheck: {
+          text: "La maggior parte delle aziende non sa quante richieste perde ogni settimana. Tra chiamate non risposte, messaggi ignorati e email dimenticate, una parte dei clienti va semplicemente altrove.",
         },
         voiceDiff: {
           title: "E se un cliente chiama e non rispondi?",
@@ -580,10 +583,10 @@ export const it: Translation = {
         problem: {
           title: "Quante richieste perdi ogni settimana senza accorgertene?",
           painPoints: [
-            "Perdi richieste clienti perché WhatsApp non viene controllato in tempo",
-            "Non rispondi in tempo alle chiamate e il cliente si rivolge altrove",
-            "Richieste dimenticate tra WhatsApp ed email senza un flusso unico",
-            "Preventivi assegnati senza visibilità su chi fa cosa e in che stato sono",
+            "Perdi richieste clienti senza accorgertene",
+            "Non rispondi in tempo alle chiamate e i clienti non aspettano",
+            "Messaggi WhatsApp ed email finiscono in canali diversi senza un flusso unico",
+            "Nessuna visibilità su chi gestisce i preventivi e in che stato si trovano",
             "Ogni richiesta gestita in modo diverso: nessuno sa dove trovare le informazioni",
           ],
         },
@@ -654,9 +657,9 @@ export const it: Translation = {
           ],
         },
         cta: {
-          title: "Scopri come organizzare i tuoi preventivi senza perdere più richieste",
-          description: "Ti mostro in 10 minuti come funziona il sistema nel tuo contesto specifico.",
-          buttonText: "Ti faccio vedere come funziona in 10 minuti",
+          title: "Smetti di perdere richieste clienti",
+          description: "Ti mostro in 10 minuti quante richieste stai perdendo e come recuperarle.",
+          buttonText: "Scopri quante richieste stai perdendo",
           microcopy: "Nessun impegno · Analizziamo il tuo caso reale",
         },
         relatedPages: {
@@ -674,24 +677,45 @@ export const it: Translation = {
           keywords: "voice agent cagliari, rispondere telefonate automatico, ai telefono aziende cagliari, gestione chiamate clienti, risponditore automatico aziende",
         },
         hero: {
-          title: "Non perdere più clienti quando non rispondi al telefono",
-          subtitle: "Attiva un voice agent che risponde alle chiamate, raccoglie le richieste e le organizza automaticamente nel tuo flusso di lavoro.",
-          highlight: "Funziona 24/7, anche fuori orario, nei weekend e durante i cantieri.",
-          cta: "Ti mostro come funziona in 10 minuti",
+          title: "Quante chiamate perdi ogni giorno senza accorgertene?",
+          killerLine: "Se non rispondi, il cliente chiama qualcun altro.",
+          subtitle: "Attiva un voice agent che risponde al posto tuo, raccoglie la richiesta e la inserisce automaticamente nel tuo flusso preventivi o appuntamenti.",
+          highlight: "Anche quando sei in cantiere, fuori orario o occupato.",
+          ctaPrimary: "Voglio vedere quante chiamate sto perdendo",
+          ctaSecondary: "Ti mostro come funziona in 10 minuti",
           points: [
             "Nessuna chiamata persa",
             "Raccolta automatica delle richieste",
             "Integrazione con preventivi e appuntamenti",
           ],
         },
+        impactBlock: {
+          lines: [
+            "La realtà è questa:",
+            "Il telefono squilla. Non rispondi. Cliente perso.",
+            "E il problema è che non lo sai nemmeno.",
+          ],
+          tracklist: [
+            "quante chiamate perdi",
+            "chi erano quei clienti",
+            "quanto fatturato ti è scappato",
+          ],
+        },
+        positioning: {
+          lines: [
+            "Non è una segreteria telefonica.",
+            "È un sistema che trasforma ogni chiamata in una richiesta reale.",
+            "Risponde, raccoglie informazioni, le organizza e le inserisce direttamente nel tuo flusso operativo.",
+          ],
+        },
         problem: {
           title: "Ogni chiamata senza risposta è un cliente che va altrove",
           painPoints: [
-            "Sei in cantiere e non puoi rispondere al telefono",
+            "Sei in cantiere e non puoi rispondere",
             "Il cliente chiama fuori orario e non trova nessuno",
-            "Non richiamate in tempo e il cliente si rivolge alla concorrenza",
-            "Nessuna traccia delle chiamate perse: non sai quante opportunità hai perso",
-            "Il team gestisce le chiamate in modo disordinato, senza un processo definito",
+            "Non richiami in tempo: il cliente sceglie un altro",
+            "Non hai visibilità sulle chiamate perse",
+            "Ogni persona del team gestisce le chiamate in modo diverso",
           ],
         },
         solution: {
@@ -727,8 +751,8 @@ export const it: Translation = {
           ],
         },
         integration: {
-          title: "Non è un canale separato: è parte dello stesso flusso",
-          description: "Il voice agent lavora insieme a WhatsApp ed email nello stesso sistema. Quando un cliente chiama, la sua richiesta entra nel flusso esattamente come se avesse scritto su WhatsApp. Niente silos, niente informazioni perse.",
+          title: "La differenza non è rispondere al telefono. È non perdere mai una richiesta.",
+          description: "Voice agent + WhatsApp + email = un unico sistema. Qualunque sia il canale: la richiesta entra sempre nello stesso flusso, niente si perde, tutto è tracciabile.",
         },
         realCase: {
           title: "Già applicato in contesti reali",
@@ -760,10 +784,10 @@ export const it: Translation = {
           ],
         },
         cta: {
-          title: "Smetti di perdere chiamate clienti",
-          description: "Ti mostro come funziona il voice agent nel tuo contesto specifico, in 10 minuti.",
-          buttonText: "Ti mostro come funziona",
-          microcopy: "Nessun impegno · Demo sul tuo caso reale",
+          title: "Smetti di perdere clienti al telefono",
+          description: "Ti mostro in 10 minuti come funzionerebbe per la tua azienda.",
+          buttonText: "Voglio vedere come funziona sul mio caso",
+          microcopy: "Nessun impegno · Demo concreta sul tuo flusso reale",
         },
         relatedPages: {
           title: "Approfondisci",
@@ -780,35 +804,45 @@ export const it: Translation = {
           keywords: "whatsapp business automazione cagliari, chatbot whatsapp aziende, gestione clienti whatsapp, automazione messaggi whatsapp, risposta automatica whatsapp imprese",
         },
         hero: {
-          title: "Rispondi automaticamente ai clienti su WhatsApp",
-          subtitle: "Gestisci richieste, appuntamenti e preventivi senza perdere messaggi. Il sistema risponde, raccoglie le informazioni e le organizza nel tuo flusso di lavoro.",
-          highlight: "Nessun messaggio dimenticato, anche quando sei occupato o fuori orario.",
-          cta: "Guarda una demo in 10 minuti",
+          title: "Quanti clienti ti scrivono su WhatsApp e non ricevono risposta in tempo?",
+          killerLine: "Se non rispondi subito, il cliente scrive a qualcun altro.",
+          subtitle: "Automatizza le risposte e trasforma ogni messaggio in una richiesta organizzata: il sistema risponde, raccoglie le informazioni e le inserisce nel tuo flusso.",
+          highlight: "Anche quando sei occupato o fuori orario.",
+          ctaPrimary: "Scopri quanti messaggi stai perdendo",
+          ctaSecondary: "Vedi come funziona",
           points: [
             "Nessun messaggio perso",
             "Risposte immediate ai clienti",
             "Richieste organizzate automaticamente",
           ],
         },
+        impactBlock: {
+          lines: [
+            "La realtà è semplice:",
+            "I clienti non aspettano.",
+            "Se non rispondi in tempo, la richiesta non è in attesa: è persa.",
+            "E tu spesso non lo sai nemmeno.",
+          ],
+        },
         problem: {
           title: "I clienti scrivono su WhatsApp. Quanti messaggi non ricevono risposta in tempo?",
           painPoints: [
-            "Messaggi che restano in attesa per ore senza risposta",
-            "Richieste perse tra chat personali e WhatsApp business",
-            "Il cliente che non riceve risposta si rivolge alla concorrenza",
-            "Nessun sistema per capire quante richieste arrivano e quante vengono gestite",
-            "Ogni membro del team gestisce WhatsApp in modo diverso, senza un processo",
+            "Messaggi non letti per ore, a volte giorni",
+            "Clienti che smettono di aspettare e scrivono a qualcun altro",
+            "Richieste perse tra chat personali e WhatsApp Business",
+            "Non sai quanti clienti stai perdendo",
+            "Il team risponde su WhatsApp senza un processo: ognuno a modo suo",
           ],
         },
         solution: {
-          title: "WhatsApp come canale professionale, non come chat personale",
+          title: "Ogni messaggio riceve una risposta. Nessuna richiesta va persa.",
           features: [
-            "Risposta automatica immediata ai messaggi in entrata",
-            "Raccolta strutturata delle informazioni della richiesta",
-            "Inserimento automatico nel flusso preventivi o appuntamenti",
-            "Notifica al team quando arriva una nuova richiesta qualificata",
-            "Storico e tracciabilità di ogni conversazione",
-            "Personalizzazione del tono, dei messaggi e del flusso per la tua azienda",
+            "Ogni messaggio riceve risposta immediata",
+            "Ogni richiesta diventa strutturata e tracciabile",
+            "Niente va perso o dimenticato",
+            "Il tuo team sa esattamente cosa fare",
+            "Vedi finalmente quante richieste ricevi davvero",
+            "Zero caos: un unico flusso per tutto",
           ],
         },
         useCase: {
@@ -846,9 +880,9 @@ export const it: Translation = {
         },
         cta: {
           title: "Smetti di perdere richieste su WhatsApp",
-          description: "Ti mostro in 10 minuti come funziona il sistema per la tua azienda.",
-          buttonText: "Guarda come funziona",
-          microcopy: "Nessun impegno · Demo sul tuo caso reale",
+          description: "Ti mostro in 10 minuti come funziona per la tua azienda.",
+          buttonText: "Mostrami quante richieste sto perdendo",
+          microcopy: "Nessun impegno · Demo concreta sul tuo caso reale",
         },
         relatedPages: {
           title: "Approfondisci",
