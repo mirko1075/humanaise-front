@@ -5,6 +5,9 @@ import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsOfService } from './pages/TermsOfService';
 import { CookiePolicy } from './pages/CookiePolicy';
 import { EmailAutomation } from './pages/EmailAutomation';
+import { PreventiviEdilizia } from './pages/PreventiviEdilizia';
+import { VoiceAgent } from './pages/VoiceAgent';
+import { WhatsappAutomation } from './pages/WhatsappAutomation';
 import { SEO } from './components/SEO';
 import { useLanguage } from './hooks/useLanguage';
 import { useTranslation } from './hooks/useTranslation';
@@ -51,6 +54,160 @@ function TermsOfServicePage() {
   );
 }
 
+function PreventiviEdiliziaPage() {
+  const { language } = useLanguage();
+  const t = useTranslation();
+  const v = t.landing.verticals.preventiviEdilizia;
+
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": v.seo.title,
+      "description": v.seo.description,
+      "url": `https://humanaise.com/preventivi-edilizia-cagliari`,
+      "inLanguage": language,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Gestione Preventivi Edilizia - Humanaise",
+      "description": "Sistema di automazione per la gestione dei preventivi per imprese edili a Cagliari. Raccolta richieste da WhatsApp, telefono ed email in un unico flusso.",
+      "provider": {
+        "@type": "Organization",
+        "name": "HumanAIse",
+        "url": "https://humanaise.com",
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Cagliari",
+      },
+      "serviceType": "AI Automation",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": v.faq.items.map((item) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer,
+        },
+      })),
+    },
+  ];
+
+  return (
+    <>
+      <SEO
+        title={v.seo.title}
+        description={v.seo.description}
+        keywords={v.seo.keywords}
+        canonical={`https://humanaise.com/preventivi-edilizia-cagliari`}
+        structuredData={structuredData}
+      />
+      <PreventiviEdilizia />
+    </>
+  );
+}
+
+function VoiceAgentPage() {
+  const { language } = useLanguage();
+  const t = useTranslation();
+  const v = t.landing.verticals.voiceAgent;
+
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": v.seo.title,
+      "description": v.seo.description,
+      "url": "https://humanaise.com/voice-agent-cagliari",
+      "inLanguage": language,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Voice Agent per Aziende - Humanaise",
+      "description": "Voice agent AI per la gestione automatica delle chiamate in entrata. Risposta 24/7, raccolta richieste e integrazione nel flusso aziendale.",
+      "provider": { "@type": "Organization", "name": "HumanAIse", "url": "https://humanaise.com" },
+      "areaServed": { "@type": "City", "name": "Cagliari" },
+      "serviceType": "AI Voice Agent",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": v.faq.items.map((item) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+      })),
+    },
+  ];
+
+  return (
+    <>
+      <SEO
+        title={v.seo.title}
+        description={v.seo.description}
+        keywords={v.seo.keywords}
+        canonical="https://humanaise.com/voice-agent-cagliari"
+        structuredData={structuredData}
+      />
+      <VoiceAgent />
+    </>
+  );
+}
+
+function WhatsappAutomationPage() {
+  const { language } = useLanguage();
+  const t = useTranslation();
+  const v = t.landing.verticals.whatsappAutomation;
+
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": v.seo.title,
+      "description": v.seo.description,
+      "url": "https://humanaise.com/whatsapp-business-automation-cagliari",
+      "inLanguage": language,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Automazione WhatsApp Business - Humanaise",
+      "description": "Sistema di automazione WhatsApp Business per la gestione di richieste clienti, preventivi e appuntamenti.",
+      "provider": { "@type": "Organization", "name": "HumanAIse", "url": "https://humanaise.com" },
+      "areaServed": { "@type": "City", "name": "Cagliari" },
+      "serviceType": "WhatsApp Business Automation",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": v.faq.items.map((item) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+      })),
+    },
+  ];
+
+  return (
+    <>
+      <SEO
+        title={v.seo.title}
+        description={v.seo.description}
+        keywords={v.seo.keywords}
+        canonical="https://humanaise.com/whatsapp-business-automation-cagliari"
+        structuredData={structuredData}
+      />
+      <WhatsappAutomation />
+    </>
+  );
+}
+
 function EmailAutomationPage() {
   const { language } = useLanguage();
   const t = useTranslation();
@@ -78,6 +235,10 @@ export default function App() {
         <Route path="/cookies" element={<CookiePolicyPage />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />
         <Route path="/terms" element={<TermsOfServicePage />} />
+        <Route path="/preventivi-edilizia-cagliari" element={<PreventiviEdiliziaPage />} />
+        <Route path="/preventivi" element={<PreventiviEdiliziaPage />} />
+        <Route path="/voice-agent-cagliari" element={<VoiceAgentPage />} />
+        <Route path="/whatsapp-business-automation-cagliari" element={<WhatsappAutomationPage />} />
         <Route path="/email-automation" element={<EmailAutomationPage />} />
         <Route path="*" element={<HomePage />} />
       </Route>

@@ -548,6 +548,292 @@ export const fr: Translation = {
       microcopy: "Sans engagement · Nous analysons un cas d'usage réel",
     },
     verticals: {
+      preventiviEdilizia: {
+        seo: {
+          title: "Gestion des Devis Bâtiment à Cagliari | WhatsApp, Téléphone, Email | Humanaise",
+          description: "Ne perdez plus de demandes clients. Automatisez la gestion des devis pour les entreprises de construction à Cagliari : WhatsApp, téléphone et email dans un seul flux organisé.",
+          keywords: "devis bâtiment cagliari, gestion devis construction, automatiser devis cagliari, logiciel entreprises bâtiment, whatsapp devis construction",
+        },
+        hero: {
+          title: "Ne perdez plus de demandes clients de WhatsApp et du téléphone",
+          subtitle: "Automatisez la gestion des devis pour votre entreprise à Cagliari. Recevez des demandes par WhatsApp, téléphone et email et transformez-les en un flux organisé.",
+          highlight: "Répond automatiquement aux appels même quand vous n'êtes pas disponible.",
+          ctaPrimary: "Je vous montre comment ça marche en 10 minutes",
+          ctaSecondary: "Voir comment ça marche",
+          points: [
+            "Zéro demande perdue",
+            "Flux de devis traçable",
+            "WhatsApp + téléphone + email unifiés",
+          ],
+        },
+        voiceDiff: {
+          title: "Et si un client appelle et que vous ne répondez pas ?",
+          bullets: [
+            "Réponse automatique aux appels",
+            "Collecte d'informations client",
+            "Intégration directe dans le flux devis",
+          ],
+        },
+        problem: {
+          title: "Combien de demandes perdez-vous chaque semaine sans vous en rendre compte ?",
+          painPoints: [
+            "Vous perdez des demandes parce que WhatsApp n'est pas vérifié à temps",
+            "Vous ne répondez pas aux appels à temps et le client se tourne vers la concurrence",
+            "Demandes oubliées entre WhatsApp et email sans flux unique",
+            "Devis assignés sans visibilité sur qui fait quoi",
+            "Chaque demande gérée différemment — personne ne sait où trouver les informations",
+          ],
+        },
+        solution: {
+          title: "Un seul système pour gérer les demandes et les devis",
+          features: [
+            "Collecte automatique des demandes WhatsApp",
+            "Voice agent qui répond aux appels hors horaires",
+            "Centralisation des demandes par email",
+            "Création et suivi des devis",
+            "Attribution interne avec visibilité en temps réel",
+            "Personnalisation par secteur, messages et nom d'entreprise",
+          ],
+        },
+        howItWorks: {
+          title: "Comment le processus change avec l'automatisation",
+          steps: [
+            "Le client contacte l'entreprise via WhatsApp, téléphone ou email — le système collecte la demande même si vous n'êtes pas disponible",
+            "Les informations sont organisées automatiquement et introduites dans le flux devis",
+            "Le devis est attribué en interne — celui qui doit agir le sait immédiatement",
+            "L'équipe répond plus vite, sans demandes tombées dans l'oubli",
+            "Tout est traçable : vous savez combien de demandes vous avez, qui les gère et dans quel état",
+          ],
+        },
+        channels: {
+          title: "WhatsApp, téléphone et email dans le même processus",
+          description: "Vous n'avez pas besoin de changer la façon dont les clients vous contactent. Le système collecte les demandes de tous les canaux et les rassemble dans un flux unique — rien n'est perdu, quel que soit le canal choisi.",
+          note: "Vous pouvez activer un seul, deux ou les trois canaux. Vous n'avez pas besoin de tous les avoir — le système s'adapte à votre façon de travailler.",
+        },
+        useCase: {
+          title: "Conçu pour les entreprises de construction et les activités à fort volume de demandes",
+          examples: [
+            "Entreprises de construction",
+            "Installateurs",
+            "Menuiseries et fenêtres",
+            "Rénovations",
+            "Plomberie et électricité",
+            "Artisans à fort volume de demandes",
+          ],
+        },
+        realCase: {
+          title: "Déjà appliqué dans un contexte réel",
+          description: "Le système a déjà été adapté à un flux opérationnel réel dans le secteur du bâtiment, avec gestion des demandes multi-canaux, attribution interne et suivi des devis jusqu'à la réponse client.",
+        },
+        faq: {
+          title: "Questions fréquentes",
+          items: [
+            {
+              question: "Le système fonctionne-t-il uniquement pour les entreprises de construction ?",
+              answer: "Non, mais cette page se concentre sur le cas d'usage des devis dans le bâtiment car c'est l'un des scénarios les plus clairs et concrets.",
+            },
+            {
+              question: "Que se passe-t-il si un client appelle hors horaires ?",
+              answer: "Le voice agent répond automatiquement, collecte les informations du client et les introduit dans le flux devis. Quand vous êtes disponible, tout est déjà organisé.",
+            },
+            {
+              question: "Peut-il être personnalisé pour mon entreprise ?",
+              answer: "Oui. Le système est conçu pour être personnalisé par tenant : secteur, messages, branding et paramètres opérationnels.",
+            },
+            {
+              question: "Gère-t-il aussi WhatsApp ?",
+              answer: "Oui, WhatsApp est l'un des canaux principaux du flux.",
+            },
+            {
+              question: "Comment savoir si cela fonctionne pour mon entreprise ?",
+              answer: "En 10 minutes je vous montre comment ça fonctionnerait dans votre cas spécifique. Sans engagement.",
+            },
+          ],
+        },
+        cta: {
+          title: "Découvrez comment organiser vos devis sans perdre de demandes",
+          description: "Je vous montre en 10 minutes comment fonctionne le système dans votre contexte spécifique.",
+          buttonText: "Je vous montre comment ça marche en 10 minutes",
+          microcopy: "Sans engagement · Nous analysons votre cas réel",
+        },
+        relatedPages: {
+          title: "En savoir plus",
+          links: [
+            { label: "Voice agent pour entreprises à Cagliari", href: "/voice-agent-cagliari" },
+            { label: "Automatisation WhatsApp Business à Cagliari", href: "/whatsapp-business-automation-cagliari" },
+          ],
+        },
+      },
+      voiceAgent: {
+        seo: {
+          title: "Voice Agent pour Entreprises à Cagliari | Répondre aux appels automatiquement | Humanaise",
+          description: "Ne manquez plus d'appels clients. Activez un voice agent qui répond, collecte des informations et les intègre dans vos processus — même hors horaires.",
+          keywords: "voice agent cagliari, répondre appels automatique, ia téléphone entreprises cagliari, gestion appels clients, répondeur automatique entreprises",
+        },
+        hero: {
+          title: "Ne perdez plus de clients parce que vous n'avez pas répondu au téléphone",
+          subtitle: "Activez un voice agent qui répond aux appels, collecte les demandes et les organise automatiquement dans votre flux de travail.",
+          highlight: "Fonctionne 24h/7j — même hors horaires, week-ends et sur chantier.",
+          cta: "Je vous montre comment ça marche en 10 minutes",
+          points: [
+            "Aucun appel manqué",
+            "Collecte automatique des demandes",
+            "Intégration avec devis et rendez-vous",
+          ],
+        },
+        problem: {
+          title: "Chaque appel sans réponse est un client qui part à la concurrence",
+          painPoints: [
+            "Vous êtes sur chantier et ne pouvez pas répondre au téléphone",
+            "Le client appelle hors horaires et ne trouve personne",
+            "Vous ne rappelez pas à temps et le client va à la concurrence",
+            "Aucune trace des appels manqués : vous ne savez pas combien d'opportunités vous avez perdues",
+            "L'équipe gère les appels de façon désorganisée, sans processus défini",
+          ],
+        },
+        solution: {
+          title: "Un voice agent qui travaille pour vous quand vous n'êtes pas disponible",
+          features: [
+            "Réponse automatique aux appels 24h/7j",
+            "Collecte du nom, contact et demande du client",
+            "Transcription et organisation automatique des informations",
+            "Intégration directe dans le flux devis ou rendez-vous",
+            "Notification immédiate à l'équipe à chaque nouvelle demande",
+            "Personnalisation du ton et du message pour votre entreprise",
+          ],
+        },
+        integration: {
+          title: "Pas un canal séparé — partie du même flux",
+          description: "Le voice agent travaille avec WhatsApp et email dans le même système. Quand un client appelle, sa demande entre dans le flux exactement comme s'il avait écrit sur WhatsApp.",
+        },
+        realCase: {
+          title: "Déjà appliqué dans des contextes réels",
+          description: "Le système est déjà actif dans des scénarios opérationnels réels — de la gestion des appels entrants d'entreprises de construction à la qualification des demandes de cliniques.",
+        },
+        faq: {
+          title: "Questions fréquentes",
+          items: [
+            {
+              question: "Le voice agent sonne-t-il naturel ?",
+              answer: "Oui. Il est conçu pour répondre de façon naturelle et compréhensible, adapté au secteur et au ton de votre entreprise.",
+            },
+            {
+              question: "Que fait-il exactement quand il répond à un appel ?",
+              answer: "Il accueille le client, collecte les informations essentielles (nom, contact, type de demande) et les introduit dans le flux.",
+            },
+            {
+              question: "Fonctionne-t-il aussi pour les rendez-vous ?",
+              answer: "Oui. En plus des demandes de devis, le voice agent peut gérer les réservations, reprogrammations et annulations de rendez-vous.",
+            },
+            {
+              question: "S'intègre-t-il avec WhatsApp et email ?",
+              answer: "Oui. Toutes les demandes — de téléphone, WhatsApp ou email — entrent dans le même flux unifié.",
+            },
+            {
+              question: "Puis-je l'essayer pour mon cas spécifique ?",
+              answer: "Oui. En 10 minutes je vous montre comment ça fonctionnerait pour votre entreprise, sans engagement.",
+            },
+          ],
+        },
+        cta: {
+          title: "Arrêtez de perdre des appels clients",
+          description: "Je vous montre comment fonctionne le voice agent dans votre contexte spécifique — en 10 minutes.",
+          buttonText: "Je vous montre comment ça marche",
+          microcopy: "Sans engagement · Démo sur votre cas réel",
+        },
+        relatedPages: {
+          title: "En savoir plus",
+          links: [
+            { label: "Gestion des devis pour entreprises de construction à Cagliari", href: "/preventivi-edilizia-cagliari" },
+            { label: "Automatisation WhatsApp Business à Cagliari", href: "/whatsapp-business-automation-cagliari" },
+          ],
+        },
+      },
+      whatsappAutomation: {
+        seo: {
+          title: "Automatisation WhatsApp Business à Cagliari | Répondez aux clients automatiquement | Humanaise",
+          description: "Automatisez les réponses WhatsApp, gérez les demandes clients et organisez les devis sans perdre de messages.",
+          keywords: "whatsapp business automatisation cagliari, chatbot whatsapp entreprises, gestion clients whatsapp, automatisation messages whatsapp, réponse automatique whatsapp",
+        },
+        hero: {
+          title: "Répondez automatiquement à vos clients sur WhatsApp",
+          subtitle: "Gérez demandes, rendez-vous et devis sans perdre de messages. Le système répond, collecte les informations et les organise dans votre flux de travail.",
+          highlight: "Aucun message oublié — même quand vous êtes occupé ou hors horaires.",
+          cta: "Voir une démo en 10 minutes",
+          points: [
+            "Aucun message perdu",
+            "Réponses immédiates aux clients",
+            "Demandes organisées automatiquement",
+          ],
+        },
+        problem: {
+          title: "Les clients écrivent sur WhatsApp. Combien de messages restent sans réponse à temps ?",
+          painPoints: [
+            "Messages attendant des heures sans réponse",
+            "Demandes perdues entre chats personnels et WhatsApp Business",
+            "Le client qui ne reçoit pas de réponse va à la concurrence",
+            "Aucun système pour savoir combien de demandes arrivent et combien sont gérées",
+            "Chaque membre de l'équipe gère WhatsApp différemment, sans processus",
+          ],
+        },
+        solution: {
+          title: "WhatsApp comme canal professionnel, pas comme chat personnel",
+          features: [
+            "Réponse automatique immédiate aux messages entrants",
+            "Collecte structurée des informations de la demande",
+            "Introduction automatique dans le flux devis ou rendez-vous",
+            "Notification à l'équipe quand une nouvelle demande qualifiée arrive",
+            "Historique et traçabilité de chaque conversation",
+            "Personnalisation du ton, des messages et du flux pour votre entreprise",
+          ],
+        },
+        useCase: {
+          title: "Idéal pour les entreprises qui reçoivent de nombreuses demandes chaque jour",
+          description: "Si la plupart de vos clients vous contactent par WhatsApp, ce système transforme ce canal en processus professionnel : chaque demande collectée, organisée et attribuée — rien de perdu.",
+        },
+        realCase: {
+          title: "Déjà appliqué dans des scénarios réels",
+          description: "Le système est déjà actif dans des contextes opérationnels réels : de la gestion des demandes de devis dans le secteur du bâtiment à la qualification de contacts pour des cabinets professionnels.",
+        },
+        faq: {
+          title: "Questions fréquentes",
+          items: [
+            {
+              question: "Fonctionne-t-il avec mon numéro WhatsApp actuel ?",
+              answer: "Le système est basé sur l'API WhatsApp Business. Dans la plupart des cas, il est possible de migrer le numéro existant.",
+            },
+            {
+              question: "Que répond-il exactement aux clients ?",
+              answer: "Il répond avec des messages personnalisés selon le type de demande, collecte les informations nécessaires et confirme au client que la demande a été reçue.",
+            },
+            {
+              question: "S'intègre-t-il avec le voice agent et l'email ?",
+              answer: "Oui. WhatsApp, téléphone et email fonctionnent dans le même flux unifié.",
+            },
+            {
+              question: "Puis-je aussi gérer des rendez-vous via WhatsApp ?",
+              answer: "Oui. En plus des devis, le système peut gérer réservations, modifications et annulations de rendez-vous directement dans le chat.",
+            },
+            {
+              question: "Comment savoir si c'est adapté à mon entreprise ?",
+              answer: "En 10 minutes je vous montre comment ça fonctionnerait dans votre cas spécifique, sans engagement.",
+            },
+          ],
+        },
+        cta: {
+          title: "Arrêtez de perdre des demandes sur WhatsApp",
+          description: "Je vous montre en 10 minutes comment fonctionne le système pour votre entreprise.",
+          buttonText: "Voir comment ça marche",
+          microcopy: "Sans engagement · Démo sur votre cas réel",
+        },
+        relatedPages: {
+          title: "En savoir plus",
+          links: [
+            { label: "Gestion des devis pour entreprises de construction à Cagliari", href: "/preventivi-edilizia-cagliari" },
+            { label: "Voice agent pour entreprises à Cagliari", href: "/voice-agent-cagliari" },
+          ],
+        },
+      },
       emailAutomation: {
         seo: {
           title: "Humanaise | Automatisation des Emails et Documents",

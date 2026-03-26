@@ -541,6 +541,292 @@ export const en: Translation = {
       microcopy: "No commitment · We analyze a real use case",
     },
     verticals: {
+      preventiviEdilizia: {
+        seo: {
+          title: "Construction Quote Management in Cagliari | WhatsApp, Phone, Email | Humanaise",
+          description: "Never lose customer requests again. Automate quote management for construction companies in Cagliari: WhatsApp, phone and email in one organized flow.",
+          keywords: "construction quotes cagliari, quote management construction, automate quotes cagliari, construction company software, whatsapp quotes construction, voice agent quotes",
+        },
+        hero: {
+          title: "Never lose customer requests from WhatsApp and phone again",
+          subtitle: "Automate quote management for your construction business in Cagliari. Receive requests from WhatsApp, phone and email and turn them into an organized flow.",
+          highlight: "Automatically answers calls even when you're unavailable.",
+          ctaPrimary: "Show me how it works in 10 minutes",
+          ctaSecondary: "See how it works",
+          points: [
+            "Zero lost requests",
+            "Trackable quote flow",
+            "WhatsApp + phone + email unified",
+          ],
+        },
+        voiceDiff: {
+          title: "What if a customer calls and you don't answer?",
+          bullets: [
+            "Automatic call answering",
+            "Customer information collection",
+            "Direct integration into the quote flow",
+          ],
+        },
+        problem: {
+          title: "How many requests do you lose every week without realizing it?",
+          painPoints: [
+            "You lose customer requests because WhatsApp isn't checked in time",
+            "You don't answer calls in time and the customer goes elsewhere",
+            "Requests forgotten between WhatsApp and email with no unified flow",
+            "Quotes assigned with no visibility on who does what and what state they're in",
+            "Every request handled differently — nobody knows where to find the information",
+          ],
+        },
+        solution: {
+          title: "One system to manage requests and quotes",
+          features: [
+            "Automatic collection of WhatsApp requests",
+            "Voice agent that answers calls out of hours",
+            "Centralization of email requests",
+            "Quote creation and tracking",
+            "Internal assignment with real-time visibility",
+            "Customization per sector, messages and company name",
+          ],
+        },
+        howItWorks: {
+          title: "How the process changes with automation",
+          steps: [
+            "The customer contacts the company via WhatsApp, phone or email — the system captures the request even when you're unavailable",
+            "Information is automatically organized and entered into the quote flow",
+            "The quote is assigned internally — whoever needs to act knows immediately",
+            "The team responds faster, with no requests falling through the cracks",
+            "Everything is trackable: you always know how many requests you have, who's handling them and what state they're in",
+          ],
+        },
+        channels: {
+          title: "WhatsApp, phone and email in the same process",
+          description: "You don't need to change how customers contact you. The system collects requests from all channels and brings them into a single flow — so nothing is lost, whatever channel the customer chooses.",
+          note: "You can activate just one, two, or all three channels. You don't need all of them — the system adapts to how you already work.",
+        },
+        useCase: {
+          title: "Built for construction companies and businesses managing high request volumes",
+          examples: [
+            "Construction companies",
+            "Installers",
+            "Windows and doors",
+            "Renovations",
+            "Plumbing and electrical",
+            "Craftsmen with high request volumes",
+          ],
+        },
+        realCase: {
+          title: "Already applied in a real context",
+          description: "The system has already been adapted to a real operational flow in the construction sector, with multi-channel request management, internal assignment and quote tracking from receipt to customer response.",
+        },
+        faq: {
+          title: "Frequently asked questions",
+          items: [
+            {
+              question: "Does the system only work for construction companies?",
+              answer: "No, but this page focuses on the construction quote use case because it's one of the clearest and most concrete scenarios. The same system can be adapted to other sectors with similar request volumes.",
+            },
+            {
+              question: "What happens if a customer calls out of hours?",
+              answer: "The voice agent answers automatically, collects the customer's information and inserts it into the quote flow. When you're available again, everything is already organized.",
+            },
+            {
+              question: "Can it be customized for my company?",
+              answer: "Yes. The system is designed to be customized per tenant: sector, messages, branding and operational settings. Each company gets a tailored flow.",
+            },
+            {
+              question: "Does it handle WhatsApp?",
+              answer: "Yes, WhatsApp is one of the main channels in the flow. Requests received via message are automatically collected and organized alongside others.",
+            },
+            {
+              question: "How do I know if it works for my company?",
+              answer: "In 10 minutes I'll show you how it would work in your specific case. No commitment.",
+            },
+          ],
+        },
+        cta: {
+          title: "Find out how to organize your quotes without losing requests",
+          description: "I'll show you in 10 minutes how the system works in your specific context.",
+          buttonText: "Show me how it works in 10 minutes",
+          microcopy: "No commitment · We analyze your real use case",
+        },
+        relatedPages: {
+          title: "Learn more",
+          links: [
+            { label: "Voice agent for businesses in Cagliari", href: "/voice-agent-cagliari" },
+            { label: "WhatsApp Business automation in Cagliari", href: "/whatsapp-business-automation-cagliari" },
+          ],
+        },
+      },
+      voiceAgent: {
+        seo: {
+          title: "Voice Agent for Businesses in Cagliari | Answer Calls Automatically | Humanaise",
+          description: "Never miss customer calls again. Activate a voice agent that answers, collects information and integrates it into your business processes — even out of hours.",
+          keywords: "voice agent cagliari, automatic call answering, ai phone businesses cagliari, customer call management, automatic answering service businesses",
+        },
+        hero: {
+          title: "Never lose customers because you didn't answer the phone",
+          subtitle: "Activate a voice agent that answers calls, collects requests and automatically organizes them into your workflow.",
+          highlight: "Works 24/7 — even out of hours, weekends and on site.",
+          cta: "Show me how it works in 10 minutes",
+          points: [
+            "No missed calls",
+            "Automatic request collection",
+            "Integration with quotes and appointments",
+          ],
+        },
+        problem: {
+          title: "Every unanswered call is a customer going elsewhere",
+          painPoints: [
+            "You're on site and can't answer the phone",
+            "The customer calls out of hours and finds nobody",
+            "You don't call back in time and the customer goes to the competition",
+            "No record of missed calls: you don't know how many opportunities you've lost",
+            "The team handles calls inconsistently, with no defined process",
+          ],
+        },
+        solution: {
+          title: "A voice agent that works for you when you're unavailable",
+          features: [
+            "Automatic call answering 24/7",
+            "Collection of customer name, contact and request",
+            "Automatic transcription and organization of information",
+            "Direct integration into the quote or appointment flow",
+            "Immediate team notification when a new request arrives",
+            "Customization of tone and message for your company",
+          ],
+        },
+        integration: {
+          title: "Not a separate channel — part of the same flow",
+          description: "The voice agent works alongside WhatsApp and email in the same system. When a customer calls, their request enters the flow exactly as if they had written on WhatsApp. No silos, no lost information.",
+        },
+        realCase: {
+          title: "Already applied in real contexts",
+          description: "The system has already been activated in real operational scenarios — from handling inbound calls for construction companies to qualifying requests for clinics. In all cases, the result is the same: fewer missed calls, more organized requests.",
+        },
+        faq: {
+          title: "Frequently asked questions",
+          items: [
+            {
+              question: "Does the voice agent sound natural?",
+              answer: "Yes. The voice agent is designed to respond in a natural and understandable way, adapted to the sector and tone of your company.",
+            },
+            {
+              question: "What exactly does it do when it answers a call?",
+              answer: "It greets the customer, collects essential information (name, contact, type of request) and enters them into the flow. If the request requires a human, it can divert or flag.",
+            },
+            {
+              question: "Does it work for booking appointments too?",
+              answer: "Yes. As well as quote requests, the voice agent can handle bookings, rescheduling and appointment cancellations.",
+            },
+            {
+              question: "Does it integrate with WhatsApp and email?",
+              answer: "Yes. All requests — whether from phone, WhatsApp or email — enter the same unified flow.",
+            },
+            {
+              question: "Can I try it for my specific case?",
+              answer: "Yes. In 10 minutes I'll show you how it would work for your company, with no commitment.",
+            },
+          ],
+        },
+        cta: {
+          title: "Stop losing customer calls",
+          description: "I'll show you how the voice agent works in your specific context — in 10 minutes.",
+          buttonText: "Show me how it works",
+          microcopy: "No commitment · Demo on your real use case",
+        },
+        relatedPages: {
+          title: "Learn more",
+          links: [
+            { label: "Quote management for construction companies in Cagliari", href: "/preventivi-edilizia-cagliari" },
+            { label: "WhatsApp Business automation in Cagliari", href: "/whatsapp-business-automation-cagliari" },
+          ],
+        },
+      },
+      whatsappAutomation: {
+        seo: {
+          title: "WhatsApp Business Automation in Cagliari | Respond to Customers Automatically | Humanaise",
+          description: "Automate WhatsApp responses, manage customer requests and organize quotes without losing messages. System built for businesses in Cagliari and Sardinia.",
+          keywords: "whatsapp business automation cagliari, whatsapp chatbot businesses, customer management whatsapp, whatsapp message automation, automatic whatsapp reply businesses",
+        },
+        hero: {
+          title: "Respond to customers on WhatsApp automatically",
+          subtitle: "Manage requests, appointments and quotes without losing messages. The system responds, collects information and organizes it in your workflow.",
+          highlight: "No forgotten messages — even when you're busy or out of hours.",
+          cta: "Watch a demo in 10 minutes",
+          points: [
+            "No lost messages",
+            "Immediate customer responses",
+            "Automatically organized requests",
+          ],
+        },
+        problem: {
+          title: "Customers write on WhatsApp. How many messages don't get a reply in time?",
+          painPoints: [
+            "Messages waiting for hours without a response",
+            "Requests lost between personal chats and WhatsApp Business",
+            "Customers who don't get a reply go to the competition",
+            "No system to understand how many requests arrive and how many are handled",
+            "Each team member manages WhatsApp differently, with no process",
+          ],
+        },
+        solution: {
+          title: "WhatsApp as a professional channel, not a personal chat",
+          features: [
+            "Immediate automatic response to incoming messages",
+            "Structured collection of request information",
+            "Automatic entry into the quote or appointment flow",
+            "Team notification when a new qualified request arrives",
+            "History and traceability of every conversation",
+            "Customization of tone, messages and flow for your company",
+          ],
+        },
+        useCase: {
+          title: "Ideal for companies receiving many requests every day",
+          description: "If most of your customers contact you via WhatsApp, this system turns that channel into a professional process: every request collected, organized and assigned — nothing lost. Works for construction companies, installers, professional offices, clinics and any business with high message volumes.",
+        },
+        realCase: {
+          title: "Already applied in real scenarios",
+          description: "The system is already active in real operational contexts: from managing quote requests in the construction sector to qualifying contacts for professional offices. The principle is the same — every WhatsApp message becomes a trackable request.",
+        },
+        faq: {
+          title: "Frequently asked questions",
+          items: [
+            {
+              question: "Does it work with my current WhatsApp number?",
+              answer: "The system is based on the WhatsApp Business API. In most cases it's possible to migrate your existing number. We'll explain how in the demo.",
+            },
+            {
+              question: "What exactly does it reply to customers?",
+              answer: "It responds with customized messages based on the type of request, collects the necessary information and confirms to the customer that the request has been received. The tone and content are configured for your company.",
+            },
+            {
+              question: "Does it integrate with the voice agent and email?",
+              answer: "Yes. WhatsApp, phone and email work in the same unified flow. Requests arriving from any channel all enter the same system.",
+            },
+            {
+              question: "Can I also manage appointments via WhatsApp?",
+              answer: "Yes. As well as quotes, the system can manage bookings, modifications and appointment cancellations directly in chat.",
+            },
+            {
+              question: "How do I know if it's right for my company?",
+              answer: "In 10 minutes I'll show you how it would work in your specific case, with no commitment.",
+            },
+          ],
+        },
+        cta: {
+          title: "Stop losing requests on WhatsApp",
+          description: "I'll show you in 10 minutes how the system works for your company.",
+          buttonText: "See how it works",
+          microcopy: "No commitment · Demo on your real use case",
+        },
+        relatedPages: {
+          title: "Learn more",
+          links: [
+            { label: "Quote management for construction companies in Cagliari", href: "/preventivi-edilizia-cagliari" },
+            { label: "Voice agent for businesses in Cagliari", href: "/voice-agent-cagliari" },
+          ],
+        },
+      },
       emailAutomation: {
         seo: {
           title: "Humanaise | Email & Document Automation",

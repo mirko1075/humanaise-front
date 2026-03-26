@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Container } from '../ui/Container';
 import { SectionHeading } from '../ui/SectionHeading';
-import { Building2, Microscope, Bot, MessageCircle, PhoneCall } from 'lucide-react';
+import { Building2, Microscope, Bot, MessageCircle, PhoneCall, ArrowRight } from 'lucide-react';
 import { useTranslation } from '../../hooks/useTranslation';
 import { staggerContainer, staggerItem, scrollViewport } from '../../utils/animations';
 
@@ -53,6 +54,17 @@ export function UseCasesSection() {
                   <p className={`text-sm leading-relaxed ${useCase.representative ? 'text-slate-300' : 'text-gray-600'}`}>
                     {useCase.description}
                   </p>
+                  {useCase.link && (
+                    <Link
+                      to={useCase.link}
+                      className={`inline-flex items-center gap-1.5 mt-4 text-sm font-medium transition-colors ${
+                        useCase.representative ? 'text-blue-400 hover:text-blue-300' : 'text-primary-600 hover:text-primary-700'
+                      }`}
+                    >
+                      {t.landing.useCases.learnMore ?? 'Scopri di più'}
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  )}
                 </div>
               </motion.div>
             );

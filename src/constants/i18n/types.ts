@@ -295,11 +295,13 @@ export interface Translation {
       title: string;
       subtitle: string;
       representativeBadge: string;
+      learnMore?: string;
       items: Array<{
         title: string;
         subtitle: string;
         description: string;
         representative?: boolean;
+        link?: string;
       }>;
     };
     howItWorks: {
@@ -367,6 +369,152 @@ export interface Translation {
           title: string;
           buttonText: string;
           microcopy: string;
+        };
+      };
+      preventiviEdilizia: {
+        seo: {
+          title: string;
+          description: string;
+          keywords: string;
+        };
+        hero: {
+          title: string;
+          subtitle: string;
+          highlight: string;
+          ctaPrimary: string;
+          ctaSecondary: string;
+          points: string[];
+        };
+        voiceDiff: {
+          title: string;
+          bullets: string[];
+        };
+        problem: {
+          title: string;
+          painPoints: string[];
+        };
+        solution: {
+          title: string;
+          features: string[];
+        };
+        howItWorks: {
+          title: string;
+          steps: string[];
+        };
+        channels: {
+          title: string;
+          description: string;
+          note: string;
+        };
+        useCase: {
+          title: string;
+          examples: string[];
+        };
+        realCase: {
+          title: string;
+          description: string;
+        };
+        faq: {
+          title: string;
+          items: Array<{ question: string; answer: string }>;
+        };
+        cta: {
+          title: string;
+          description: string;
+          buttonText: string;
+          microcopy: string;
+        };
+        relatedPages: {
+          title: string;
+          links: Array<{ label: string; href: string }>;
+        };
+      };
+      voiceAgent: {
+        seo: {
+          title: string;
+          description: string;
+          keywords: string;
+        };
+        hero: {
+          title: string;
+          subtitle: string;
+          highlight: string;
+          cta: string;
+          points: string[];
+        };
+        problem: {
+          title: string;
+          painPoints: string[];
+        };
+        solution: {
+          title: string;
+          features: string[];
+        };
+        integration: {
+          title: string;
+          description: string;
+        };
+        realCase: {
+          title: string;
+          description: string;
+        };
+        faq: {
+          title: string;
+          items: Array<{ question: string; answer: string }>;
+        };
+        cta: {
+          title: string;
+          description: string;
+          buttonText: string;
+          microcopy: string;
+        };
+        relatedPages: {
+          title: string;
+          links: Array<{ label: string; href: string }>;
+        };
+      };
+      whatsappAutomation: {
+        seo: {
+          title: string;
+          description: string;
+          keywords: string;
+        };
+        hero: {
+          title: string;
+          subtitle: string;
+          highlight: string;
+          cta: string;
+          points: string[];
+        };
+        problem: {
+          title: string;
+          painPoints: string[];
+        };
+        solution: {
+          title: string;
+          features: string[];
+        };
+        useCase: {
+          title: string;
+          description: string;
+        };
+        realCase: {
+          title: string;
+          description: string;
+        };
+        faq: {
+          title: string;
+          items: Array<{ question: string; answer: string }>;
+        };
+        cta: {
+          title: string;
+          description: string;
+          buttonText: string;
+          microcopy: string;
+        };
+        relatedPages: {
+          title: string;
+          links: Array<{ label: string; href: string }>;
         };
       };
     };

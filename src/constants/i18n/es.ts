@@ -546,6 +546,292 @@ export const es: Translation = {
       microcopy: "Sin compromiso · Analizamos un caso de uso real",
     },
     verticals: {
+      preventiviEdilizia: {
+        seo: {
+          title: "Gestión de Presupuestos en Construcción Cagliari | WhatsApp, Teléfono, Email | Humanaise",
+          description: "No pierdas más solicitudes de clientes. Automatiza la gestión de presupuestos para empresas de construcción en Cagliari: WhatsApp, teléfono y email en un único flujo organizado.",
+          keywords: "presupuestos construcción cagliari, gestión presupuestos construcción, automatizar presupuestos cagliari, software empresas constructoras, whatsapp presupuestos construcción",
+        },
+        hero: {
+          title: "No pierdas más solicitudes de clientes de WhatsApp y teléfono",
+          subtitle: "Automatiza la gestión de presupuestos para tu empresa en Cagliari. Recibe solicitudes de WhatsApp, teléfono y email y transfórmalas en un flujo organizado.",
+          highlight: "Responde automáticamente a las llamadas incluso cuando no estás disponible.",
+          ctaPrimary: "Te muestro cómo funciona en 10 minutos",
+          ctaSecondary: "Ver cómo funciona",
+          points: [
+            "Cero solicitudes perdidas",
+            "Flujo de presupuestos rastreable",
+            "WhatsApp + teléfono + email unificados",
+          ],
+        },
+        voiceDiff: {
+          title: "¿Y si un cliente llama y no respondes?",
+          bullets: [
+            "Respuesta automática a las llamadas",
+            "Recogida de información del cliente",
+            "Integración directa en el flujo de presupuestos",
+          ],
+        },
+        problem: {
+          title: "¿Cuántas solicitudes pierdes cada semana sin darte cuenta?",
+          painPoints: [
+            "Pierdes solicitudes porque WhatsApp no se revisa a tiempo",
+            "No respondes a las llamadas a tiempo y el cliente acude a la competencia",
+            "Solicitudes olvidadas entre WhatsApp y email sin un flujo único",
+            "Presupuestos asignados sin visibilidad sobre quién hace qué",
+            "Cada solicitud se gestiona de forma diferente sin proceso definido",
+          ],
+        },
+        solution: {
+          title: "Un único sistema para gestionar solicitudes y presupuestos",
+          features: [
+            "Recogida automática de solicitudes de WhatsApp",
+            "Voice agent que responde llamadas fuera de horario",
+            "Centralización de solicitudes de email",
+            "Creación y seguimiento del presupuesto",
+            "Asignación interna con visibilidad en tiempo real",
+            "Personalización por sector, mensajes y nombre de empresa",
+          ],
+        },
+        howItWorks: {
+          title: "Cómo cambia el proceso con la automatización",
+          steps: [
+            "El cliente contacta la empresa vía WhatsApp, teléfono o email — el sistema recoge la solicitud aunque no estés disponible",
+            "La información se organiza automáticamente y se introduce en el flujo de presupuestos",
+            "El presupuesto se asigna internamente — quien debe actuar lo sabe de inmediato",
+            "El equipo responde más rápido, sin solicitudes perdidas",
+            "Todo es rastreable: sabes cuántas solicitudes tienes, quién las gestiona y en qué estado están",
+          ],
+        },
+        channels: {
+          title: "WhatsApp, teléfono y email en el mismo proceso",
+          description: "No necesitas cambiar cómo te contactan los clientes. El sistema recoge solicitudes de todos los canales y las lleva a un único flujo — para no perder nada, sea cual sea el canal elegido.",
+          note: "Puedes activar uno, dos o los tres canales. No es necesario tenerlos todos — el sistema se adapta a cómo trabajas ya.",
+        },
+        useCase: {
+          title: "Diseñado para empresas de construcción y negocios con alto volumen de solicitudes",
+          examples: [
+            "Empresas de construcción",
+            "Instaladores",
+            "Ventanas y puertas",
+            "Reformas",
+            "Fontanería y electricidad",
+            "Artesanos con alto volumen de solicitudes",
+          ],
+        },
+        realCase: {
+          title: "Ya aplicado en un contexto real",
+          description: "El sistema ya ha sido adaptado a un flujo operativo real en el sector de la construcción, con gestión de solicitudes multicanal, asignación interna y seguimiento del presupuesto hasta la respuesta al cliente.",
+        },
+        faq: {
+          title: "Preguntas frecuentes",
+          items: [
+            {
+              question: "¿El sistema solo funciona para empresas de construcción?",
+              answer: "No, pero esta página se centra en el caso de uso de presupuestos en construcción porque es uno de los escenarios más claros y concretos.",
+            },
+            {
+              question: "¿Qué pasa si un cliente llama fuera de horario?",
+              answer: "El voice agent responde automáticamente, recoge la información del cliente y la introduce en el flujo de presupuestos. Cuando estás disponible, todo ya está organizado.",
+            },
+            {
+              question: "¿Se puede personalizar para mi empresa?",
+              answer: "Sí. El sistema está diseñado para personalizarse por tenant: sector, mensajes, branding y configuraciones operativas.",
+            },
+            {
+              question: "¿Gestiona también WhatsApp?",
+              answer: "Sí, WhatsApp es uno de los canales principales del flujo.",
+            },
+            {
+              question: "¿Cómo sé si funciona para mi empresa?",
+              answer: "En 10 minutos te muestro cómo funcionaría en tu caso específico. Sin compromiso.",
+            },
+          ],
+        },
+        cta: {
+          title: "Descubre cómo organizar tus presupuestos sin perder solicitudes",
+          description: "Te muestro en 10 minutos cómo funciona el sistema en tu contexto específico.",
+          buttonText: "Te muestro cómo funciona en 10 minutos",
+          microcopy: "Sin compromiso · Analizamos tu caso real",
+        },
+        relatedPages: {
+          title: "Más información",
+          links: [
+            { label: "Voice agent para empresas en Cagliari", href: "/voice-agent-cagliari" },
+            { label: "Automatización WhatsApp Business en Cagliari", href: "/whatsapp-business-automation-cagliari" },
+          ],
+        },
+      },
+      voiceAgent: {
+        seo: {
+          title: "Voice Agent para Empresas en Cagliari | Responde llamadas automáticamente | Humanaise",
+          description: "No pierdas más llamadas de clientes. Activa un voice agent que responde, recoge información y la integra en tus procesos empresariales — incluso fuera de horario.",
+          keywords: "voice agent cagliari, responder llamadas automático, ia teléfono empresas cagliari, gestión llamadas clientes, contestador automático empresas",
+        },
+        hero: {
+          title: "No pierdas más clientes cuando no respondes al teléfono",
+          subtitle: "Activa un voice agent que responde a las llamadas, recoge las solicitudes y las organiza automáticamente en tu flujo de trabajo.",
+          highlight: "Funciona 24/7 — incluso fuera de horario, fines de semana y en obra.",
+          cta: "Te muestro cómo funciona en 10 minutos",
+          points: [
+            "Ninguna llamada perdida",
+            "Recogida automática de solicitudes",
+            "Integración con presupuestos y citas",
+          ],
+        },
+        problem: {
+          title: "Cada llamada sin respuesta es un cliente que se va a la competencia",
+          painPoints: [
+            "Estás en obra y no puedes responder al teléfono",
+            "El cliente llama fuera de horario y no encuentra a nadie",
+            "No devuelves la llamada a tiempo y el cliente se va a la competencia",
+            "Sin registro de llamadas perdidas: no sabes cuántas oportunidades has perdido",
+            "El equipo gestiona las llamadas de forma desorganizada, sin proceso definido",
+          ],
+        },
+        solution: {
+          title: "Un voice agent que trabaja por ti cuando no estás disponible",
+          features: [
+            "Respuesta automática a llamadas 24/7",
+            "Recogida del nombre, contacto y solicitud del cliente",
+            "Transcripción y organización automática de la información",
+            "Integración directa en el flujo de presupuestos o citas",
+            "Notificación inmediata al equipo cuando llega una nueva solicitud",
+            "Personalización del tono y mensaje para tu empresa",
+          ],
+        },
+        integration: {
+          title: "No es un canal separado — es parte del mismo flujo",
+          description: "El voice agent trabaja junto a WhatsApp y email en el mismo sistema. Cuando un cliente llama, su solicitud entra en el flujo exactamente igual que si hubiera escrito por WhatsApp.",
+        },
+        realCase: {
+          title: "Ya aplicado en contextos reales",
+          description: "El sistema ya está activo en escenarios operativos reales — desde la gestión de llamadas entrantes de empresas de construcción hasta la cualificación de solicitudes de clínicas.",
+        },
+        faq: {
+          title: "Preguntas frecuentes",
+          items: [
+            {
+              question: "¿El voice agent suena natural?",
+              answer: "Sí. Está diseñado para responder de forma natural y comprensible, adaptado al sector y tono de tu empresa.",
+            },
+            {
+              question: "¿Qué hace exactamente cuando responde una llamada?",
+              answer: "Saluda al cliente, recoge la información esencial (nombre, contacto, tipo de solicitud) y la introduce en el flujo.",
+            },
+            {
+              question: "¿Funciona también para reservar citas?",
+              answer: "Sí. Además de solicitudes de presupuesto, el voice agent puede gestionar reservas, reprogramaciones y cancelaciones de citas.",
+            },
+            {
+              question: "¿Se integra con WhatsApp y email?",
+              answer: "Sí. Todas las solicitudes — de teléfono, WhatsApp o email — entran en el mismo flujo unificado.",
+            },
+            {
+              question: "¿Puedo probarlo para mi caso específico?",
+              answer: "Sí. En 10 minutos te muestro cómo funcionaría para tu empresa, sin compromiso.",
+            },
+          ],
+        },
+        cta: {
+          title: "Deja de perder llamadas de clientes",
+          description: "Te muestro cómo funciona el voice agent en tu contexto específico — en 10 minutos.",
+          buttonText: "Te muestro cómo funciona",
+          microcopy: "Sin compromiso · Demo en tu caso real",
+        },
+        relatedPages: {
+          title: "Más información",
+          links: [
+            { label: "Gestión de presupuestos para empresas de construcción en Cagliari", href: "/preventivi-edilizia-cagliari" },
+            { label: "Automatización WhatsApp Business en Cagliari", href: "/whatsapp-business-automation-cagliari" },
+          ],
+        },
+      },
+      whatsappAutomation: {
+        seo: {
+          title: "Automatización WhatsApp Business en Cagliari | Responde clientes automáticamente | Humanaise",
+          description: "Automatiza las respuestas de WhatsApp, gestiona solicitudes de clientes y organiza presupuestos sin perder mensajes.",
+          keywords: "whatsapp business automatización cagliari, chatbot whatsapp empresas, gestión clientes whatsapp, automatización mensajes whatsapp, respuesta automática whatsapp",
+        },
+        hero: {
+          title: "Responde automáticamente a los clientes en WhatsApp",
+          subtitle: "Gestiona solicitudes, citas y presupuestos sin perder mensajes. El sistema responde, recoge la información y la organiza en tu flujo de trabajo.",
+          highlight: "Ningún mensaje olvidado — incluso cuando estás ocupado o fuera de horario.",
+          cta: "Ver una demo en 10 minutos",
+          points: [
+            "Ningún mensaje perdido",
+            "Respuestas inmediatas a clientes",
+            "Solicitudes organizadas automáticamente",
+          ],
+        },
+        problem: {
+          title: "Los clientes escriben en WhatsApp. ¿Cuántos mensajes no reciben respuesta a tiempo?",
+          painPoints: [
+            "Mensajes esperando durante horas sin respuesta",
+            "Solicitudes perdidas entre chats personales y WhatsApp Business",
+            "El cliente que no recibe respuesta se va a la competencia",
+            "Sin sistema para saber cuántas solicitudes llegan y cuántas se gestionan",
+            "Cada miembro del equipo gestiona WhatsApp de forma diferente, sin proceso",
+          ],
+        },
+        solution: {
+          title: "WhatsApp como canal profesional, no como chat personal",
+          features: [
+            "Respuesta automática inmediata a mensajes entrantes",
+            "Recogida estructurada de información de la solicitud",
+            "Introducción automática en el flujo de presupuestos o citas",
+            "Notificación al equipo cuando llega una nueva solicitud cualificada",
+            "Historial y trazabilidad de cada conversación",
+            "Personalización del tono, mensajes y flujo para tu empresa",
+          ],
+        },
+        useCase: {
+          title: "Ideal para empresas que reciben muchas solicitudes cada día",
+          description: "Si la mayoría de tus clientes te contactan por WhatsApp, este sistema transforma ese canal en un proceso profesional: cada solicitud recogida, organizada y asignada — sin que nada se pierda.",
+        },
+        realCase: {
+          title: "Ya aplicado en escenarios reales",
+          description: "El sistema ya está activo en contextos operativos reales: desde la gestión de solicitudes de presupuestos en el sector de la construcción hasta la cualificación de contactos para despachos profesionales.",
+        },
+        faq: {
+          title: "Preguntas frecuentes",
+          items: [
+            {
+              question: "¿Funciona con mi número de WhatsApp actual?",
+              answer: "El sistema se basa en la API de WhatsApp Business. En la mayoría de los casos es posible migrar el número existente.",
+            },
+            {
+              question: "¿Qué responde exactamente a los clientes?",
+              answer: "Responde con mensajes personalizados según el tipo de solicitud, recoge la información necesaria y confirma al cliente que la solicitud ha sido recibida.",
+            },
+            {
+              question: "¿Se integra con el voice agent y el email?",
+              answer: "Sí. WhatsApp, teléfono y email trabajan en el mismo flujo unificado.",
+            },
+            {
+              question: "¿Puedo gestionar también citas por WhatsApp?",
+              answer: "Sí. Además de presupuestos, el sistema puede gestionar reservas, modificaciones y cancelaciones de citas directamente en el chat.",
+            },
+            {
+              question: "¿Cómo sé si es adecuado para mi empresa?",
+              answer: "En 10 minutos te muestro cómo funcionaría en tu caso específico, sin compromiso.",
+            },
+          ],
+        },
+        cta: {
+          title: "Deja de perder solicitudes en WhatsApp",
+          description: "Te muestro en 10 minutos cómo funciona el sistema para tu empresa.",
+          buttonText: "Ver cómo funciona",
+          microcopy: "Sin compromiso · Demo en tu caso real",
+        },
+        relatedPages: {
+          title: "Más información",
+          links: [
+            { label: "Gestión de presupuestos para empresas de construcción en Cagliari", href: "/preventivi-edilizia-cagliari" },
+            { label: "Voice agent para empresas en Cagliari", href: "/voice-agent-cagliari" },
+          ],
+        },
+      },
       emailAutomation: {
         seo: {
           title: "Humanaise | Automatización de Email y Documentos",
