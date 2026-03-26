@@ -45,14 +45,17 @@ export function VoiceAgent() {
               <Mic className="w-4 h-4" />
               Voice Agent
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
               {v.hero.title}
             </h1>
-            <p className="text-xl text-primary-200 mb-3">
+            <p className="text-lg font-semibold text-red-400 mb-4">
+              {v.hero.killerLine}
+            </p>
+            <p className="text-xl text-primary-200 mb-2">
               {v.hero.subtitle}
             </p>
             <p className="text-base text-secondary-400 font-medium mb-8">
-              {v.hero.highlight}
+              👉 {v.hero.highlight}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
               <Button size="lg" onClick={scrollToContact}>
@@ -87,17 +90,29 @@ export function VoiceAgent() {
       </section>
 
       {/* Impact Block */}
-      <section className="py-10 bg-red-950/30 border-y border-red-900/40">
+      <section className="py-14 bg-red-950/30 border-y border-red-900/40">
         <Container>
-          <motion.p
-            className="text-center text-lg md:text-xl font-semibold text-red-300 max-w-2xl mx-auto"
+          <motion.div
+            className="max-w-xl mx-auto text-center space-y-4"
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
             viewport={scrollViewport}
           >
-            {v.impactBlock.text}
-          </motion.p>
+            <p className="text-primary-400 text-sm uppercase tracking-widest">{v.impactBlock.lines[0]}</p>
+            <p className="text-2xl font-bold text-white">{v.impactBlock.lines[1]}</p>
+            <p className="text-lg text-primary-200">{v.impactBlock.lines[2]}</p>
+            <div className="pt-2 text-left inline-block">
+              <p className="text-sm text-primary-400 mb-2">Non hai traccia di:</p>
+              <ul className="space-y-1">
+                {v.impactBlock.tracklist.map((item, i) => (
+                  <li key={i} className="flex items-center gap-2 text-red-400 text-sm font-medium">
+                    <span className="text-red-600">→</span> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
         </Container>
       </section>
 
@@ -123,6 +138,23 @@ export function VoiceAgent() {
               </motion.li>
             ))}
           </motion.ul>
+        </Container>
+      </section>
+
+      {/* Positioning */}
+      <section className="py-16 bg-indigo-950 border-y border-indigo-800/40">
+        <Container>
+          <motion.div
+            className="max-w-2xl mx-auto text-center space-y-4"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={scrollViewport}
+          >
+            <p className="text-xl font-bold text-white line-through decoration-red-500/60 decoration-2">{v.positioning.lines[0]}</p>
+            <p className="text-2xl font-bold text-secondary-400">{v.positioning.lines[1]}</p>
+            <p className="text-lg text-primary-200">{v.positioning.lines[2]}</p>
+          </motion.div>
         </Container>
       </section>
 
@@ -224,7 +256,7 @@ export function VoiceAgent() {
             viewport={scrollViewport}
           >
             <h2 className="text-3xl font-bold text-white mb-4 text-center">{v.integration.title}</h2>
-            <p className="text-xl text-primary-200 text-center mb-10">{v.integration.description}</p>
+            <p className="text-xl text-primary-200 text-center mb-6">{v.integration.description}</p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               {[
                 { icon: Phone, label: 'Voice Agent', color: 'text-blue-400', active: true },

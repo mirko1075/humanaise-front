@@ -672,10 +672,10 @@ export const es: Translation = {
           keywords: "voice agent cagliari, responder llamadas automático, ia teléfono empresas cagliari, gestión llamadas clientes, contestador automático empresas",
         },
         hero: {
-          title: "Si no respondes al teléfono, estás perdiendo clientes cada día",
-          subtitle: "El voice agent responde las llamadas por ti, recoge las solicitudes y las inserta automáticamente en tu flujo.",
-          highlight: "Cada llamada perdida es un cliente que va a uno de tus competidores.",
-          ctaPrimary: "Descubre qué pasa cuando no respondes",
+          title: "¿Cuántas llamadas pierdes cada día sin darte cuenta?",
+          subtitle: "Activa un voice agent que responde por ti, recoge la solicitud y la inserta automáticamente en tu flujo de presupuestos o citas.",
+          highlight: "Incluso cuando estás en obra, fuera de horario u ocupado.",
+          ctaPrimary: "Quiero ver cuántas llamadas estoy perdiendo",
           ctaSecondary: "Te muestro cómo recuperar las llamadas perdidas",
           points: [
             "Ninguna llamada perdida",
@@ -684,7 +684,23 @@ export const es: Translation = {
           ],
         },
         impactBlock: {
-          text: "Cada llamada sin respuesta es una oportunidad perdida. El cliente no espera: llama a otra persona.",
+          lines: [
+            "La realidad es esta:",
+            "El teléfono suena. No respondes. Cliente perdido.",
+            "Y el problema es que ni siquiera lo sabes.",
+          ],
+          tracklist: [
+            "cuántas llamadas pierdes",
+            "quiénes eran esos clientes",
+            "cuántos ingresos se te escaparon",
+          ],
+        },
+        positioning: {
+          lines: [
+            "No es un contestador.",
+            "Es un sistema que transforma cada llamada en una solicitud real.",
+            "Responde, recoge información, la organiza y la inserta directamente en tu flujo operativo.",
+          ],
         },
         problem: {
           title: "Cada llamada sin respuesta es un cliente que se va a la competencia",
@@ -729,8 +745,8 @@ export const es: Translation = {
           ],
         },
         integration: {
-          title: "No es un canal separado: es parte del mismo flujo",
-          description: "El voice agent trabaja junto a WhatsApp y email en el mismo sistema. Cuando un cliente llama, su solicitud entra en el flujo exactamente igual que si hubiera escrito por WhatsApp.",
+          title: "La diferencia no es responder al teléfono. Es no perder nunca una solicitud.",
+          description: "Voice agent + WhatsApp + email = un único sistema. Cualquiera que sea el canal: la solicitud entra siempre en el mismo flujo, nada se pierde, todo es trazable.",
         },
         realCase: {
           title: "Ya aplicado en contextos reales",
@@ -762,10 +778,10 @@ export const es: Translation = {
           ],
         },
         cta: {
-          title: "Deja de perder llamadas de clientes",
+          title: "Deja de perder clientes por teléfono",
           description: "Te muestro cómo funciona el voice agent en tu contexto específico, en 10 minutos.",
           buttonText: "Te muestro cómo funciona",
-          microcopy: "Sin compromiso · Demo en tu caso real",
+          microcopy: "Sin compromiso · Demo concreta en tu flujo real",
         },
         relatedPages: {
           title: "Más información",
@@ -782,36 +798,46 @@ export const es: Translation = {
           keywords: "whatsapp business automatización cagliari, chatbot whatsapp empresas, gestión clientes whatsapp, automatización mensajes whatsapp, respuesta automática whatsapp",
         },
         hero: {
-          title: "Responde automáticamente a los clientes en WhatsApp",
-          subtitle: "Gestiona solicitudes, citas y presupuestos sin perder mensajes. El sistema responde, recoge la información y la organiza en tu flujo de trabajo.",
-          highlight: "Ningún mensaje olvidado, incluso cuando estás ocupado o fuera de horario.",
+          title: "¿Cuántos clientes te escriben en WhatsApp y no reciben respuesta a tiempo?",
+          killerLine: "Si no respondes de inmediato, el cliente le escribe a otra persona.",
+          subtitle: "Automatiza las respuestas y transforma cada mensaje en una solicitud organizada: el sistema responde, recoge la información y la inserta en tu flujo.",
+          highlight: "Incluso cuando estás ocupado o fuera de horario.",
           ctaPrimary: "Descubre cuántos mensajes estás perdiendo",
-          ctaSecondary: "Te muestro cómo gestionarlos automáticamente",
+          ctaSecondary: "Ver cómo funciona",
           points: [
             "Ningún mensaje perdido",
             "Respuestas inmediatas a clientes",
             "Solicitudes organizadas automáticamente",
           ],
         },
+
+        impactBlock: {
+          lines: [
+            "La realidad es simple:",
+            "Los clientes no esperan.",
+            "Si no respondes a tiempo, la solicitud no está pendiente: está perdida.",
+            "Y a menudo ni siquiera lo sabes.",
+          ],
+        },
         problem: {
           title: "Los clientes escriben en WhatsApp. ¿Cuántos mensajes no reciben respuesta a tiempo?",
           painPoints: [
-            "Mensajes esperando durante horas sin respuesta",
+            "Mensajes sin leer durante horas, a veces días",
             "Solicitudes perdidas entre chats personales y WhatsApp Business",
-            "El cliente que no recibe respuesta se va a la competencia",
-            "Sin sistema para saber cuántas solicitudes llegan y cuántas se gestionan",
-            "Cada miembro del equipo gestiona WhatsApp de forma diferente, sin proceso",
+            "Clientes que dejan de esperar y escriben a otro",
+            "No sabes cuántos clientes estás perdiendo",
+            "El equipo responde en WhatsApp sin proceso: cada uno a su manera",
           ],
         },
         solution: {
-          title: "WhatsApp como canal profesional, no como chat personal",
+          title: "Cada mensaje recibe respuesta. Ninguna solicitud se pierde.",
           features: [
-            "Respuesta automática inmediata a mensajes entrantes",
-            "Recogida estructurada de información de la solicitud",
-            "Introducción automática en el flujo de presupuestos o citas",
-            "Notificación al equipo cuando llega una nueva solicitud cualificada",
-            "Historial y trazabilidad de cada conversación",
-            "Personalización del tono, mensajes y flujo para tu empresa",
+            "Cada mensaje recibe respuesta inmediata",
+            "Cada solicitud se vuelve estructurada y trazable",
+            "Nada se pierde ni se olvida",
+            "Tu equipo sabe exactamente qué hacer",
+            "Por fin ves cuántas solicitudes recibes de verdad",
+            "Cero caos: un único flujo para todo",
           ],
         },
         useCase: {
@@ -851,7 +877,7 @@ export const es: Translation = {
           title: "Deja de perder solicitudes en WhatsApp",
           description: "Te muestro en 10 minutos cómo funciona el sistema para tu empresa.",
           buttonText: "Ver cómo funciona",
-          microcopy: "Sin compromiso · Demo en tu caso real",
+          microcopy: "Sin compromiso · Demo concreta en tu flujo real",
         },
         relatedPages: {
           title: "Más información",

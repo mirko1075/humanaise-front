@@ -667,10 +667,10 @@ export const en: Translation = {
           keywords: "voice agent cagliari, automatic call answering, ai phone businesses cagliari, customer call management, automatic answering service businesses",
         },
         hero: {
-          title: "If you don't answer the phone, you're losing customers every day",
-          subtitle: "The voice agent answers calls for you, collects requests and inserts them automatically into your flow.",
-          highlight: "Every missed call is a customer going to one of your competitors.",
-          ctaPrimary: "Find out what happens when you don't answer",
+          title: "How many calls are you losing every day without realising it?",
+          subtitle: "Activate a voice agent that answers calls for you, collects the request and inserts it automatically into your quote or appointment flow.",
+          highlight: "Even when you're on site, out of hours or busy.",
+          ctaPrimary: "I want to see how many calls I'm losing",
           ctaSecondary: "Show me how to recover missed calls",
           points: [
             "No missed calls",
@@ -679,7 +679,23 @@ export const en: Translation = {
           ],
         },
         impactBlock: {
-          text: "Every unanswered call is a lost opportunity. The customer doesn't wait: they call someone else.",
+          lines: [
+            "The reality is this:",
+            "The phone rings. You don't answer. Customer lost.",
+            "And the problem is you don't even know it.",
+          ],
+          tracklist: [
+            "how many calls you're missing",
+            "who those customers were",
+            "how much revenue slipped away",
+          ],
+        },
+        positioning: {
+          lines: [
+            "It's not a voicemail.",
+            "It's a system that turns every call into a real request.",
+            "It answers, collects information, organises it and inserts it directly into your operational flow.",
+          ],
         },
         problem: {
           title: "Every unanswered call is a customer going elsewhere",
@@ -724,8 +740,8 @@ export const en: Translation = {
           ],
         },
         integration: {
-          title: "Not a separate channel: part of the same flow",
-          description: "The voice agent works alongside WhatsApp and email in the same system. When a customer calls, their request enters the flow exactly as if they had written on WhatsApp. No silos, no lost information.",
+          title: "The difference isn't answering the phone. It's never losing a request.",
+          description: "Voice agent + WhatsApp + email = one unified system. Whatever the channel: the request always enters the same flow, nothing is lost, everything is trackable.",
         },
         realCase: {
           title: "Already applied in real contexts",
@@ -757,7 +773,7 @@ export const en: Translation = {
           ],
         },
         cta: {
-          title: "Stop losing customer calls",
+          title: "Stop losing customers on the phone",
           description: "I'll show you how the voice agent works in your specific context, in 10 minutes.",
           buttonText: "Show me how it works",
           microcopy: "No commitment · Demo on your real use case",
@@ -777,9 +793,10 @@ export const en: Translation = {
           keywords: "whatsapp business automation cagliari, whatsapp chatbot businesses, customer management whatsapp, whatsapp message automation, automatic whatsapp reply businesses",
         },
         hero: {
-          title: "Respond to customers on WhatsApp automatically",
-          subtitle: "Manage requests, appointments and quotes without losing messages. The system responds, collects information and organizes it in your workflow.",
-          highlight: "No forgotten messages, even when you're busy or out of hours.",
+          title: "How many customers message you on WhatsApp and don't get a reply in time?",
+          killerLine: "If you don't reply straight away, the customer writes to someone else.",
+          subtitle: "Automate responses and turn every message into an organised request: the system replies, collects information and inserts it into your flow.",
+          highlight: "Even when you're busy or out of hours.",
           ctaPrimary: "Find out how many messages you\'re losing",
           ctaSecondary: "Show me how to handle them automatically",
           points: [
@@ -788,25 +805,34 @@ export const en: Translation = {
             "Automatically organized requests",
           ],
         },
+
+        impactBlock: {
+          lines: [
+            "The reality is simple:",
+            "Customers don't wait.",
+            "If you don't reply in time, the request isn't pending: it's lost.",
+            "And you often don't even know.",
+          ],
+        },
         problem: {
           title: "Customers write on WhatsApp. How many messages don't get a reply in time?",
           painPoints: [
-            "Messages waiting for hours without a response",
+            "Messages unread for hours, sometimes days",
+            "Customers stop waiting and write to someone else",
             "Requests lost between personal chats and WhatsApp Business",
-            "Customers who don't get a reply go to the competition",
-            "No system to understand how many requests arrive and how many are handled",
-            "Each team member manages WhatsApp differently, with no process",
+            "You have no idea how many clients you're losing",
+            "Your team handles WhatsApp with no process: everyone does it differently",
           ],
         },
         solution: {
-          title: "WhatsApp as a professional channel, not a personal chat",
+          title: "Every message gets a reply. No request goes unanswered.",
           features: [
-            "Immediate automatic response to incoming messages",
-            "Structured collection of request information",
-            "Automatic entry into the quote or appointment flow",
-            "Team notification when a new qualified request arrives",
-            "History and traceability of every conversation",
-            "Customization of tone, messages and flow for your company",
+            "Every message gets an immediate reply",
+            "Every request becomes structured and trackable",
+            "Nothing gets lost or forgotten",
+            "Your team knows exactly what to do",
+            "You finally see how many requests you actually receive",
+            "Zero chaos: one single flow for everything",
           ],
         },
         useCase: {

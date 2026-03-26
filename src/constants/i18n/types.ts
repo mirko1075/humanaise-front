@@ -440,6 +440,7 @@ export interface Translation {
         };
         hero: {
           title: string;
+          killerLine: string;
           subtitle: string;
           highlight: string;
           ctaPrimary: string;
@@ -447,7 +448,11 @@ export interface Translation {
           points: string[];
         };
         impactBlock: {
-          text: string;
+          lines: string[];
+          tracklist: string[];
+        };
+        positioning: {
+          lines: string[];
         };
         problem: {
           title: string;
@@ -498,11 +503,15 @@ export interface Translation {
         };
         hero: {
           title: string;
+          killerLine: string;
           subtitle: string;
           highlight: string;
           ctaPrimary: string;
           ctaSecondary: string;
           points: string[];
+        };
+        impactBlock: {
+          lines: string[];
         };
         problem: {
           title: string;

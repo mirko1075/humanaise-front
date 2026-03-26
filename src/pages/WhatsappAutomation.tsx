@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Container } from '../components/ui/Container';
@@ -23,6 +23,10 @@ export function WhatsappAutomation() {
     contactRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToReality = () => {
+    document.getElementById('reality-section')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
@@ -40,28 +44,25 @@ export function WhatsappAutomation() {
               <MessageCircle className="w-4 h-4" />
               WhatsApp Business
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
               {v.hero.title}
             </h1>
-            <p className="text-xl text-primary-200 mb-3">
+            <p className="text-lg font-semibold text-red-400 mb-4">
+              {v.hero.killerLine}
+            </p>
+            <p className="text-xl text-primary-200 mb-2">
               {v.hero.subtitle}
             </p>
             <p className="text-base text-secondary-400 font-medium mb-8">
-              {v.hero.highlight}
+              👉 {v.hero.highlight}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+            <div className="flex justify-center mb-6">
               <Button size="lg" onClick={scrollToContact}>
                 {v.hero.ctaPrimary}
               </Button>
-              <button
-                onClick={scrollToContact}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-primary-200 border border-primary-700 rounded-lg hover:bg-primary-800 transition-colors"
-              >
-                {v.hero.ctaSecondary}
-              </button>
             </div>
             <motion.ul
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-6"
               variants={staggerContainer}
               initial="hidden"
               animate="visible"
@@ -77,6 +78,42 @@ export function WhatsappAutomation() {
                 </motion.li>
               ))}
             </motion.ul>
+            <button
+              onClick={scrollToReality}
+              className="text-sm text-primary-400 hover:text-primary-200 underline underline-offset-4 transition-colors"
+            >
+              {v.hero.ctaSecondary} ↓
+            </button>
+          </motion.div>
+        </Container>
+      </section>
+
+      {/* Impact Block */}
+      <section id="reality-section" className="py-12 bg-red-950/30 border-y border-red-900/40">
+        <Container>
+          <motion.div
+            className="max-w-xl mx-auto text-center space-y-3"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={scrollViewport}
+          >
+            {v.impactBlock.lines.map((line, i) => (
+              <p
+                key={i}
+                className={
+                  i === 0
+                    ? 'text-primary-400 text-sm uppercase tracking-widest'
+                    : i === 1
+                    ? 'text-2xl font-bold text-white'
+                    : i === v.impactBlock.lines.length - 1
+                    ? 'text-base text-red-400 font-medium'
+                    : 'text-lg text-primary-200'
+                }
+              >
+                {line}
+              </p>
+            ))}
           </motion.div>
         </Container>
       </section>
