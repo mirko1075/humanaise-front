@@ -24,6 +24,7 @@ export const it: Translation = {
       reasons: "Perché Noi",
       contact: "Contatti",
       success: "Successo",
+      social: "Social",
     },
   },
   home: {
@@ -407,6 +408,9 @@ export const it: Translation = {
         "Copiare dati tra strumenti, fogli di calcolo e documenti",
         "Creare gli stessi report e documenti più e più volte",
         "Rincorrere approvazioni e follow-up su canali diversi",
+        "Rispondere alle stesse domande dei clienti, via chat o telefono, ogni giorno",
+        "Fissare appuntamenti manualmente con infiniti scambi di messaggi",
+        "Perdere lead e richieste perché nessuno è disponibile a rispondere subito",
         "Perdere tempo in amministrazione ripetitiva invece che nel lavoro vero",
       ],
       closing: "Questo lavoro è ripetitivo, lento e soggetto a errori. C'è un modo migliore.",
@@ -438,10 +442,33 @@ export const it: Translation = {
         },
       ],
     },
+    aiCapabilities: {
+      title: "Capacità AI",
+      subtitle: "Estendi la tua automazione con l'AI: dagli assistenti ai voice agent.",
+      items: [
+        {
+          title: "Assistenti AI (basati su RAG)",
+          description: "Crea assistenti AI che rispondono alle domande usando i tuoi documenti interni, knowledge base e dati. Le risposte sono basate sulle tue informazioni reali, non su output AI generici.",
+        },
+        {
+          title: "AI Appointment Setter",
+          description: "Gestisci automaticamente le richieste in arrivo, qualifica i lead e prenota chiamate o meeting via chat (WhatsApp, email o web), riducendo lo scambio manuale di messaggi.",
+        },
+        {
+          title: "Voice Agent",
+          description: "Voice agent AI che gestiscono chiamate, raccolgono informazioni e guidano gli utenti attraverso processi predefiniti, integrati con i tuoi sistemi e workflow.",
+        },
+        {
+          title: "Estrazione e Classificazione Dati AI",
+          description: "Estrai dati strutturati da input non strutturati (email, documenti, messaggi) e classificali per attivare workflow e decisioni automatiche.",
+        },
+      ],
+    },
     useCases: {
       title: "Progetti Reali",
       subtitle: "Questi sono sistemi reali che abbiamo costruito, insieme a implementazioni rappresentative che mostrano come il nostro approccio all'automazione può essere applicato in diversi contesti.",
       representativeBadge: "Implementazione Rappresentativa",
+      learnMore: "Scopri di più",
       items: [
         {
           title: "Automazione Processi di Ricerca",
@@ -452,11 +479,24 @@ export const it: Translation = {
           title: "Automazione Preventivi e Documenti",
           subtitle: "Impresa Edile",
           description: "Abbiamo implementato un sistema di automazione che gestisce l'intero ciclo dalla richiesta del cliente alla generazione del preventivo e alla gestione documentale. Le richieste da WhatsApp ed email vengono elaborate automaticamente, i dati vengono estratti e utilizzati per generare preventivi e organizzare documenti. Il sistema si integra con gli strumenti interni per notificare i team e monitorare l'avanzamento, sostituendo processi manuali frammentati e migliorando la visibilità operativa.",
+          link: "/preventivi-edilizia-cagliari",
         },
         {
           title: "Assistente AI & Appointment Setter",
           subtitle: "Agenzia di Automazione AI",
           description: "Abbiamo costruito un assistente chat basato su AI che risponde a domande sull'azienda utilizzando documenti interni tramite un approccio basato su retrieval (RAG), e può anche prenotare, riprogrammare e cancellare Discovery Call direttamente nella conversazione. L'assistente si integra con sistemi di scheduling, gestisce conversazioni multilingue e cattura lead qualificati. Tutto senza intervento umano. Puoi provarlo adesso su questo sito.",
+        },
+        {
+          title: "Chatbot AI per Assistenza Clienti",
+          subtitle: "Studio Professionale",
+          description: "Un chatbot AI addestrato sulla knowledge base dello studio (servizi offerti, documenti necessari, scadenze fiscali, procedure) che risponde alle domande dei clienti istantaneamente via sito web o WhatsApp. Gestisce le richieste ricorrenti, guida i clienti nella preparazione dei documenti e inoltra i casi complessi al professionista. Disponibile 24/7, ha ridotto le chiamate ripetitive di oltre il 60% liberando tempo per attività ad alto valore.",
+          representative: true,
+        },
+        {
+          title: "Voice Agent per Prenotazione Appuntamenti",
+          subtitle: "Clinica Medica",
+          description: "Un voice agent AI che gestisce le chiamate in entrata, qualifica le richieste dei pazienti e prenota o riprogramma appuntamenti direttamente nel sistema calendario della clinica. Parla in modo naturale, comprende l'intento anche in chiamate rumorose e invia conferme SMS automaticamente. La clinica ha recuperato ore di lavoro giornaliero della receptionist e ha smesso di perdere chiamate fuori orario.",
+          representative: true,
         },
       ],
     },
@@ -511,6 +551,313 @@ export const it: Translation = {
       microcopy: "Nessun impegno · Analizziamo un tuo caso reale",
     },
     verticals: {
+      preventiviEdilizia: {
+        seo: {
+          title: "Gestione Preventivi Edilizia a Cagliari | WhatsApp, Telefono, Email | Humanaise",
+          description: "Non perdere più richieste clienti. Automatizza la gestione dei preventivi per imprese edili a Cagliari: WhatsApp, telefono ed email in un unico flusso organizzato.",
+          keywords: "preventivi edilizia cagliari, gestione preventivi edilizia, automatizzare preventivi cagliari, software preventivi imprese edili, whatsapp preventivi edilizia, voice agent preventivi",
+        },
+        hero: {
+          title: "Non perdere più richieste clienti da WhatsApp e telefono",
+          subtitle: "Automatizza la gestione dei preventivi per la tua impresa a Cagliari. Ricevi richieste da WhatsApp, telefono ed email e trasformale in un flusso organizzato.",
+          highlight: "Risponde automaticamente anche alle chiamate quando non sei disponibile.",
+          ctaPrimary: "Ti faccio vedere come funziona in 10 minuti",
+          ctaSecondary: "Guarda come funziona",
+          points: [
+            "Zero richieste perse",
+            "Flusso preventivi tracciabile",
+            "WhatsApp + telefono + email unificati",
+          ],
+        },
+        voiceDiff: {
+          title: "E se un cliente chiama e non rispondi?",
+          bullets: [
+            "Risposta automatica alle chiamate",
+            "Raccolta informazioni cliente",
+            "Integrazione diretta nel flusso preventivi",
+          ],
+        },
+        problem: {
+          title: "Quante richieste perdi ogni settimana senza accorgertene?",
+          painPoints: [
+            "Perdi richieste clienti perché WhatsApp non viene controllato in tempo",
+            "Non rispondi in tempo alle chiamate e il cliente si rivolge altrove",
+            "Richieste dimenticate tra WhatsApp ed email senza un flusso unico",
+            "Preventivi assegnati senza visibilità su chi fa cosa e in che stato sono",
+            "Ogni richiesta gestita in modo diverso: nessuno sa dove trovare le informazioni",
+          ],
+        },
+        solution: {
+          title: "Un unico sistema per gestire richieste e preventivi",
+          features: [
+            "Raccolta automatica delle richieste da WhatsApp",
+            "Voice agent che risponde alle chiamate fuori orario",
+            "Centralizzazione delle richieste da email",
+            "Creazione e tracciamento del preventivo",
+            "Assegnazione interna con visibilità in tempo reale",
+            "Personalizzazione per settore, messaggi e nome azienda",
+          ],
+        },
+        howItWorks: {
+          title: "Come cambia il processo con l'automazione",
+          steps: [
+            "Il cliente contatta l'azienda via WhatsApp, telefono o email: il sistema raccoglie la richiesta anche se non sei disponibile",
+            "Le informazioni vengono organizzate automaticamente e inserite nel flusso preventivi",
+            "Il preventivo viene assegnato internamente: chi deve agire lo sa subito",
+            "Il team risponde più velocemente, senza richieste cadute nel vuoto",
+            "Tutto è tracciabile: sai sempre quante richieste hai, chi le gestisce e in che stato sono",
+          ],
+        },
+        channels: {
+          title: "WhatsApp, telefono ed email nello stesso processo",
+          description: "Non serve cambiare come i clienti ti contattano. Il sistema raccoglie le richieste da tutti i canali e le porta in un unico flusso, così non perdi nulla, qualunque sia il canale scelto dal cliente.",
+          note: "Puoi attivare uno solo, due, o tutti e tre i canali.\nNon è necessario averli tutti: il sistema si adatta a come lavori già.",
+        },
+        useCase: {
+          title: "Pensato per imprese edili e aziende che gestiscono molte richieste",
+          examples: [
+            "Imprese edili",
+            "Installatori",
+            "Serramenti e infissi",
+            "Ristrutturazioni",
+            "Impianti idraulici ed elettrici",
+            "Artigiani con alto volume di richieste",
+          ],
+        },
+        realCase: {
+          title: "Già applicato in un contesto reale",
+          description: "Il sistema è già stato adattato a un flusso operativo reale nel settore edilizia, con gestione richieste da più canali, assegnazione interna e tracciamento del preventivo dalla ricezione alla risposta al cliente.",
+        },
+        faq: {
+          title: "Domande frequenti",
+          items: [
+            {
+              question: "Il sistema funziona solo per aziende edili?",
+              answer: "No, ma questa pagina è focalizzata sul caso d'uso dei preventivi in edilizia perché è uno degli scenari più chiari e concreti. Lo stesso sistema può essere adattato ad altri settori con volumi simili di richieste.",
+            },
+            {
+              question: "Cosa succede se un cliente chiama fuori orario?",
+              answer: "Il voice agent risponde automaticamente, raccoglie le informazioni del cliente e le inserisce nel flusso preventivi. Quando torni disponibile, trovi già tutto organizzato.",
+            },
+            {
+              question: "Si può personalizzare per la mia azienda?",
+              answer: "Sì. Il sistema è progettato per essere personalizzato per tenant: settore, messaggi, branding e configurazioni operative. Ogni azienda riceve un flusso su misura.",
+            },
+            {
+              question: "Gestisce anche WhatsApp?",
+              answer: "Sì, WhatsApp è uno dei canali principali del flusso. Le richieste arrivate via messaggio vengono raccolte e organizzate automaticamente insieme alle altre.",
+            },
+            {
+              question: "Come faccio a capire se funziona per la mia azienda?",
+              answer: "In 10 minuti ti mostro come funzionerebbe nel tuo caso specifico. Nessun impegno.",
+            },
+          ],
+        },
+        cta: {
+          title: "Scopri come organizzare i tuoi preventivi senza perdere più richieste",
+          description: "Ti mostro in 10 minuti come funziona il sistema nel tuo contesto specifico.",
+          buttonText: "Ti faccio vedere come funziona in 10 minuti",
+          microcopy: "Nessun impegno · Analizziamo il tuo caso reale",
+        },
+        relatedPages: {
+          title: "Approfondisci",
+          links: [
+            { label: "Voice agent per aziende a Cagliari", href: "/voice-agent-cagliari" },
+            { label: "Automazione WhatsApp Business a Cagliari", href: "/whatsapp-business-automation-cagliari" },
+          ],
+        },
+      },
+      voiceAgent: {
+        seo: {
+          title: "Voice Agent per Aziende a Cagliari | Rispondi alle chiamate automaticamente | Humanaise",
+          description: "Non perdere più chiamate clienti. Attiva un voice agent che risponde, raccoglie informazioni e le integra nei tuoi processi aziendali, anche fuori orario.",
+          keywords: "voice agent cagliari, rispondere telefonate automatico, ai telefono aziende cagliari, gestione chiamate clienti, risponditore automatico aziende",
+        },
+        hero: {
+          title: "Non perdere più clienti quando non rispondi al telefono",
+          subtitle: "Attiva un voice agent che risponde alle chiamate, raccoglie le richieste e le organizza automaticamente nel tuo flusso di lavoro.",
+          highlight: "Funziona 24/7, anche fuori orario, nei weekend e durante i cantieri.",
+          cta: "Ti mostro come funziona in 10 minuti",
+          points: [
+            "Nessuna chiamata persa",
+            "Raccolta automatica delle richieste",
+            "Integrazione con preventivi e appuntamenti",
+          ],
+        },
+        problem: {
+          title: "Ogni chiamata senza risposta è un cliente che va altrove",
+          painPoints: [
+            "Sei in cantiere e non puoi rispondere al telefono",
+            "Il cliente chiama fuori orario e non trova nessuno",
+            "Non richiamate in tempo e il cliente si rivolge alla concorrenza",
+            "Nessuna traccia delle chiamate perse: non sai quante opportunità hai perso",
+            "Il team gestisce le chiamate in modo disordinato, senza un processo definito",
+          ],
+        },
+        solution: {
+          title: "Un voice agent che lavora al posto tuo quando non sei disponibile",
+          features: [
+            "Risposta automatica alle chiamate 24/7",
+            "Raccolta del nome, del contatto e della richiesta del cliente",
+            "Trascrizione e organizzazione automatica delle informazioni",
+            "Integrazione diretta nel flusso preventivi o appuntamenti",
+            "Notifica immediata al team quando arriva una nuova richiesta",
+            "Personalizzazione del tono e del messaggio per la tua azienda",
+          ],
+        },
+        appointments: {
+          title: "Prenota, modifica e cancella appuntamenti al telefono",
+          description: "Il voice agent non raccoglie solo richieste generiche. Può gestire l'intero ciclo degli appuntamenti direttamente in chiamata, senza che nessun operatore debba intervenire.",
+          actions: [
+            "Prenotazione di un nuovo appuntamento",
+            "Modifica di un appuntamento esistente",
+            "Cancellazione con conferma al cliente",
+            "Verifica disponibilità in tempo reale",
+          ],
+        },
+        leadCapture: {
+          title: "Acquisisce i lead e li porta direttamente nel tuo CRM",
+          description: "Ogni chiamata diventa un'opportunità registrata. Il voice agent raccoglie le informazioni del cliente e le sincronizza automaticamente con il tuo CRM, senza nessun inserimento manuale.",
+          items: [
+            "Raccolta automatica di nome, contatto e tipo di richiesta",
+            "Creazione del lead nel CRM in tempo reale",
+            "Tagging e categorizzazione della richiesta",
+            "Notifica immediata al team commerciale",
+            "Compatibile con i principali CRM (HubSpot, Salesforce, Pipedrive e altri)",
+          ],
+        },
+        integration: {
+          title: "Non è un canale separato: è parte dello stesso flusso",
+          description: "Il voice agent lavora insieme a WhatsApp ed email nello stesso sistema. Quando un cliente chiama, la sua richiesta entra nel flusso esattamente come se avesse scritto su WhatsApp. Niente silos, niente informazioni perse.",
+        },
+        realCase: {
+          title: "Già applicato in contesti reali",
+          description: "Il sistema è già stato attivato in scenari operativi reali: dalla gestione delle chiamate in entrata di imprese edili alla qualifica delle richieste di cliniche. In tutti i casi, il risultato è lo stesso: meno chiamate perse, più richieste organizzate.",
+        },
+        faq: {
+          title: "Domande frequenti",
+          items: [
+            {
+              question: "Il voice agent parla in modo naturale?",
+              answer: "Sì. Il voice agent è progettato per rispondere in modo naturale e comprensibile, adattato al settore e al tono della tua azienda.",
+            },
+            {
+              question: "Cosa fa esattamente quando risponde a una chiamata?",
+              answer: "Saluta il cliente, raccoglie le informazioni essenziali (nome, contatto, tipo di richiesta) e le inserisce nel flusso. Se la richiesta richiede un umano, può dirottare o segnalare.",
+            },
+            {
+              question: "Funziona anche per prenotare appuntamenti?",
+              answer: "Sì. Oltre alle richieste preventivi, il voice agent può gestire prenotazioni, riprogrammazioni e cancellazioni di appuntamenti.",
+            },
+            {
+              question: "Si integra con WhatsApp ed email?",
+              answer: "Sì. Tutte le richieste da telefono, WhatsApp o email entrano nello stesso flusso unificato.",
+            },
+            {
+              question: "Posso provarlo sul mio caso specifico?",
+              answer: "Sì. In 10 minuti ti mostro come funzionerebbe per la tua azienda, senza impegno.",
+            },
+          ],
+        },
+        cta: {
+          title: "Smetti di perdere chiamate clienti",
+          description: "Ti mostro come funziona il voice agent nel tuo contesto specifico, in 10 minuti.",
+          buttonText: "Ti mostro come funziona",
+          microcopy: "Nessun impegno · Demo sul tuo caso reale",
+        },
+        relatedPages: {
+          title: "Approfondisci",
+          links: [
+            { label: "Gestione preventivi per imprese edili a Cagliari", href: "/preventivi-edilizia-cagliari" },
+            { label: "Automazione WhatsApp Business a Cagliari", href: "/whatsapp-business-automation-cagliari" },
+          ],
+        },
+      },
+      whatsappAutomation: {
+        seo: {
+          title: "Automazione WhatsApp Business a Cagliari | Rispondi ai clienti automaticamente | Humanaise",
+          description: "Automatizza le risposte WhatsApp, gestisci richieste clienti e organizza i preventivi senza perdere messaggi. Sistema pensato per aziende a Cagliari e in Sardegna.",
+          keywords: "whatsapp business automazione cagliari, chatbot whatsapp aziende, gestione clienti whatsapp, automazione messaggi whatsapp, risposta automatica whatsapp imprese",
+        },
+        hero: {
+          title: "Rispondi automaticamente ai clienti su WhatsApp",
+          subtitle: "Gestisci richieste, appuntamenti e preventivi senza perdere messaggi. Il sistema risponde, raccoglie le informazioni e le organizza nel tuo flusso di lavoro.",
+          highlight: "Nessun messaggio dimenticato, anche quando sei occupato o fuori orario.",
+          cta: "Guarda una demo in 10 minuti",
+          points: [
+            "Nessun messaggio perso",
+            "Risposte immediate ai clienti",
+            "Richieste organizzate automaticamente",
+          ],
+        },
+        problem: {
+          title: "I clienti scrivono su WhatsApp. Quanti messaggi non ricevono risposta in tempo?",
+          painPoints: [
+            "Messaggi che restano in attesa per ore senza risposta",
+            "Richieste perse tra chat personali e WhatsApp business",
+            "Il cliente che non riceve risposta si rivolge alla concorrenza",
+            "Nessun sistema per capire quante richieste arrivano e quante vengono gestite",
+            "Ogni membro del team gestisce WhatsApp in modo diverso, senza un processo",
+          ],
+        },
+        solution: {
+          title: "WhatsApp come canale professionale, non come chat personale",
+          features: [
+            "Risposta automatica immediata ai messaggi in entrata",
+            "Raccolta strutturata delle informazioni della richiesta",
+            "Inserimento automatico nel flusso preventivi o appuntamenti",
+            "Notifica al team quando arriva una nuova richiesta qualificata",
+            "Storico e tracciabilità di ogni conversazione",
+            "Personalizzazione del tono, dei messaggi e del flusso per la tua azienda",
+          ],
+        },
+        useCase: {
+          title: "Ideale per aziende che ricevono molte richieste ogni giorno",
+          description: "Se la maggior parte dei tuoi clienti ti contatta via WhatsApp, questo sistema trasforma quel canale in un processo professionale: ogni richiesta raccolta, organizzata e assegnata, senza che nulla vada perso. Funziona per imprese edili, installatori, studi professionali, cliniche e qualsiasi attività con alto volume di messaggi.",
+        },
+        realCase: {
+          title: "Già applicato in scenari reali",
+          description: "Il sistema è già attivo in contesti operativi reali: dalla gestione delle richieste di preventivi nel settore edilizia alla qualifica dei contatti per studi professionali. Il principio è lo stesso: ogni messaggio WhatsApp diventa una richiesta tracciabile.",
+        },
+        faq: {
+          title: "Domande frequenti",
+          items: [
+            {
+              question: "Funziona con il mio numero WhatsApp attuale?",
+              answer: "Il sistema si basa su WhatsApp Business API. Nella maggior parte dei casi è possibile migrare il numero esistente. Ti spieghiamo come nella demo.",
+            },
+            {
+              question: "Cosa risponde esattamente ai clienti?",
+              answer: "Risponde con messaggi personalizzati in base al tipo di richiesta, raccoglie le informazioni necessarie e conferma al cliente che la richiesta è stata ricevuta. Il tono e il contenuto sono configurati per la tua azienda.",
+            },
+            {
+              question: "Si integra con il voice agent e l'email?",
+              answer: "Sì. WhatsApp, telefono ed email lavorano nello stesso flusso unificato. Le richieste che arrivano da qualsiasi canale entrano tutte nel medesimo sistema.",
+            },
+            {
+              question: "Posso gestire anche gli appuntamenti via WhatsApp?",
+              answer: "Sì. Oltre ai preventivi, il sistema può gestire prenotazioni, modifiche e cancellazioni di appuntamenti direttamente in chat.",
+            },
+            {
+              question: "Come faccio a capire se è adatto alla mia azienda?",
+              answer: "In 10 minuti ti mostro come funzionerebbe nel tuo caso specifico, senza impegno.",
+            },
+          ],
+        },
+        cta: {
+          title: "Smetti di perdere richieste su WhatsApp",
+          description: "Ti mostro in 10 minuti come funziona il sistema per la tua azienda.",
+          buttonText: "Guarda come funziona",
+          microcopy: "Nessun impegno · Demo sul tuo caso reale",
+        },
+        relatedPages: {
+          title: "Approfondisci",
+          links: [
+            { label: "Gestione preventivi per imprese edili a Cagliari", href: "/preventivi-edilizia-cagliari" },
+            { label: "Voice agent per aziende a Cagliari", href: "/voice-agent-cagliari" },
+          ],
+        },
+      },
       emailAutomation: {
         seo: {
           title: "Humanaise | Automazione Email e Documenti",
