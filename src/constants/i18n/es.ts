@@ -564,6 +564,9 @@ export const es: Translation = {
             "WhatsApp + teléfono + email unificados",
           ],
         },
+        realityCheck: {
+          text: "La mayoría de las empresas no sabe cuántas solicitudes pierde cada semana. Entre llamadas sin respuesta, mensajes ignorados y emails olvidados, una parte de los clientes va simplemente a otro sitio.",
+        },
         voiceDiff: {
           title: "¿Y si un cliente llama y no respondes?",
           bullets: [
@@ -669,15 +672,19 @@ export const es: Translation = {
           keywords: "voice agent cagliari, responder llamadas automático, ia teléfono empresas cagliari, gestión llamadas clientes, contestador automático empresas",
         },
         hero: {
-          title: "No pierdas más clientes cuando no respondes al teléfono",
-          subtitle: "Activa un voice agent que responde a las llamadas, recoge las solicitudes y las organiza automáticamente en tu flujo de trabajo.",
-          highlight: "Funciona 24/7, incluso fuera de horario, fines de semana y en obra.",
-          cta: "Te muestro cómo funciona en 10 minutos",
+          title: "Si no respondes al teléfono, estás perdiendo clientes cada día",
+          subtitle: "El voice agent responde las llamadas por ti, recoge las solicitudes y las inserta automáticamente en tu flujo.",
+          highlight: "Cada llamada perdida es un cliente que va a uno de tus competidores.",
+          ctaPrimary: "Descubre qué pasa cuando no respondes",
+          ctaSecondary: "Te muestro cómo recuperar las llamadas perdidas",
           points: [
             "Ninguna llamada perdida",
             "Recogida automática de solicitudes",
             "Integración con presupuestos y citas",
           ],
+        },
+        impactBlock: {
+          text: "Cada llamada sin respuesta es una oportunidad perdida. El cliente no espera: llama a otra persona.",
         },
         problem: {
           title: "Cada llamada sin respuesta es un cliente que se va a la competencia",
@@ -778,7 +785,8 @@ export const es: Translation = {
           title: "Responde automáticamente a los clientes en WhatsApp",
           subtitle: "Gestiona solicitudes, citas y presupuestos sin perder mensajes. El sistema responde, recoge la información y la organiza en tu flujo de trabajo.",
           highlight: "Ningún mensaje olvidado, incluso cuando estás ocupado o fuera de horario.",
-          cta: "Ver una demo en 10 minutos",
+          ctaPrimary: "Descubre cuántos mensajes estás perdiendo",
+          ctaSecondary: "Te muestro cómo gestionarlos automáticamente",
           points: [
             "Ningún mensaje perdido",
             "Respuestas inmediatas a clientes",

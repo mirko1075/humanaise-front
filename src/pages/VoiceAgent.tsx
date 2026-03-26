@@ -54,9 +54,17 @@ export function VoiceAgent() {
             <p className="text-base text-secondary-400 font-medium mb-8">
               {v.hero.highlight}
             </p>
-            <Button size="lg" onClick={scrollToContact} className="mb-10">
-              {v.hero.cta}
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+              <Button size="lg" onClick={scrollToContact}>
+                {v.hero.ctaPrimary}
+              </Button>
+              <button
+                onClick={scrollToContact}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-primary-200 border border-primary-700 rounded-lg hover:bg-primary-800 transition-colors"
+              >
+                {v.hero.ctaSecondary}
+              </button>
+            </div>
             <motion.ul
               className="flex flex-col sm:flex-row gap-4 justify-center"
               variants={staggerContainer}
@@ -75,6 +83,21 @@ export function VoiceAgent() {
               ))}
             </motion.ul>
           </motion.div>
+        </Container>
+      </section>
+
+      {/* Impact Block */}
+      <section className="py-10 bg-red-950/30 border-y border-red-900/40">
+        <Container>
+          <motion.p
+            className="text-center text-lg md:text-xl font-semibold text-red-300 max-w-2xl mx-auto"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={scrollViewport}
+          >
+            {v.impactBlock.text}
+          </motion.p>
         </Container>
       </section>
 

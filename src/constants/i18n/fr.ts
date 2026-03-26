@@ -566,6 +566,9 @@ export const fr: Translation = {
             "WhatsApp + téléphone + email unifiés",
           ],
         },
+        realityCheck: {
+          text: "La plupart des entreprises ne savent pas combien de demandes elles perdent chaque semaine. Entre les appels sans réponse, les messages ignorés et les emails oubliés, une partie des clients va simplement ailleurs.",
+        },
         voiceDiff: {
           title: "Et si un client appelle et que vous ne répondez pas ?",
           bullets: [
@@ -671,15 +674,19 @@ export const fr: Translation = {
           keywords: "voice agent cagliari, répondre appels automatique, ia téléphone entreprises cagliari, gestion appels clients, répondeur automatique entreprises",
         },
         hero: {
-          title: "Ne perdez plus de clients parce que vous n'avez pas répondu au téléphone",
-          subtitle: "Activez un voice agent qui répond aux appels, collecte les demandes et les organise automatiquement dans votre flux de travail.",
-          highlight: "Fonctionne 24h/7j, même hors horaires, week-ends et sur chantier.",
-          cta: "Je vous montre comment ça marche en 10 minutes",
+          title: "Si vous ne répondez pas au téléphone, vous perdez des clients chaque jour",
+          subtitle: "Le voice agent répond aux appels à votre place, collecte les demandes et les insère automatiquement dans votre flux.",
+          highlight: "Chaque appel manqué est un client qui va chez un de vos concurrents.",
+          ctaPrimary: "Découvrez ce qui se passe quand vous ne répondez pas",
+          ctaSecondary: "Je vous montre comment récupérer les appels manqués",
           points: [
             "Aucun appel manqué",
             "Collecte automatique des demandes",
             "Intégration avec devis et rendez-vous",
           ],
+        },
+        impactBlock: {
+          text: "Chaque appel sans réponse est une opportunité perdue. Le client n'attend pas: il appelle quelqu'un d'autre.",
         },
         problem: {
           title: "Chaque appel sans réponse est un client qui part à la concurrence",
@@ -780,7 +787,8 @@ export const fr: Translation = {
           title: "Répondez automatiquement à vos clients sur WhatsApp",
           subtitle: "Gérez demandes, rendez-vous et devis sans perdre de messages. Le système répond, collecte les informations et les organise dans votre flux de travail.",
           highlight: "Aucun message oublié, même quand vous êtes occupé ou hors horaires.",
-          cta: "Voir une démo en 10 minutes",
+          ctaPrimary: "Découvrez combien de messages vous perdez",
+          ctaSecondary: "Je vous montre comment les gérer automatiquement",
           points: [
             "Aucun message perdu",
             "Réponses immédiates aux clients",

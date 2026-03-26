@@ -49,9 +49,17 @@ export function WhatsappAutomation() {
             <p className="text-base text-secondary-400 font-medium mb-8">
               {v.hero.highlight}
             </p>
-            <Button size="lg" onClick={scrollToContact} className="mb-10">
-              {v.hero.cta}
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+              <Button size="lg" onClick={scrollToContact}>
+                {v.hero.ctaPrimary}
+              </Button>
+              <button
+                onClick={scrollToContact}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-primary-200 border border-primary-700 rounded-lg hover:bg-primary-800 transition-colors"
+              >
+                {v.hero.ctaSecondary}
+              </button>
+            </div>
             <motion.ul
               className="flex flex-col sm:flex-row gap-4 justify-center"
               variants={staggerContainer}

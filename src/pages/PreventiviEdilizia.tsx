@@ -87,6 +87,21 @@ export function PreventiviEdilizia() {
         </Container>
       </section>
 
+      {/* Reality Check */}
+      <section className="py-10 bg-red-950/30 border-y border-red-900/40">
+        <Container>
+          <motion.p
+            className="text-center text-lg md:text-xl font-semibold text-red-300 max-w-2xl mx-auto"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={scrollViewport}
+          >
+            {v.realityCheck.text}
+          </motion.p>
+        </Container>
+      </section>
+
       {/* Voice Differentiation Block */}
       <section className="py-16 bg-indigo-950 border-y border-indigo-800/50">
         <Container>

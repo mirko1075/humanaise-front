@@ -559,6 +559,9 @@ export const en: Translation = {
             "WhatsApp + phone + email unified",
           ],
         },
+        realityCheck: {
+          text: "Most businesses don't know how many requests they lose every week. Between unanswered calls, ignored messages and forgotten emails, some customers simply go elsewhere.",
+        },
         voiceDiff: {
           title: "What if a customer calls and you don't answer?",
           bullets: [
@@ -664,15 +667,19 @@ export const en: Translation = {
           keywords: "voice agent cagliari, automatic call answering, ai phone businesses cagliari, customer call management, automatic answering service businesses",
         },
         hero: {
-          title: "Never lose customers because you didn't answer the phone",
-          subtitle: "Activate a voice agent that answers calls, collects requests and automatically organizes them into your workflow.",
-          highlight: "Works 24/7, even out of hours, weekends and on site.",
-          cta: "Show me how it works in 10 minutes",
+          title: "If you don't answer the phone, you're losing customers every day",
+          subtitle: "The voice agent answers calls for you, collects requests and inserts them automatically into your flow.",
+          highlight: "Every missed call is a customer going to one of your competitors.",
+          ctaPrimary: "Find out what happens when you don't answer",
+          ctaSecondary: "Show me how to recover missed calls",
           points: [
             "No missed calls",
             "Automatic request collection",
             "Integration with quotes and appointments",
           ],
+        },
+        impactBlock: {
+          text: "Every unanswered call is a lost opportunity. The customer doesn't wait: they call someone else.",
         },
         problem: {
           title: "Every unanswered call is a customer going elsewhere",
@@ -773,7 +780,8 @@ export const en: Translation = {
           title: "Respond to customers on WhatsApp automatically",
           subtitle: "Manage requests, appointments and quotes without losing messages. The system responds, collects information and organizes it in your workflow.",
           highlight: "No forgotten messages, even when you're busy or out of hours.",
-          cta: "Watch a demo in 10 minutes",
+          ctaPrimary: "Find out how many messages you\'re losing",
+          ctaSecondary: "Show me how to handle them automatically",
           points: [
             "No lost messages",
             "Immediate customer responses",
