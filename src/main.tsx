@@ -4,7 +4,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 import { LanguageProvider } from './contexts/LanguageContext';
+import { captureUtm } from './utils/utm';
 import './index.css';
+
+captureUtm();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

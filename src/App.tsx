@@ -104,7 +104,7 @@ function PreventiviEdiliziaPage() {
         title={v.seo.title}
         description={v.seo.description}
         keywords={v.seo.keywords}
-        canonical={`https://humanaise.com/preventivi-edilizia-cagliari`}
+        canonical={`https://humanaise.com/${language}/preventivi-edilizia-cagliari`}
         structuredData={structuredData}
       />
       <PreventiviEdilizia />
@@ -152,7 +152,7 @@ function VoiceAgentPage() {
         title={v.seo.title}
         description={v.seo.description}
         keywords={v.seo.keywords}
-        canonical="https://humanaise.com/voice-agent-cagliari"
+        canonical={`https://humanaise.com/${language}/voice-agent-cagliari`}
         structuredData={structuredData}
       />
       <VoiceAgent />
@@ -200,7 +200,7 @@ function WhatsappAutomationPage() {
         title={v.seo.title}
         description={v.seo.description}
         keywords={v.seo.keywords}
-        canonical="https://humanaise.com/whatsapp-business-automation-cagliari"
+        canonical={`https://humanaise.com/${language}/whatsapp-business-automation-cagliari`}
         structuredData={structuredData}
       />
       <WhatsappAutomation />
@@ -240,6 +240,15 @@ export default function App() {
         <Route path="/voice-agent-cagliari" element={<VoiceAgentPage />} />
         <Route path="/whatsapp-business-automation-cagliari" element={<WhatsappAutomationPage />} />
         <Route path="/email-automation" element={<EmailAutomationPage />} />
+        {/* Language-prefixed routes — these are the canonical URLs referenced in the sitemap */}
+        <Route path="/:lang/preventivi-edilizia-cagliari" element={<PreventiviEdiliziaPage />} />
+        <Route path="/:lang/preventivi" element={<PreventiviEdiliziaPage />} />
+        <Route path="/:lang/voice-agent-cagliari" element={<VoiceAgentPage />} />
+        <Route path="/:lang/whatsapp-business-automation-cagliari" element={<WhatsappAutomationPage />} />
+        <Route path="/:lang/email-automation" element={<EmailAutomationPage />} />
+        <Route path="/:lang/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/:lang/cookies" element={<CookiePolicyPage />} />
+        <Route path="/:lang/terms-of-service" element={<TermsOfServicePage />} />
         <Route path="*" element={<HomePage />} />
       </Route>
     </Routes>

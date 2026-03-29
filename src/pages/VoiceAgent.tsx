@@ -1,4 +1,3 @@
-import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Container } from '../components/ui/Container';
@@ -18,15 +17,16 @@ import {
 } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { fadeInUp, staggerContainer, staggerItem, scrollViewport } from '../utils/animations';
+import { usePageTracking } from '../hooks/usePageTracking';
 
 export function VoiceAgent() {
   const t = useTranslation();
   const v = t.landing.verticals.voiceAgent;
-  const contactRef = useRef<HTMLDivElement>(null);
 
-  const scrollToContact = () => {
-    contactRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const { ctaText, handleCtaClick, contactRef } = usePageTracking('voice_agent', {
+    A: v.hero.ctaPrimary,
+    B: 'Recupera le chiamate che stai perdendo',
+  });
 
   return (
     <div className="overflow-x-hidden">
@@ -58,11 +58,11 @@ export function VoiceAgent() {
               👉 {v.hero.highlight}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-              <Button size="lg" onClick={scrollToContact}>
-                {v.hero.ctaPrimary}
+              <Button size="lg" onClick={handleCtaClick}>
+                {ctaText}
               </Button>
               <button
-                onClick={scrollToContact}
+                onClick={handleCtaClick}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-primary-200 border border-primary-700 rounded-lg hover:bg-primary-800 transition-colors"
               >
                 {v.hero.ctaSecondary}
@@ -339,7 +339,7 @@ export function VoiceAgent() {
               {v.cta.title}
             </h2>
             <p className="text-xl text-primary-200 mb-8">{v.cta.description}</p>
-            <Button size="lg" onClick={scrollToContact}>
+            <Button size="lg" onClick={handleCtaClick}>
               {v.cta.buttonText}
             </Button>
             <p className="text-sm text-primary-300 mt-4">{v.cta.microcopy}</p>
