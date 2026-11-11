@@ -498,6 +498,13 @@ export const it: Translation = {
           description: "Un voice agent AI che gestisce le chiamate in entrata, qualifica le richieste dei pazienti e prenota o riprogramma appuntamenti direttamente nel sistema calendario della clinica. Parla in modo naturale, comprende l'intento anche in chiamate rumorose e invia conferme SMS automaticamente. La clinica ha recuperato ore di lavoro giornaliero della receptionist e ha smesso di perdere chiamate fuori orario.",
           representative: true,
         },
+        {
+          title: "AI Concierge per Ville e Yacht",
+          subtitle: "Costa Smeralda , Property Management & Yacht Services",
+          description: "Un agente AI su WhatsApp risponde agli ospiti delle ville di lusso 24/7 in 4 lingue (italiano, inglese, russo, arabo), raccoglie le richieste di servizi extra e le inoltra allo staff con i dettagli già strutturati. Il modulo yacht gestisce provisioning dell'equipaggio via voce o testo, concierge charter e coordinamento terra-mare. Progettato per centri servizi, property manager e yacht companies in Costa Smeralda.",
+          representative: true,
+          link: "/costa-smeralda",
+        },
       ],
     },
     howItWorks: {
@@ -957,6 +964,182 @@ export const it: Translation = {
           title: "Vuoi automatizzare questo processo nella tua azienda?",
           buttonText: "Richiedi una demo gratuita",
           microcopy: "Nessun impegno · Analisi su un tuo caso reale",
+        },
+      },
+      costaSmeralda: {
+        seo: {
+          title: "AI Concierge per Ville e Yacht in Costa Smeralda | Humanaise",
+          description: "Assistente AI su WhatsApp per centri servizi, property manager e yacht services in Costa Smeralda. Risponde agli ospiti 24/7 in italiano, inglese, russo e arabo. Pilot gratuito 30 giorni.",
+          keywords: "AI concierge Costa Smeralda, automazione ville lusso Sardegna, WhatsApp chatbot property management, assistente virtuale Porto Cervo, ai villa rental, concierge digitale yacht, yacht provisioning AI, property manager Porto Rotondo, luxury concierge Arzachena",
+        },
+        hero: {
+          badge: "PILOT GRATUITO 30 GIORNI",
+          title: "AI Concierge per Costa Smeralda",
+          subtitle: "Assistente intelligente per ville di lusso, yacht e servizi concierge.",
+          description: "Progettato per centri servizi, property manager e yacht services tra Porto Cervo, Porto Rotondo e Arzachena. Meno richieste inevase, più servizi venduti, zero messaggi persi.",
+          cta: "Richiedi il Pilot Gratuito",
+        },
+        problem: {
+          headline: "150 messaggi WhatsApp al giorno.",
+          highlight: "Una sola persona a rispondere.",
+          stats: [
+            { number: "68%", text: "delle richieste in alta stagione arrivano fuori orario lavorativo" },
+            { number: "3-5h", text: "tempo medio di risposta nelle ore notturne e nei weekend" },
+            { number: "40%", text: "delle richieste di servizi extra (charter, chef, transfer) perse nel flusso" },
+          ],
+        },
+        solution: {
+          title: "Un agente AI che lavora per voi.",
+          highlight: "In 4 lingue, 24/7.",
+          steps: [
+            {
+              title: "L'ospite scrive su WhatsApp",
+              body: "In italiano, inglese, russo o arabo. A qualsiasi ora. L'agente AI risponde immediatamente con le informazioni dalla knowledge base della villa: WiFi, regole, indicazioni, servizi.",
+            },
+            {
+              title: "Richiesta di servizio? L'AI raccoglie i dettagli",
+              body: "Se l'ospite chiede un transfer, un'escursione o uno chef a domicilio, l'agente pone le domande giuste: data, ora, numero persone, preferenze. In modo naturale e conversazionale.",
+            },
+            {
+              title: "Lo staff riceve tutto pronto",
+              body: "La richiesta arriva al team competente su un canale dedicato, con riepilogo strutturato. Basta confermare ed eseguire. Zero tempo perso a decifrare messaggi vocali.",
+            },
+          ],
+        },
+        yacht: {
+          badge: "YACHT SERVICES",
+          title: "Anche per yacht e charter.",
+          highlight: "Dal provisioning al concierge.",
+          services: [
+            {
+              title: "AI Provisioning Agent",
+              description: "L'equipaggio o il captain invia la lista provviste via WhatsApp o voce. L'AI la struttura, verifica disponibilità presso i fornitori locali, genera gli ordini e traccia le consegne.",
+            },
+            {
+              title: "Concierge Ospiti Charter",
+              description: "Stesse funzionalità del villa concierge per i charter guests: ristoranti, escursioni, transfer, prenotazioni , in qualsiasi lingua.",
+            },
+            {
+              title: "Coordinamento Terra-Mare",
+              description: "Gestione logistica tra equipaggio a bordo e base a terra: ormeggi, bunker, servizi tecnici e formalità portuali.",
+            },
+            {
+              title: "Comunicazione Multilingua",
+              description: "Comunicazione fluida tra equipaggio e fornitori in qualsiasi lingua, senza barriere linguistiche.",
+            },
+          ],
+          targets: "Yacht management companies, charter companies e provisioning companies.",
+        },
+        pilot: {
+          badge: "ZERO RISCHI",
+          title: "Il pilot: 30 giorni, 3 ville,",
+          highlight: "completamente gratuito.",
+          whatWeDo: {
+            title: "Cosa facciamo noi",
+            items: [
+              "Costruiamo la knowledge base di ogni villa dalle vostre info esistenti",
+              "Configuriamo l'agente AI sul vostro numero WhatsApp Business",
+              "Calibriamo le risposte con il vostro feedback nei primi 7 giorni",
+              "Dashboard operativa e report settimanali inclusi",
+            ],
+          },
+          whatYouNeed: {
+            title: "Cosa serve da voi",
+            items: [
+              "Info base di 3 ville: indirizzo, regole, FAQ (anche formato vocale)",
+              "Accesso al numero WhatsApp Business (o ne attiviamo uno dedicato)",
+              "Un referente per la prima settimana di calibrazione",
+              "Tempo totale richiesto: circa 2 ore",
+            ],
+          },
+        },
+        results: {
+          title: "Numeri concreti,",
+          highlight: "misurabili dal giorno uno.",
+          kpis: [
+            { number: "< 30s", label: "Prima risposta, 24/7" },
+            { number: "70%", label: "Richieste gestite dall'AI" },
+            { number: "100%", label: "Servizi extra tracciati" },
+            { number: "0", label: "Messaggi persi" },
+          ],
+        },
+        pricing: {
+          title: "Tre pacchetti,",
+          highlight: "su misura per voi.",
+          note: "Tutti i pacchetti includono un pilot gratuito di 30 giorni su 3 ville. Pricing personalizzato in base al portfolio. Nessun vincolo, disdici quando vuoi.",
+          essential: {
+            badge: "Essenziale",
+            subtitle: "Per concierge e PM con fino a 10 ville",
+            features: [
+              "Setup incluso",
+              "WhatsApp AI Agent 24/7 in 4 lingue (IT, EN, RU, AR)",
+              "Knowledge base personalizzata per ogni villa",
+              "Routing richieste allo staff competente",
+              "Dashboard operativa",
+              "Report settimanali automatici",
+            ],
+            cta: "Richiedi il Pilot Gratuito",
+          },
+          professional: {
+            badge: "Professional",
+            popular: "Più richiesto",
+            subtitle: "Per centri servizi strutturati con fino a 30 ville",
+            features: [
+              "Tutto il piano Essenziale, più:",
+              "Voice Agent per chiamate fuori orario",
+              "Upselling proattivo (suggerimenti servizi extra al momento giusto)",
+              "Dashboard dedicata per i proprietari delle ville",
+              "Onboarding prioritario (go-live in 48h)",
+            ],
+            cta: "Richiedi il Pilot Gratuito",
+          },
+          yachtPlan: {
+            badge: "Professional + Yacht",
+            subtitle: "Per operatori che gestiscono ville e servizi nautici",
+            features: [
+              "Tutto il piano Professional, più:",
+              "Provisioning AI (liste provviste via WhatsApp e voce)",
+              "Concierge ospiti charter (ristoranti, transfer, escursioni)",
+              "Coordinamento terra-mare (ormeggi, bunker, assistenza tecnica)",
+              "Preference Sheet digitale pre-charter via WhatsApp",
+            ],
+            cta: "Contattaci per un Preventivo",
+          },
+        },
+        about: "Humanaise è un'agenzia di automazione AI con sede in Sardegna, specializzata in soluzioni per il settore hospitality e property management di lusso. Il nostro servizio Villa AI Concierge è progettato specificamente per i centri servizi della Costa Smeralda , da Porto Cervo a Porto Rotondo, da Arzachena a Baja Sardinia , che gestiscono ville di lusso e servizi yacht per una clientela internazionale esigente. La nostra tecnologia è già in produzione con clienti nel settore edile e si basa su un'architettura multi-tenant collaudata con WhatsApp Business API, AI generativa e knowledge base personalizzate.",
+        faq: {
+          title: "Domande frequenti",
+          items: [
+            {
+              question: "Come funziona l'AI Concierge per le ville in Costa Smeralda?",
+              answer: "L'AI Concierge è un assistente su WhatsApp che risponde automaticamente agli ospiti delle vostre ville 24 ore su 24, in italiano, inglese, russo e arabo. Gestisce domande ricorrenti (WiFi, check-in, spiagge, ristoranti) e inoltra le richieste di servizi extra (yacht, chef, transfer) al vostro staff con tutti i dettagli già raccolti.",
+            },
+            {
+              question: "Quanto costa il servizio Villa AI Concierge?",
+              answer: "Offriamo tre pacchetti , Essenziale (fino a 10 ville), Professional (fino a 30 ville con Voice Agent e upselling), e Professional + Yacht (ville + provisioning e concierge nautico). Il setup è sempre incluso. Il pricing è personalizzato in base al vostro portfolio. Offriamo un pilot gratuito di 30 giorni su 3 ville per testare il servizio senza impegno.",
+            },
+            {
+              question: "Il servizio funziona anche per yacht e imbarcazioni?",
+              answer: "Sì. Il modulo Yacht AI gestisce provisioning via WhatsApp (l'equipaggio invia la lista provviste, l'AI la struttura e coordina i fornitori), concierge per charter guests, e coordinamento logistico terra-mare per ormeggi, bunker e servizi tecnici.",
+            },
+            {
+              question: "In quali lingue risponde l'assistente AI?",
+              answer: "L'assistente risponde automaticamente in italiano, inglese, russo e arabo , le quattro lingue principali della clientela luxury in Costa Smeralda. Rileva automaticamente la lingua del messaggio dell'ospite.",
+            },
+            {
+              question: "Quanto tempo serve per attivare il servizio?",
+              answer: "L'onboarding richiede circa 2 ore dal centro servizi: ci servono le info base delle ville (anche in formato vocale) e l'accesso al numero WhatsApp Business. L'agente AI è operativo in 24-48 ore.",
+            },
+            {
+              question: "Gli ospiti capiscono che stanno parlando con un'AI?",
+              answer: "No. L'agente è calibrato con un tono da concierge 5 stelle , cordiale, discreto, professionale. Le risposte sono personalizzate sulla base delle informazioni specifiche di ogni villa. Per richieste complesse, l'AI passa la conversazione a un operatore umano in modo trasparente.",
+            },
+          ],
+        },
+        cta: {
+          title: "Pronti per la stagione?",
+          subtitle: "Contattateci per attivare il pilot gratuito di 30 giorni prima dell'inizio della stagione estiva.",
+          buttonText: "Richiedi il Pilot Gratuito",
         },
       },
     },

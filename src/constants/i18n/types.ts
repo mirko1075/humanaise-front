@@ -495,6 +495,67 @@ export interface Translation {
           links: Array<{ label: string; href: string }>;
         };
       };
+      costaSmeralda: {
+        seo: {
+          title: string;
+          description: string;
+          keywords: string;
+        };
+        hero: {
+          badge: string;
+          title: string;
+          subtitle: string;
+          description: string;
+          cta: string;
+        };
+        problem: {
+          headline: string;
+          highlight: string;
+          stats: Array<{ number: string; text: string }>;
+        };
+        solution: {
+          title: string;
+          highlight: string;
+          steps: Array<{ title: string; body: string }>;
+        };
+        yacht: {
+          badge: string;
+          title: string;
+          highlight: string;
+          services: Array<{ title: string; description: string }>;
+          targets: string;
+        };
+        pilot: {
+          badge: string;
+          title: string;
+          highlight: string;
+          whatWeDo: { title: string; items: string[] };
+          whatYouNeed: { title: string; items: string[] };
+        };
+        results: {
+          title: string;
+          highlight: string;
+          kpis: Array<{ number: string; label: string }>;
+        };
+        pricing: {
+          title: string;
+          highlight: string;
+          note: string;
+          essential: { badge: string; subtitle: string; features: string[]; cta: string };
+          professional: { badge: string; popular: string; subtitle: string; features: string[]; cta: string };
+          yachtPlan: { badge: string; subtitle: string; features: string[]; cta: string };
+        };
+        about: string;
+        faq: {
+          title: string;
+          items: Array<{ question: string; answer: string }>;
+        };
+        cta: {
+          title: string;
+          subtitle: string;
+          buttonText: string;
+        };
+      };
       whatsappAutomation: {
         seo: {
           title: string;

@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Container } from '../components/ui/Container';
@@ -13,15 +12,16 @@ import {
 } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { fadeInUp, staggerContainer, staggerItem, scrollViewport } from '../utils/animations';
+import { usePageTracking } from '../hooks/usePageTracking';
 
 export function WhatsappAutomation() {
   const t = useTranslation();
   const v = t.landing.verticals.whatsappAutomation;
-  const contactRef = useRef<HTMLDivElement>(null);
 
-  const scrollToContact = () => {
-    contactRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const { ctaText, handleCtaClick, contactRef } = usePageTracking('whatsapp', {
+    A: v.hero.ctaPrimary,
+    B: 'Ricevi più richieste senza perdere tempo',
+  });
 
   const scrollToReality = () => {
     document.getElementById('reality-section')?.scrollIntoView({ behavior: 'smooth' });
@@ -57,8 +57,8 @@ export function WhatsappAutomation() {
               👉 {v.hero.highlight}
             </p>
             <div className="flex justify-center mb-6">
-              <Button size="lg" onClick={scrollToContact}>
-                {v.hero.ctaPrimary}
+              <Button size="lg" onClick={handleCtaClick}>
+                {ctaText}
               </Button>
             </div>
             <motion.ul
@@ -242,7 +242,7 @@ export function WhatsappAutomation() {
               {v.cta.title}
             </h2>
             <p className="text-xl text-primary-200 mb-8">{v.cta.description}</p>
-            <Button size="lg" onClick={scrollToContact}>
+            <Button size="lg" onClick={handleCtaClick}>
               {v.cta.buttonText}
             </Button>
             <p className="text-sm text-primary-300 mt-4">{v.cta.microcopy}</p>

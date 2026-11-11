@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useTranslations } from '../../../hooks/useTranslations';
+import { trackEvent, trackConversion } from '../../../utils/tracking';
+import { getVariant } from '../../../utils/abTest';
+import { getUtm } from '../../../utils/utm';
 
 export function ContactForm() {
   const [formData, setFormData] = useState<Record<string, string>>({});
@@ -7,6 +10,15 @@ export function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const page = window.location.pathname.replace(/^\//, '') || 'home';
+    const utm = getUtm();
+    trackEvent('form_submit', {
+      page,
+      variant: getVariant(),
+      utm_source: utm.utm_source ?? '',
+      utm_campaign: utm.utm_campaign ?? '',
+    });
+    trackConversion('FORM_SUBMIT_LABEL');
     console.log('Form submitted:', formData);
   };
 

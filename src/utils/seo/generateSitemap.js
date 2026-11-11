@@ -2,7 +2,7 @@ import fs from "fs";
 
 const baseUrl = "https://humanaise.com";
 const languages = ["en", "it", "es", "fr"];
-const staticRoutes = ["", "/privacy-policy", "/terms-of-service", "/cookies", "/email-automation", "/preventivi-edilizia-cagliari", "/voice-agent-cagliari", "/whatsapp-business-automation-cagliari"];
+const staticRoutes = ["", "/privacy-policy", "/terms-of-service", "/cookies", "/email-automation", "/preventivi-edilizia-cagliari", "/voice-agent-cagliari", "/whatsapp-business-automation-cagliari", "/costa-smeralda"];
 
 function localizedUrl(language, route) {
   return `${baseUrl}/${language}${route}`;
@@ -29,12 +29,12 @@ function languageAlternates(route) {
 
 function getRoutePriority(route) {
   if (route === "") return "1.0";
-  if (["/email-automation", "/preventivi-edilizia-cagliari", "/voice-agent-cagliari", "/whatsapp-business-automation-cagliari"].includes(route)) return "0.8";
+  if (["/email-automation", "/preventivi-edilizia-cagliari", "/voice-agent-cagliari", "/whatsapp-business-automation-cagliari", "/costa-smeralda"].includes(route)) return "0.8";
   return "0.3";
 }
 
 function getRouteChangefreq(route) {
-  if (["", "/email-automation", "/preventivi-edilizia-cagliari", "/voice-agent-cagliari", "/whatsapp-business-automation-cagliari"].includes(route)) return "weekly";
+  if (["", "/email-automation", "/preventivi-edilizia-cagliari", "/voice-agent-cagliari", "/whatsapp-business-automation-cagliari", "/costa-smeralda"].includes(route)) return "weekly";
   return "yearly";
 }
 
