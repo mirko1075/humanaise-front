@@ -34,6 +34,7 @@ interface SEOProps {
   canonical?: string;
   keywords?: string;
   author?: string;
+  ogImage?: string;
   structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
@@ -43,6 +44,7 @@ export function SEO({
   canonical,
   keywords = 'Making AI feel Human. AI automation, business automation, artificial intelligence, workflow optimization, AI solutions',
   author = 'HumanAIse',
+  ogImage,
   structuredData
 }: SEOProps) {
   const t = useTranslation();
@@ -56,6 +58,7 @@ export function SEO({
   const seoTitle = title || defaultTitle;
   const seoDescription = description || defaultDescription;
   const seoCanonical = canonical || `${BASE_URL}${currentPath}`;
+  const seoOgImage = ogImage ? `${BASE_URL}${ogImage}` : OG_IMAGE;
   const ogLocale = LOCALE_MAP[language] || 'en_US';
   const alternateLanguages = Object.keys(LANGUAGES) as Array<keyof typeof LANGUAGES>;
   const organizationSchema = {
@@ -152,7 +155,7 @@ export function SEO({
       <meta property="og:url" content={seoCanonical} />
       <meta property="og:title" content={seoTitle} />
       <meta property="og:description" content={seoDescription} />
-      <meta property="og:image" content={OG_IMAGE} />
+      <meta property="og:image" content={seoOgImage} />
       <meta property="og:locale" content={ogLocale} />
       {alternateLanguages
         .filter((lang) => lang !== language)
@@ -167,7 +170,7 @@ export function SEO({
       <meta name="twitter:url" content={seoCanonical} />
       <meta name="twitter:title" content={seoTitle} />
       <meta name="twitter:description" content={seoDescription} />
-      <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="twitter:image" content={seoOgImage} />
 
       {/* Additional Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />

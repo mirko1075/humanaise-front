@@ -20,7 +20,7 @@ export const trackEvent = (
   }
 };
 
-// Fire Google Ads conversion — replace CONVERSION_ID/LABEL in GTM or here
+// Fire Google Ads conversion: replace CONVERSION_ID/LABEL in GTM or here
 export const trackConversion = (conversionLabel: string): void => {
   if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
     window.gtag('event', 'conversion', {
