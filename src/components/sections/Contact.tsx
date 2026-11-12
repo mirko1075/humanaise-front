@@ -6,6 +6,8 @@ import { Button } from '../ui/Button';
 import { CONTACT_INFO, CONTACT_FORM_FIELDS } from '../../constants/contact';
 import { useTranslation } from '../../hooks/useTranslation';
 import { fadeInUp, scrollViewport } from '../../utils/animations';
+import { trackEvent } from '../../utils/tracking';
+import { getUtm } from '../../utils/utm';
 
 export function Contact() {
   const t = useTranslation();
@@ -37,6 +39,8 @@ export function Contact() {
       return;
     }
 
+    const page = window.location.pathname.replace(/^\//, '') || 'home';
+    const utm = getUtm();
     const body = new URLSearchParams({
       'form-name': 'contact',
       ...formData,
@@ -47,8 +51,16 @@ export function Contact() {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: body.toString(),
     })
-      .then(() => setSubmitted(true))
-      .catch(() => setError({ hasError: true, message: 'An error occurred. Please try again.' }));
+      .then((res) => {
+        // fetch only rejects on network errors: a 404/5xx must not show "sent"
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        trackEvent('form_submit_success', { page, utm_source: utm.utm_source ?? '', utm_campaign: utm.utm_campaign ?? '' });
+        setSubmitted(true);
+      })
+      .catch(() => {
+        trackEvent('form_error', { page });
+        setError({ hasError: true, message: 'An error occurred. Please try again.' });
+      });
   };
 
   const handleInputChange = (
