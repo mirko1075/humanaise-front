@@ -47,6 +47,13 @@ export const CookieBanner: React.FC = () => {
 
   const handleConsent = (value: ConsentValue) => {
     localStorage.setItem(CONSENT_KEY, value);
+    const state = value === 'accepted' ? 'granted' : 'denied';
+    window.gtagConsent?.('consent', 'update', {
+      ad_storage: state,
+      ad_user_data: state,
+      ad_personalization: state,
+      analytics_storage: state,
+    });
     setVisible(false);
   };
 

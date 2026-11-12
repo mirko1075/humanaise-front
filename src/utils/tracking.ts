@@ -1,6 +1,7 @@
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
+    gtagConsent?: (...args: unknown[]) => void; // Consent Mode v2 helper defined in index.html
     dataLayer?: unknown[];
     umami?: { track: (name: string, data?: Record<string, string>) => void };
   }

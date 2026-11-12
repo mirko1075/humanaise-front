@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google Consent Mode v2: everything denied until the visitor accepts in CookieBanner.
+         Stored choice is read here so a returning "accepted" visitor is granted before GTM loads.
+         Named gtagConsent (not gtag) on purpose: trackEvent() already pushes events to dataLayer. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtagConsent() { dataLayer.push(arguments); }
+      var consentValue = 'denied';
+      try { if (localStorage.getItem('humanaise_cookie_consent') === 'accepted') consentValue = 'granted'; } catch (e) {}
+      gtagConsent('consent', 'default', {
+        ad_storage: consentValue, ad_user_data: consentValue, ad_personalization: consentValue,
+        analytics_storage: consentValue, wait_for_update: 500
+      });
+    </script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
