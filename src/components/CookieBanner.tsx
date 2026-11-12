@@ -54,6 +54,9 @@ export const CookieBanner: React.FC = () => {
       ad_personalization: state,
       analytics_storage: state,
     });
+    // GTM tags blocked by consent at page load are not retried on consent change:
+    // this event is the extra trigger that makes the Google tag fire right after "Accept".
+    if (value === 'accepted') window.dataLayer?.push({ event: 'consent_update' });
     setVisible(false);
   };
 
