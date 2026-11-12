@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { useTranslation } from '../../hooks/useTranslation';
+import { trackEvent } from '../../utils/tracking';
 import  splash from '../../imgs/copertina.jpg';
 
 export function Hero() {
@@ -47,13 +48,19 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
           >
-            <Button size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+            <Button size="lg" onClick={() => {
+              trackEvent('cta_click', { page: 'home', location: 'hero_primary' });
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}>
               {t.landing.hero.ctaPrimary}
             </Button>
             <Button
               variant="outline"
               size="lg"
-              onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => {
+                trackEvent('cta_click', { page: 'home', location: 'hero_secondary' });
+                document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               {t.landing.hero.ctaSecondary}
             </Button>
