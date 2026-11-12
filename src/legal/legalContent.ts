@@ -1,7 +1,7 @@
 import type { Language } from '../constants/i18n/types';
 import type { LegalContent } from './legalTypes';
 
-const LAST_UPDATED = '2026-03-14';
+const LAST_UPDATED = '2026-11-12';
 
 const en: LegalContent = {
   privacyPolicy: {
@@ -30,7 +30,7 @@ const en: LegalContent = {
       {
         title: 'AI Chatbot Interactions',
         content:
-          'The website may provide an AI-powered chatbot designed to assist users with information about services and to facilitate communication.\n\nMessages entered into the chatbot may be processed by automated systems in order to generate responses.\n\nConversations may be temporarily stored for purposes such as:',
+          'The website may provide an AI-powered chatbot designed to assist users with information about services and to facilitate communication.\n\nThe chatbot is an artificial intelligence system, not a human, and you are informed of this at the start of every conversation. Messages are sent to a third-party AI provider (OpenAI) acting on our behalf to generate responses; this provider may process data outside the European Economic Area.\n\nMessages entered into the chatbot may be processed by automated systems in order to generate responses.\n\nConversations may be temporarily stored for purposes such as:',
         items: [
           'Improving service quality',
           'Debugging and monitoring system performance',
@@ -52,6 +52,11 @@ const en: LegalContent = {
           'Preferred time slots',
           'Optional additional information',
         ],
+      },
+      {
+        title: 'Website Analytics',
+        content:
+          'We measure how the website is used (pages viewed, clicks on buttons and contact links, form submission outcomes) with Umami, a self-hosted tool that does not use cookies and produces aggregated statistics. On a sample of visits we also record heatmaps of clicks and scrolling to improve the layout.\n\nIf you accept optional cookies in the cookie banner, Google Tag Manager may additionally load analytics and marketing tags provided by Google. If you reject them, the Google tags are configured not to store cookies on your device.',
       },
       {
         title: 'WhatsApp Communication',
@@ -113,7 +118,8 @@ const en: LegalContent = {
         content: 'This website may use:',
         items: [
           'Essential cookies required for the operation of the site',
-          'Optional analytics cookies to improve the website experience',
+          'Optional analytics and marketing cookies (Google Tag Manager and the tags it loads), set only after you accept them in the cookie banner',
+          'Cookie-free, self-hosted statistics (Umami), which do not use cookies or identify individual visitors',
         ],
       },
       {
@@ -178,7 +184,7 @@ const it: LegalContent = {
       {
         title: 'Interazioni con il Chatbot AI',
         content:
-          'Il sito web può fornire un chatbot basato sull\'intelligenza artificiale progettato per assistere gli utenti con informazioni sui servizi e per facilitare la comunicazione.\n\nI messaggi inseriti nel chatbot possono essere elaborati da sistemi automatizzati al fine di generare risposte.\n\nLe conversazioni possono essere temporaneamente archiviate per scopi quali:',
+          'Il sito web può fornire un chatbot basato sull\'intelligenza artificiale progettato per assistere gli utenti con informazioni sui servizi e per facilitare la comunicazione.\n\nIl chatbot è un sistema di intelligenza artificiale, non una persona, e ne sei informato all\'inizio di ogni conversazione. I messaggi vengono inviati a un fornitore di intelligenza artificiale terzo (OpenAI) che opera per nostro conto per generare le risposte; tale fornitore può trattare i dati al di fuori dello Spazio Economico Europeo.\n\nI messaggi inseriti nel chatbot possono essere elaborati da sistemi automatizzati al fine di generare risposte.\n\nLe conversazioni possono essere temporaneamente archiviate per scopi quali:',
         items: [
           'Miglioramento della qualità del servizio',
           'Debug e monitoraggio delle prestazioni del sistema',
@@ -200,6 +206,11 @@ const it: LegalContent = {
           'Fasce orarie preferite',
           'Informazioni aggiuntive opzionali',
         ],
+      },
+      {
+        title: 'Analisi del Sito',
+        content:
+          'Misuriamo come viene utilizzato il sito (pagine visualizzate, clic su pulsanti e link di contatto, esito dell\'invio dei moduli) con Umami, uno strumento ospitato da noi che non utilizza cookie e produce statistiche aggregate. Su un campione di visite registriamo inoltre mappe di calore dei clic e dello scorrimento per migliorare il layout.\n\nSe accetti i cookie opzionali nel banner, Google Tag Manager può inoltre caricare tag di analisi e marketing forniti da Google. Se li rifiuti, i tag Google sono configurati per non memorizzare cookie sul tuo dispositivo.',
       },
       {
         title: 'Comunicazione WhatsApp',
@@ -265,7 +276,8 @@ const it: LegalContent = {
         content: 'Questo sito web può utilizzare:',
         items: [
           'Cookie essenziali necessari per il funzionamento del sito',
-          'Cookie analitici opzionali per migliorare l\'esperienza del sito',
+          'Cookie analitici e di marketing opzionali (Google Tag Manager e i tag che carica), impostati solo dopo la tua accettazione nel banner dei cookie',
+          'Statistiche senza cookie ospitate da noi (Umami), che non utilizzano cookie né identificano i singoli visitatori',
         ],
       },
       {
@@ -330,7 +342,7 @@ const es: LegalContent = {
       {
         title: 'Interacciones con el Chatbot de IA',
         content:
-          'El sitio web puede proporcionar un chatbot basado en inteligencia artificial diseñado para ayudar a los usuarios con información sobre servicios y facilitar la comunicación.\n\nLos mensajes ingresados en el chatbot pueden ser procesados por sistemas automatizados para generar respuestas.\n\nLas conversaciones pueden almacenarse temporalmente con fines como:',
+          'El sitio web puede proporcionar un chatbot basado en inteligencia artificial diseñado para ayudar a los usuarios con información sobre servicios y facilitar la comunicación.\n\nEl chatbot es un sistema de inteligencia artificial, no una persona, y se te informa de ello al inicio de cada conversación. Los mensajes se envían a un proveedor de inteligencia artificial externo (OpenAI) que actúa en nuestro nombre para generar las respuestas; este proveedor puede tratar los datos fuera del Espacio Económico Europeo.\n\nLos mensajes ingresados en el chatbot pueden ser procesados por sistemas automatizados para generar respuestas.\n\nLas conversaciones pueden almacenarse temporalmente con fines como:',
         items: [
           'Mejora de la calidad del servicio',
           'Depuración y monitoreo del rendimiento del sistema',
@@ -352,6 +364,11 @@ const es: LegalContent = {
           'Franjas horarias preferidas',
           'Información adicional opcional',
         ],
+      },
+      {
+        title: 'Analítica del Sitio',
+        content:
+          'Medimos cómo se utiliza el sitio (páginas vistas, clics en botones y enlaces de contacto, resultado del envío de formularios) con Umami, una herramienta alojada por nosotros que no utiliza cookies y genera estadísticas agregadas. En una muestra de visitas también registramos mapas de calor de clics y desplazamiento para mejorar el diseño.\n\nSi aceptas las cookies opcionales en el banner, Google Tag Manager puede cargar además etiquetas de análisis y marketing de Google. Si las rechazas, las etiquetas de Google están configuradas para no almacenar cookies en tu dispositivo.',
       },
       {
         title: 'Comunicación por WhatsApp',
@@ -418,7 +435,8 @@ const es: LegalContent = {
         content: 'Este sitio web puede utilizar:',
         items: [
           'Cookies esenciales necesarias para el funcionamiento del sitio',
-          'Cookies analíticas opcionales para mejorar la experiencia del sitio',
+          'Cookies analíticas y de marketing opcionales (Google Tag Manager y las etiquetas que carga), establecidas solo después de que las aceptes en el banner de cookies',
+          'Estadísticas sin cookies alojadas por nosotros (Umami), que no utilizan cookies ni identifican a visitantes individuales',
         ],
       },
       {
@@ -483,7 +501,7 @@ const fr: LegalContent = {
       {
         title: 'Interactions avec le Chatbot IA',
         content:
-          'Le site web peut fournir un chatbot alimenté par l\'intelligence artificielle conçu pour aider les utilisateurs avec des informations sur les services et faciliter la communication.\n\nLes messages saisis dans le chatbot peuvent être traités par des systèmes automatisés afin de générer des réponses.\n\nLes conversations peuvent être temporairement stockées à des fins telles que :',
+          'Le site web peut fournir un chatbot alimenté par l\'intelligence artificielle conçu pour aider les utilisateurs avec des informations sur les services et faciliter la communication.\n\nLe chatbot est un système d\'intelligence artificielle, et non une personne, et vous en êtes informé au début de chaque conversation. Les messages sont envoyés à un fournisseur d\'intelligence artificielle tiers (OpenAI) agissant pour notre compte afin de générer les réponses ; ce fournisseur peut traiter les données en dehors de l\'Espace économique européen.\n\nLes messages saisis dans le chatbot peuvent être traités par des systèmes automatisés afin de générer des réponses.\n\nLes conversations peuvent être temporairement stockées à des fins telles que :',
         items: [
           'Amélioration de la qualité du service',
           'Débogage et surveillance des performances du système',
@@ -505,6 +523,11 @@ const fr: LegalContent = {
           'Créneaux horaires préférés',
           'Informations supplémentaires optionnelles',
         ],
+      },
+      {
+        title: 'Analyse du Site',
+        content:
+          'Nous mesurons l\'utilisation du site (pages vues, clics sur les boutons et les liens de contact, résultat de l\'envoi des formulaires) avec Umami, un outil hébergé par nos soins qui n\'utilise pas de cookies et produit des statistiques agrégées. Sur un échantillon de visites, nous enregistrons également des cartes de chaleur des clics et du défilement afin d\'améliorer la mise en page.\n\nSi vous acceptez les cookies optionnels dans le bandeau, Google Tag Manager peut en outre charger des balises d\'analyse et de marketing de Google. Si vous les refusez, les balises Google sont configurées pour ne pas stocker de cookies sur votre appareil.',
       },
       {
         title: 'Communication WhatsApp',
@@ -571,7 +594,8 @@ const fr: LegalContent = {
         content: 'Ce site web peut utiliser :',
         items: [
           'Cookies essentiels nécessaires au fonctionnement du site',
-          'Cookies analytiques optionnels pour améliorer l\'expérience du site',
+          'Cookies analytiques et marketing optionnels (Google Tag Manager et les balises qu\'il charge), déposés uniquement après votre acceptation dans le bandeau de cookies',
+          'Statistiques sans cookies hébergées par nos soins (Umami), qui n\'utilisent pas de cookies et n\'identifient pas les visiteurs individuels',
         ],
       },
       {
