@@ -56,7 +56,7 @@ const en: LegalContent = {
       {
         title: 'Website Analytics',
         content:
-          'If you accept optional cookies in the cookie banner, Google Tag Manager may load analytics and marketing tags provided by Google. If you reject them, the Google tags are configured not to store cookies on your device.',
+          'If you accept optional cookies in the cookie banner, Google Tag Manager may load analytics and marketing tags provided by Google. If you reject them, the Google tags are configured not to store cookies on your device. In that case Google may still receive cookieless signals (such as the page visited, browser type and time of the visit), without identifiers stored on your device, used only for aggregate measurement and statistical modelling (Google Consent Mode).',
       },
       {
         title: 'WhatsApp Communication',
@@ -209,7 +209,7 @@ const it: LegalContent = {
       {
         title: 'Analisi del Sito',
         content:
-          'Se accetti i cookie opzionali nel banner, Google Tag Manager può caricare tag di analisi e marketing forniti da Google. Se li rifiuti, i tag Google sono configurati per non memorizzare cookie sul tuo dispositivo.',
+          'Se accetti i cookie opzionali nel banner, Google Tag Manager può caricare tag di analisi e marketing forniti da Google. Se li rifiuti, i tag Google sono configurati per non memorizzare cookie sul tuo dispositivo. In tal caso Google può comunque ricevere segnali senza cookie (ad esempio pagina visitata, tipo di browser e orario della visita), senza identificativi salvati sul tuo dispositivo, usati solo per misurazioni aggregate e modelli statistici (Google Consent Mode).',
       },
       {
         title: 'Comunicazione WhatsApp',
@@ -366,7 +366,7 @@ const es: LegalContent = {
       {
         title: 'Analítica del Sitio',
         content:
-          'Si aceptas las cookies opcionales en el banner, Google Tag Manager puede cargar etiquetas de análisis y marketing de Google. Si las rechazas, las etiquetas de Google están configuradas para no almacenar cookies en tu dispositivo.',
+          'Si aceptas las cookies opcionales en el banner, Google Tag Manager puede cargar etiquetas de análisis y marketing de Google. Si las rechazas, las etiquetas de Google están configuradas para no almacenar cookies en tu dispositivo. En ese caso Google puede recibir igualmente señales sin cookies (como la página visitada, el tipo de navegador y la hora de la visita), sin identificadores guardados en tu dispositivo, usadas solo para mediciones agregadas y modelos estadísticos (Google Consent Mode).',
       },
       {
         title: 'Comunicación por WhatsApp',
@@ -524,7 +524,7 @@ const fr: LegalContent = {
       {
         title: 'Analyse du Site',
         content:
-          'Si vous acceptez les cookies optionnels dans le bandeau, Google Tag Manager peut charger des balises d\'analyse et de marketing de Google. Si vous les refusez, les balises Google sont configurées pour ne pas stocker de cookies sur votre appareil.',
+          'Si vous acceptez les cookies optionnels dans le bandeau, Google Tag Manager peut charger des balises d\'analyse et de marketing de Google. Si vous les refusez, les balises Google sont configurées pour ne pas stocker de cookies sur votre appareil. Dans ce cas, Google peut tout de même recevoir des signaux sans cookies (comme la page visitée, le type de navigateur et l\'heure de la visite), sans identifiant enregistré sur votre appareil, utilisés uniquement pour des mesures agrégées et une modélisation statistique (Google Consent Mode).',
       },
       {
         title: 'Communication WhatsApp',
