@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
 import { useLanguage } from '../hooks/useLanguage';
 import { LANGUAGES } from '../constants/languages';
@@ -54,7 +55,8 @@ export function SEO({
 
   const defaultTitle = 'HumanAIse - AI Automation Solutions';
   const defaultDescription = t.home.hero.subtitle;
-  const routeSuffix = getRouteSuffix(window.location.pathname);
+  const { pathname } = useLocation();
+  const routeSuffix = getRouteSuffix(pathname);
   const currentPath = `/${language}${routeSuffix}`;
 
   const seoTitle = title || defaultTitle;

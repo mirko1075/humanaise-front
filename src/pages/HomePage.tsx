@@ -11,15 +11,17 @@ import { NewsSection } from '../components/home/NewsSection';
 import { CallToAction } from '../components/sections/CallToAction';
 import { Contact } from '../components/sections/Contact';
 import { useHashScroll } from '../hooks/useHashScroll';
+import { useTranslation } from '../hooks/useTranslation';
 
 export function HomePage() {
   useHashScroll();
+  const t = useTranslation();
 
   return (
     <>
       <SEO
-        title="Humanaise | Business Process Automation for SMEs"
-        description="Automate emails, documents, WhatsApp and internal workflows. Humanaise helps SMEs in Sardinia and across Italy reduce manual work and simplify operations."
+        title={t.home.seo.title}
+        description={t.home.seo.description}
         keywords="business process automation, SME automation, email automation, document automation, workflow automation, reduce manual work, automate business operations, automazione processi aziendali, AI automation Cagliari, automazione Sardegna, automazione aziendale Italia"
       />
       <Hero />

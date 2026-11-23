@@ -27,6 +27,10 @@ export const es: Translation = {
     },
   },
   home: {
+    seo: {
+      title: "Humanaise | Automatización de procesos empresariales para pymes",
+      description: "Automatiza correos, documentos, WhatsApp y flujos internos. Humanaise ayuda a las pymes de Cerdeña y de toda Italia a reducir el trabajo manual y simplificar sus operaciones.",
+    },
     hero: {
       title: "Donde la Inteligencia Humana se Encuentra con la Innovación IA",
       subtitle:

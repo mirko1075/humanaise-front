@@ -28,6 +28,10 @@ export interface Translation {
     };
   };
   home: {
+    seo: {
+      title: string;
+      description: string;
+    };
     hero: {
       title: string;
       subtitle: string;

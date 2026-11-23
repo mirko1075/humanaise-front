@@ -28,6 +28,10 @@ export const en: Translation = {
     },
   },
   home: {
+    seo: {
+      title: "Humanaise | Business Process Automation for SMEs",
+      description: "Automate emails, documents, WhatsApp and internal workflows. Humanaise helps SMEs in Sardinia and across Italy reduce manual work and simplify operations.",
+    },
     hero: {
       title: "Where Human Intelligence Meets AI Innovation",
       subtitle:
