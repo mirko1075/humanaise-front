@@ -41,15 +41,16 @@ export function Contact() {
 
     const page = window.location.pathname.replace(/^\//, '') || 'home';
     const utm = getUtm();
-    const body = new URLSearchParams({
-      'form-name': 'contact',
-      ...formData,
-    });
-
-    fetch('/', {
+    // ponytail: same payload shape Netlify Forms used to send to this n8n webhook, so the workflow needs no change
+    fetch('https://n8n.humanaise.com/webhook/netlify-form-submission', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: body.toString(),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        form_name: 'contact',
+        site_url: window.location.origin,
+        created_at: new Date().toISOString(),
+        data: formData,
+      }),
     })
       .then((res) => {
         // fetch only rejects on network errors: a 404/5xx must not show "sent"
