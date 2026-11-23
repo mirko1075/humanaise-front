@@ -38,7 +38,20 @@
 - Images optimized at build time via `vite-plugin-image-optimizer`
 
 ## Deployment
-- Vercel (vercel.json with SPA rewrite) and Netlify (`public/_redirects`)
+- **Hosting: Vercel** (since 2026-11-23), team `humanaise`, project `humanaise-front` (`prj_cZqu1HzQYnqLkxN3QnGyipABCN7d`)
+  - Production URL: https://humanaise-front.vercel.app → custom domains `humanaise.com`, `www.humanaise.com`
+  - Access: `npx vercel login` (account owner of team `humanaise`), dashboard https://vercel.com/humanaise/humanaise-front
+  - Deploy: Git integration with GitHub `mirko1075/humanaise-front`: every push to `master` deploys to production, every PR gets a preview URL. Manual fallback: `npx vercel deploy --prod` from a clean checkout. `.vercel/` holds the local project link, not committed
+  - `humanaise.com` redirects 301 to `www.humanaise.com` (Vercel domain setting, not `vercel.json`)
+  - `humanaise.it` is not registered (whois AVAILABLE on 2026-11-23); decided not to buy it
+  - SPA rewrite in `vercel.json`
+- **Netlify: dismissed.** The old account was suspended for unpaid billing; site `humanaise` (`fa0fcd72-b049-4fd7-8c41-0a59e868a577`) is inactive but still claims `humanaise.com`, so the domain cannot be attached to any other Netlify site (`humanaiseai` on Mirko's team was refused) until Netlify support releases it. `public/_redirects` is a leftover
+- **Domain & DNS: GoDaddy** (registrar and nameservers `ns77/ns78.domaincontrol.com`). API token in `.env` as `GODADDY_TOKEN` (never commit)
+  - `www` CNAME → `cname.vercel-dns.com`
+  - `@` A → `76.76.21.21` (only this A record)
+  - `_vercel` TXT → `vc-domain-verify=humanaise.com,9a45c76f341727f15841` and `vc-domain-verify=www.humanaise.com,64333e7cd03f292c756b` (Vercel ownership proof)
+  - Leave MX / SPF / Google / Microsoft TXT records alone: they serve email
+- **Contact form**: `src/components/sections/Contact.tsx` POSTs JSON to n8n webhook `https://n8n.humanaise.com/webhook/netlify-form-submission` (workflow `[HUMANAISE] - Netlify Form Submission` in repo `n8n-automation-humanaise`), which forwards to `relay.humanaise.com`. Payload keeps the old Netlify shape (`form_name`, `site_url`, `created_at`, `data`). Webhook is unauthenticated: add Turnstile if spam appears
 - SPA: all routes rewrite to `/index.html`
 
 ## Workflow
