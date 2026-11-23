@@ -51,7 +51,7 @@
   - `@` A → `76.76.21.21` (only this A record)
   - `_vercel` TXT → `vc-domain-verify=humanaise.com,9a45c76f341727f15841` and `vc-domain-verify=www.humanaise.com,64333e7cd03f292c756b` (Vercel ownership proof)
   - Leave MX / SPF / Google / Microsoft TXT records alone: they serve email
-- **Contact form**: `src/components/sections/Contact.tsx` POSTs JSON to n8n webhook `https://n8n.humanaise.com/webhook/netlify-form-submission` (workflow `[HUMANAISE] - Netlify Form Submission` in repo `n8n-automation-humanaise`), which forwards to `relay.humanaise.com`. Payload keeps the old Netlify shape (`form_name`, `site_url`, `created_at`, `data`). Webhook is unauthenticated: add Turnstile if spam appears
+- **Contact form**: `Contact.tsx` POSTs JSON to the Vercel function `api/contact.ts`, which validates the fields, drops honeypot (`bot-field`) hits and forwards to n8n webhook `https://n8n.humanaise.com/webhook/netlify-form-submission` (workflow `[HUMANAISE] - Netlify Form Submission` in repo `n8n-automation-humanaise`) with header `x-humanaise-form-secret`; n8n checks it via header-auth credential `Humanaise contact form secret` and forwards to `relay.humanaise.com`. Secret lives in Vercel env `FORM_WEBHOOK_SECRET` (production + preview) and in that n8n credential: rotate both together. Check: `node scripts/check-contact-api.ts`. No captcha/rate limit yet: add Turnstile if spam gets through
 - SPA: all routes rewrite to `/index.html`
 
 ## Workflow

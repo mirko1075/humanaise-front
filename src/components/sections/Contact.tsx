@@ -41,16 +41,10 @@ export function Contact() {
 
     const page = window.location.pathname.replace(/^\//, '') || 'home';
     const utm = getUtm();
-    // ponytail: same payload shape Netlify Forms used to send to this n8n webhook, so the workflow needs no change
-    fetch('https://n8n.humanaise.com/webhook/netlify-form-submission', {
+    fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        form_name: 'contact',
-        site_url: window.location.origin,
-        created_at: new Date().toISOString(),
-        data: formData,
-      }),
+      body: JSON.stringify(formData),
     })
       .then((res) => {
         // fetch only rejects on network errors: a 404/5xx must not show "sent"
@@ -171,15 +165,12 @@ export function Contact() {
               <form
                 name="contact"
                 method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
                 className="space-y-5"
               >
-                <input type="hidden" name="form-name" value="contact" />
                 <p className="hidden">
                   <label>
-                    Don't fill this out: <input name="bot-field" />
+                    Don't fill this out: <input id="bot-field" name="bot-field" tabIndex={-1} autoComplete="off" onChange={handleInputChange} />
                   </label>
                 </p>
                 {error.hasError && (
