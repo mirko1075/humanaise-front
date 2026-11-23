@@ -1,7 +1,7 @@
 import type { Language } from '../constants/i18n/types';
 import type { LegalContent } from './legalTypes';
 
-const LAST_UPDATED = '2026-11-12';
+const LAST_UPDATED = '2026-11-23';
 
 const en: LegalContent = {
   privacyPolicy: {
@@ -56,7 +56,7 @@ const en: LegalContent = {
       {
         title: 'Website Analytics',
         content:
-          'We measure how the website is used (pages viewed, clicks on buttons and contact links, form submission outcomes) with Umami, a self-hosted tool that does not use cookies and produces aggregated statistics. On a sample of visits we also record heatmaps of clicks and scrolling to improve the layout.\n\nIf you accept optional cookies in the cookie banner, Google Tag Manager may additionally load analytics and marketing tags provided by Google. If you reject them, the Google tags are configured not to store cookies on your device.',
+          'If you accept optional cookies in the cookie banner, Google Tag Manager may load analytics and marketing tags provided by Google. If you reject them, the Google tags are configured not to store cookies on your device.',
       },
       {
         title: 'WhatsApp Communication',
@@ -119,7 +119,6 @@ const en: LegalContent = {
         items: [
           'Essential cookies required for the operation of the site',
           'Optional analytics and marketing cookies (Google Tag Manager and the tags it loads), set only after you accept them in the cookie banner',
-          'Cookie-free, self-hosted statistics (Umami), which do not use cookies or identify individual visitors',
         ],
       },
       {
@@ -210,7 +209,7 @@ const it: LegalContent = {
       {
         title: 'Analisi del Sito',
         content:
-          'Misuriamo come viene utilizzato il sito (pagine visualizzate, clic su pulsanti e link di contatto, esito dell\'invio dei moduli) con Umami, uno strumento ospitato da noi che non utilizza cookie e produce statistiche aggregate. Su un campione di visite registriamo inoltre mappe di calore dei clic e dello scorrimento per migliorare il layout.\n\nSe accetti i cookie opzionali nel banner, Google Tag Manager può inoltre caricare tag di analisi e marketing forniti da Google. Se li rifiuti, i tag Google sono configurati per non memorizzare cookie sul tuo dispositivo.',
+          'Se accetti i cookie opzionali nel banner, Google Tag Manager può caricare tag di analisi e marketing forniti da Google. Se li rifiuti, i tag Google sono configurati per non memorizzare cookie sul tuo dispositivo.',
       },
       {
         title: 'Comunicazione WhatsApp',
@@ -277,7 +276,6 @@ const it: LegalContent = {
         items: [
           'Cookie essenziali necessari per il funzionamento del sito',
           'Cookie analitici e di marketing opzionali (Google Tag Manager e i tag che carica), impostati solo dopo la tua accettazione nel banner dei cookie',
-          'Statistiche senza cookie ospitate da noi (Umami), che non utilizzano cookie né identificano i singoli visitatori',
         ],
       },
       {
@@ -368,7 +366,7 @@ const es: LegalContent = {
       {
         title: 'Analítica del Sitio',
         content:
-          'Medimos cómo se utiliza el sitio (páginas vistas, clics en botones y enlaces de contacto, resultado del envío de formularios) con Umami, una herramienta alojada por nosotros que no utiliza cookies y genera estadísticas agregadas. En una muestra de visitas también registramos mapas de calor de clics y desplazamiento para mejorar el diseño.\n\nSi aceptas las cookies opcionales en el banner, Google Tag Manager puede cargar además etiquetas de análisis y marketing de Google. Si las rechazas, las etiquetas de Google están configuradas para no almacenar cookies en tu dispositivo.',
+          'Si aceptas las cookies opcionales en el banner, Google Tag Manager puede cargar etiquetas de análisis y marketing de Google. Si las rechazas, las etiquetas de Google están configuradas para no almacenar cookies en tu dispositivo.',
       },
       {
         title: 'Comunicación por WhatsApp',
@@ -436,7 +434,6 @@ const es: LegalContent = {
         items: [
           'Cookies esenciales necesarias para el funcionamiento del sitio',
           'Cookies analíticas y de marketing opcionales (Google Tag Manager y las etiquetas que carga), establecidas solo después de que las aceptes en el banner de cookies',
-          'Estadísticas sin cookies alojadas por nosotros (Umami), que no utilizan cookies ni identifican a visitantes individuales',
         ],
       },
       {
@@ -527,7 +524,7 @@ const fr: LegalContent = {
       {
         title: 'Analyse du Site',
         content:
-          'Nous mesurons l\'utilisation du site (pages vues, clics sur les boutons et les liens de contact, résultat de l\'envoi des formulaires) avec Umami, un outil hébergé par nos soins qui n\'utilise pas de cookies et produit des statistiques agrégées. Sur un échantillon de visites, nous enregistrons également des cartes de chaleur des clics et du défilement afin d\'améliorer la mise en page.\n\nSi vous acceptez les cookies optionnels dans le bandeau, Google Tag Manager peut en outre charger des balises d\'analyse et de marketing de Google. Si vous les refusez, les balises Google sont configurées pour ne pas stocker de cookies sur votre appareil.',
+          'Si vous acceptez les cookies optionnels dans le bandeau, Google Tag Manager peut charger des balises d\'analyse et de marketing de Google. Si vous les refusez, les balises Google sont configurées pour ne pas stocker de cookies sur votre appareil.',
       },
       {
         title: 'Communication WhatsApp',
@@ -595,7 +592,6 @@ const fr: LegalContent = {
         items: [
           'Cookies essentiels nécessaires au fonctionnement du site',
           'Cookies analytiques et marketing optionnels (Google Tag Manager et les balises qu\'il charge), déposés uniquement après votre acceptation dans le bandeau de cookies',
-          'Statistiques sans cookies hébergées par nos soins (Umami), qui n\'utilisent pas de cookies et n\'identifient pas les visiteurs individuels',
         ],
       },
       {
