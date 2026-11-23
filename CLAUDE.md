@@ -2,7 +2,7 @@
 
 ## Build & Run
 - `npm run dev` — start Vite dev server
-- `npm run build` — generate sitemap + production build
+- `npm run build` — generate sitemap + production build + prerender `<head>` of every sitemap URL (`scripts/prerender.mjs`, renders `src/entry-prerender.tsx` with Vite SSR). Build fails if a canonical doesn't match its URL or a title is duplicated
 - `npm run preview` — preview production build locally
 - `npm run lint` — run ESLint
 
@@ -11,7 +11,7 @@
 - Tailwind CSS with custom `primary` (blue) and `secondary` (green) color scales
 - No router library — routing is manual via `window.location.pathname` in `src/App.tsx`
 - Icons: `lucide-react`
-- SEO: `react-helmet-async`
+- SEO: `react-helmet-async`; tags are also baked into static `dist/<lang>/<route>/index.html` at build time, so components rendered by `SEO` must not read `window`/`document` during render (use router hooks)
 - Charts: `chart.js` + `react-chartjs-2` (ROI calculator)
 
 ## Architecture

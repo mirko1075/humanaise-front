@@ -28,6 +28,10 @@ export const it: Translation = {
     },
   },
   home: {
+    seo: {
+      title: "Humanaise | Automazione dei processi aziendali per PMI",
+      description: "Automatizza email, documenti, WhatsApp e flussi interni. Humanaise aiuta le PMI in Sardegna e in tutta Italia a ridurre il lavoro manuale e semplificare le operazioni.",
+    },
     hero: {
       title: "Dove l'Intelligenza Umana Incontra l'Innovazione AI",
       subtitle:

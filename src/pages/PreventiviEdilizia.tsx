@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Container } from '../components/ui/Container';
@@ -192,7 +193,7 @@ export function PreventiviEdilizia() {
             viewport={scrollViewport}
           >
             {v.howItWorks.steps.map((step, i) => (
-              <React.Fragment key={i}>
+              <Fragment key={i}>
                 <motion.div variants={staggerItem} className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-blue-500/20 border border-blue-400 flex items-center justify-center shrink-0 mt-0.5">
                     <span className="text-sm font-bold text-blue-400">{i + 1}</span>
@@ -204,7 +205,7 @@ export function PreventiviEdilizia() {
                     <ArrowDown className="w-7 h-7 text-blue-400" strokeWidth={2.5} />
                   </div>
                 )}
-              </React.Fragment>
+              </Fragment>
             ))}
           </motion.div>
         </Container>

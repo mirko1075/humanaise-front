@@ -27,6 +27,10 @@ export const fr: Translation = {
     },
   },
   home: {
+    seo: {
+      title: "Humanaise | Automatisation des processus métier pour PME",
+      description: "Automatisez e-mails, documents, WhatsApp et flux internes. Humanaise aide les PME de Sardaigne et de toute l'Italie à réduire le travail manuel et à simplifier leurs opérations.",
+    },
     hero: {
       title: "Où l'Intelligence Humaine Rencontre l'Innovation IA",
       subtitle:
