@@ -41,7 +41,9 @@
 - **Hosting: Vercel** (since 2026-11-23), team `humanaise`, project `humanaise-front` (`prj_cZqu1HzQYnqLkxN3QnGyipABCN7d`)
   - Production URL: https://humanaise-front.vercel.app → custom domains `humanaise.com`, `www.humanaise.com`
   - Access: `npx vercel login` (account owner of team `humanaise`), dashboard https://vercel.com/humanaise/humanaise-front
-  - Deploy: manual, `npx vercel deploy --prod` from a clean checkout (no Git integration yet: `vercel git connect` to deploy on push). `.vercel/` holds the local project link, not committed
+  - Deploy: Git integration with GitHub `mirko1075/humanaise-front`: every push to `master` deploys to production, every PR gets a preview URL. Manual fallback: `npx vercel deploy --prod` from a clean checkout. `.vercel/` holds the local project link, not committed
+  - `humanaise.com` redirects 301 to `www.humanaise.com` (Vercel domain setting, not `vercel.json`)
+  - `humanaise.it` is not registered (whois AVAILABLE on 2026-11-23); decided not to buy it
   - SPA rewrite in `vercel.json`
 - **Netlify: dismissed.** The old account was suspended for unpaid billing; site `humanaise` (`fa0fcd72-b049-4fd7-8c41-0a59e868a577`) is inactive but still claims `humanaise.com`, so the domain cannot be attached to any other Netlify site (`humanaiseai` on Mirko's team was refused) until Netlify support releases it. `public/_redirects` is a leftover
 - **Domain & DNS: GoDaddy** (registrar and nameservers `ns77/ns78.domaincontrol.com`). API token in `.env` as `GODADDY_TOKEN` (never commit)
