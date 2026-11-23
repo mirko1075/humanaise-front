@@ -36,6 +36,7 @@ interface SEOProps {
   author?: string;
   ogImage?: string;
   structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
+  noindex?: boolean;
 }
 
 export function SEO({
@@ -45,7 +46,8 @@ export function SEO({
   keywords = 'Making AI feel Human. AI automation, business automation, artificial intelligence, workflow optimization, AI solutions',
   author = 'HumanAIse',
   ogImage,
-  structuredData
+  structuredData,
+  noindex = false
 }: SEOProps) {
   const t = useTranslation();
   const { language } = useLanguage();
@@ -175,7 +177,7 @@ export function SEO({
       {/* Additional Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       <meta name="theme-color" content="#1e40af" />
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
       <meta name="revisit-after" content="7 days" />
       <meta name="geo.region" content="IT-CA" />
       <meta name="geo.placename" content="Cagliari" />

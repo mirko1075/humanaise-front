@@ -14,7 +14,7 @@ function languageAlternates(route) {
       (lang) => `
     <xhtml:link
       rel="alternate"
-      hrefLang="${lang}"
+      hreflang="${lang}"
       href="${localizedUrl(lang, route)}"
     />`
     )
@@ -22,7 +22,7 @@ function languageAlternates(route) {
     `
     <xhtml:link
       rel="alternate"
-      hrefLang="x-default"
+      hreflang="x-default"
       href="${localizedUrl("en", route)}"
     />`;
 }
