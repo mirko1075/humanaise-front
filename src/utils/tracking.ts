@@ -3,7 +3,6 @@ declare global {
     gtag?: (...args: unknown[]) => void;
     gtagConsent?: (...args: unknown[]) => void; // Consent Mode v2 helper defined in index.html
     dataLayer?: unknown[];
-    umami?: { track: (name: string, data?: Record<string, string>) => void };
   }
 }
 
@@ -20,8 +19,6 @@ export const trackEvent = (
   if (Array.isArray(window.dataLayer)) {
     window.dataLayer.push({ event: eventName, ...params });
   }
-  // Self-hosted Umami (cookieless); no-op until its script has loaded
-  window.umami?.track(eventName, params);
 };
 
 // Fire Google Ads conversion: replace CONVERSION_ID/LABEL in GTM or here
