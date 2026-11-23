@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useParams } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { HomePage } from './pages/HomePage';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
@@ -10,6 +10,7 @@ import { VoiceAgent } from './pages/VoiceAgent';
 import { WhatsappAutomation } from './pages/WhatsappAutomation';
 import { CostaSmeralda } from './pages/CostaSmeralda';
 import { SEO } from './components/SEO';
+import { LANGUAGES } from './constants/languages';
 import { useLanguage } from './hooks/useLanguage';
 import { useTranslation } from './hooks/useTranslation';
 
@@ -300,12 +301,29 @@ function EmailAutomationPage() {
   );
 }
 
+// Unknown URLs still show the home page, but marked noindex so Google does not
+// index them as duplicate homepages (soft 404). Rendered after HomePage so its tags win.
+function NotFoundPage() {
+  return (
+    <>
+      <HomePage />
+      <SEO title="Page not found | HumanAIse" noindex />
+    </>
+  );
+}
+
+// "/:lang" also matches any single-segment typo ("/foo"): only real languages are the home.
+function LangHomePage() {
+  const { lang } = useParams();
+  return lang && lang in LANGUAGES ? <HomePage /> : <NotFoundPage />;
+}
+
 export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/:lang" element={<HomePage />} />
+        <Route path="/:lang" element={<LangHomePage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/privacy" element={<PrivacyPolicyPage />} />
         <Route path="/cookies" element={<CookiePolicyPage />} />
@@ -327,7 +345,7 @@ export default function App() {
         <Route path="/:lang/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/:lang/cookies" element={<CookiePolicyPage />} />
         <Route path="/:lang/terms-of-service" element={<TermsOfServicePage />} />
-        <Route path="*" element={<HomePage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );
